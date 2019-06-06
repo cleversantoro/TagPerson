@@ -1,0 +1,250 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>be0ecd80-27a5-4c41-aefe-4e07a499fb5c</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>Main.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>TagPerson</Name>
+    <RootNamespace>TagPerson</RootNamespace>
+    <IsWindowsApplication>True</IsWindowsApplication>
+    <InterpreterId>Global|PythonCore|3.7</InterpreterId>
+    <SuppressPackageInstallationPrompt>True</SuppressPackageInstallationPrompt>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Controller\" />
+    <Folder Include="DAO\" />
+    <Folder Include="DataBase\" />
+    <Folder Include="DataBase\sql\" />
+    <Folder Include="Imagens\" />
+    <Folder Include="Imagens\Brasao\" />
+    <Folder Include="Imagens\ico\" />
+    <Folder Include="Imagens\Item\" />
+    <Folder Include="Imagens\categoria\" />
+    <Folder Include="Imagens\Personagem\" />
+    <Folder Include="Imagens\Personagem\raca\" />
+    <Folder Include="Imagens\Personagem\profissao\" />
+    <Folder Include="Imagens\tela\" />
+    <Folder Include="Model\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="resources\" />
+    <Folder Include="tests\" />
+    <Folder Include="View\" />
+    <Folder Include="View\UI\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataBase\sql\bonus.txt" />
+    <Content Include="DataBase\sql\combate.json" />
+    <Content Include="DataBase\sql\combate.txt" />
+    <Content Include="DataBase\sql\combate_insert.sql" />
+    <Content Include="DataBase\sql\habilidade-new.txt" />
+    <Content Include="DataBase\sql\habilidades.json" />
+    <Content Include="DataBase\sql\habilidade_insert.sql" />
+    <Content Include="DataBase\sql\script5.sql" />
+    <Content Include="DataBase\sql\script-2.sql" />
+    <Content Include="DataBase\sql\script.sql" />
+    <Content Include="DataBase\sql\tagperson-060619.sql" />
+    <Content Include="DataBase\sql\tagperson-dados-sqlite.sql" />
+    <Content Include="DataBase\sql\tagperson-estrura-sqlite.sql" />
+    <Content Include="DataBase\tagperson.db" />
+    <Content Include="Imagens\Brasao\cabadom.png" />
+    <Content Include="Imagens\Brasao\cacordo.png" />
+    <Content Include="Imagens\Brasao\camien.png" />
+    <Content Include="Imagens\Brasao\cazanti.png" />
+    <Content Include="Imagens\Brasao\ccalco.png" />
+    <Content Include="Imagens\Brasao\cconti.png" />
+    <Content Include="Imagens\Brasao\cdantsem.png" />
+    <Content Include="Imagens\Brasao\cender.png" />
+    <Content Include="Imagens\Brasao\ceredra.png" />
+    <Content Include="Imagens\Brasao\cestepe.png" />
+    <Content Include="Imagens\Brasao\cfilanti.png" />
+    <Content Include="Imagens\Brasao\clevania.png" />
+    <Content Include="Imagens\Brasao\cludgrim.png" />
+    <Content Include="Imagens\Brasao\cluna.png" />
+    <Content Include="Imagens\Brasao\cmarana.png" />
+    <Content Include="Imagens\Brasao\cnovoporto.png" />
+    <Content Include="Imagens\Brasao\cpino.png" />
+    <Content Include="Imagens\Brasao\cplana.png" />
+    <Content Include="Imagens\Brasao\cportis.png" />
+    <Content Include="Imagens\Brasao\cportolivre.png" />
+    <Content Include="Imagens\Brasao\cquizes.png" />
+    <Content Include="Imagens\Brasao\ctorbel.png" />
+    <Content Include="Imagens\Brasao\cverrogar.png" />
+    <Content Include="Imagens\Brasao\pluna.png" />
+    <Content Include="Imagens\Brasao\pquizes.png" />
+    <Content Include="Imagens\Brasao\tagmar_mapa.png" />
+    <Content Include="Imagens\categoria\agressao.png" />
+    <Content Include="Imagens\categoria\ataque.png" />
+    <Content Include="Imagens\categoria\postura.png" />
+    <Content Include="Imagens\categoria\precisao.png" />
+    <Content Include="Imagens\categoria\protecao.png" />
+    <Content Include="Imagens\categoria\suporte.png" />
+    <Content Include="Imagens\ico\bard.png" />
+    <Content Include="Imagens\ico\book.png" />
+    <Content Include="Imagens\ico\caravan.svg" />
+    <Content Include="Imagens\ico\cart.png" />
+    <Content Include="Imagens\ico\dice.png" />
+    <Content Include="Imagens\ico\disk.png" />
+    <Content Include="Imagens\ico\folder_image.png" />
+    <Content Include="Imagens\ico\iconfinder_question_12319.png" />
+    <Content Include="Imagens\ico\mage.png" />
+    <Content Include="Imagens\ico\magic_stones.svg" />
+    <Content Include="Imagens\ico\obelisk.svg" />
+    <Content Include="Imagens\ico\page.png" />
+    <Content Include="Imagens\ico\pencil.png" />
+    <Content Include="Imagens\ico\priest.png" />
+    <Content Include="Imagens\ico\printer.png" />
+    <Content Include="Imagens\ico\pyramid.svg" />
+    <Content Include="Imagens\ico\ranger.png" />
+    <Content Include="Imagens\ico\shield.png" />
+    <Content Include="Imagens\ico\statue.svg" />
+    <Content Include="Imagens\ico\sword_in_the_stone.svg" />
+    <Content Include="Imagens\ico\taggen-icon.ico" />
+    <Content Include="Imagens\ico\taggen.png" />
+    <Content Include="Imagens\ico\tagmar_logo.ico" />
+    <Content Include="Imagens\ico\thief.png" />
+    <Content Include="Imagens\ico\user.png" />
+    <Content Include="Imagens\ico\wand.png" />
+    <Content Include="Imagens\ico\warrior.png" />
+    <Content Include="Imagens\ico\we_bow017.png" />
+    <Content Include="Imagens\ico\wrench.png" />
+    <Content Include="Imagens\Item\item1.png" />
+    <Content Include="Imagens\Item\item2.png" />
+    <Content Include="Imagens\Item\item3.png" />
+    <Content Include="Imagens\Item\item4.png" />
+    <Content Include="Imagens\Item\item_arco_de_guerra.png" />
+    <Content Include="Imagens\Item\item_couro_rigido.png" />
+    <Content Include="Imagens\Item\item_elmo_fechado.png" />
+    <Content Include="Imagens\Item\item_escudo_grande.png" />
+    <Content Include="Imagens\Item\item_espada.png" />
+    <Content Include="Imagens\Item\item_machado_de_guerra.png" />
+    <Content Include="Imagens\Item\item_mangual.png" />
+    <Content Include="Imagens\Personagem\raca\anao.png" />
+    <Content Include="Imagens\Personagem\profissao\bardo.png" />
+    <Content Include="Imagens\Personagem\raca\elfodourado.png" />
+    <Content Include="Imagens\Personagem\raca\elfoflorestal.png" />
+    <Content Include="Imagens\Personagem\profissao\guerreiro.png" />
+    <Content Include="Imagens\Personagem\raca\humano.png" />
+    <Content Include="Imagens\Personagem\profissao\ladino.png" />
+    <Content Include="Imagens\Personagem\profissao\mago.png" />
+    <Content Include="Imagens\Personagem\raca\meioelfo.png" />
+    <Content Include="Imagens\Personagem\raca\pequenino.png" />
+    <Content Include="Imagens\Personagem\profissao\rastreador.png" />
+    <Content Include="Imagens\Personagem\profissao\sacerdote.png" />
+    <Content Include="Imagens\tela\body_bg.png" />
+    <Content Include="Imagens\tela\caravan.svg" />
+    <Content Include="Imagens\tela\logo.jpg" />
+    <Content Include="Imagens\tela\logo.png" />
+    <Content Include="Imagens\tela\LogoPequeno.png" />
+    <Content Include="Imagens\tela\magic_stones.svg" />
+    <Content Include="Imagens\tela\obelisk.svg" />
+    <Content Include="Imagens\tela\pyramid.svg" />
+    <Content Include="Imagens\tela\python.png" />
+    <Content Include="Imagens\tela\shadow.png" />
+    <Content Include="Imagens\tela\simbolo.png" />
+    <Content Include="Imagens\tela\sqlite-database.png" />
+    <Content Include="Imagens\tela\statue.svg" />
+    <Content Include="Imagens\tela\sword_in_the_stone.svg" />
+    <Content Include="Imagens\tela\taggen-ficha-p1.svg" />
+    <Content Include="Imagens\tela\taggen-ficha-p2.svg" />
+    <Content Include="Imagens\tela\tagmar_atributos.png" />
+    <Content Include="Imagens\tela\tagmar_capa_berbert.png" />
+    <Content Include="Imagens\tela\tagmar_combate.png" />
+    <Content Include="Imagens\tela\tagmar_descricao.png" />
+    <Content Include="Imagens\tela\tagmar_dinheiro.png" />
+    <Content Include="Imagens\tela\tagmar_equipamento.png" />
+    <Content Include="Imagens\tela\tagmar_habilidades.png" />
+    <Content Include="Imagens\tela\tagmar_historia.png" />
+    <Content Include="Imagens\tela\tagmar_logo.ico" />
+    <Content Include="Imagens\tela\tagmar_logo.png" />
+    <Content Include="Imagens\tela\tagmar_magia.png" />
+    <Content Include="requirements.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.py" />
+    <Compile Include="Helpers\constantes.py" />
+    <Compile Include="Controller\DivindadeCTR.py" />
+    <Compile Include="Controller\EquipamentoCTR.py" />
+    <Compile Include="Controller\EspecialidadeCTR.py" />
+    <Compile Include="Controller\HabilidadeCTR.py" />
+    <Compile Include="Controller\LocalidadeCTR.py" />
+    <Compile Include="Controller\MagiaCTR.py" />
+    <Compile Include="Controller\PersonagemCTR.py" />
+    <Compile Include="Controller\ProfissaoCTR.py" />
+    <Compile Include="Controller\RacaCTR.py" />
+    <Compile Include="Controller\TempoCTR.py" />
+    <Compile Include="Controller\__init__.py" />
+    <Compile Include="DAO\DivindadeDAO.py" />
+    <Compile Include="DAO\EquipamentoDAO.py" />
+    <Compile Include="DAO\EspecialidadeDAO.py" />
+    <Compile Include="DAO\GenericDAO.py" />
+    <Compile Include="DAO\HabilidadeDAO.py" />
+    <Compile Include="DAO\LocalidadeDAO.py" />
+    <Compile Include="DAO\MagiaDAO.py" />
+    <Compile Include="DAO\PersonagemDAO.py" />
+    <Compile Include="DAO\ProfissaoDAO.py" />
+    <Compile Include="DAO\RacaDAO.py" />
+    <Compile Include="DAO\TempoDAO.py" />
+    <Compile Include="DAO\__init__.py" />
+    <Compile Include="DataBase\ConexaoSQL.py" />
+    <Compile Include="DataBase\__init__.py" />
+    <Compile Include="Helpers\helpers.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Helpers\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Armas.py" />
+    <Compile Include="Model\__Base__.py" />
+    <Compile Include="Model\Defesa.py" />
+    <Compile Include="Model\Escudo.py" />
+    <Compile Include="Model\Especializacao.py" />
+    <Compile Include="Model\Habilidades.py" />
+    <Compile Include="Model\Items.py" />
+    <Compile Include="Model\Localidade.py" />
+    <Compile Include="Model\Magia.py" />
+    <Compile Include="Model\Personagem.py" />
+    <Compile Include="Model\Profissao.py" />
+    <Compile Include="Model\Raca.py" />
+    <Compile Include="Model\__init__.py" />
+    <Compile Include="resources\categoria.py" />
+    <Compile Include="resources\icones.py" />
+    <Compile Include="resources\personagem.py" />
+    <Compile Include="resources\tela.py" />
+    <Compile Include="resources\__init__.py" />
+    <Compile Include="View\FrmNovoPersonagem.py" />
+    <Compile Include="View\FrmPrincipal_UI.py" />
+    <Compile Include="View\FrmSobre.py" />
+    <Compile Include="tests\tests.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\UI\FrmNovoPersonagem_UI.py" />
+    <Compile Include="View\UI\FrmPrincipal.py" />
+    <Compile Include="View\UI\FrmSobre_UI.py" />
+    <Compile Include="View\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="Global|PythonCore|3.7" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>
