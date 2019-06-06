@@ -1,0 +1,30 @@
+id	nome	bonus	possui_especializacao
+2	Acrobacias	5	0
+5	Arte	2	1
+1	Ações Furtivas	5	0
+6	Carpintaria	5	0
+8	Corrida	5	0
+12	Engenharia	0	0
+13	Escalar Superfícies	5	0
+14	Escapar	5	0
+15	Escrita	0	1
+16	Etiqueta	2	0
+18	Furtar Objetos	5	0
+19	Jogatina	6	0
+20	Lidar com Animais	6	0
+21	Liderança	2	0
+23	Malabarismo	5	0
+24	Manusear Armadilhas	6	0
+25	Medicina	0	0
+26	Misticismo	0	0
+27	Montar Animais	5	0
+28	Natação	4	0
+30	Navegação	6	0
+29	Náutica	6	0
+33	Persuasão	2	0
+34	Religião	0	0
+36	Seguir Trilhas	6	0
+38	Sobrevivência	6	0
+39	Trabalho em Metal	6	0
+40	Trabalhos Manuais	5	0
+42	Venefício	0	0

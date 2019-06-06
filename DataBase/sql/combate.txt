@@ -1,0 +1,21 @@
+6	Ataque Oportuno	82
+10	Carga	85
+12	Carga Montada	101
+11	Carga de Arremesso	100
+16	Combate Montado	86
+14	Combate com Arco	96
+15	Combate com Escudo	102
+17	Combate não Letal	90
+23	Desequilibrar	104
+25	Direcionamento	97
+29	Esquiva	87
+34	Força Interior	91
+35	Fúria	105
+37	Golpe Giratório	92
+38	Golpe Letal	93
+42	Intimidar	106
+44	Luta às Cegas	88
+45	Mira	99
+54	Resistência à Dor	89
+54	Resistência à Dor	94
+60	Voz de Comando	95

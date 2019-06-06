@@ -1,0 +1,30 @@
+id	nome	id_old
+2	Acrobacias		7
+5	Arte			26
+1	Ações Furtivas	19
+6	Carpintaria		1
+8	Corrida			8
+12	Engenharia			2
+13	Escalar Superfícies	9
+14	Escapar				22
+15	Escrita				13
+16	Etiqueta			29
+18	Furtar Objetos		24
+19	Jogatina			25
+20	Lidar com Animais	34
+21	Liderança			30
+23	Malabarismo			10
+24	Manusear Armadilhas	35
+25	Medicina			3
+26	Misticismo	16
+27	Montar Animais	11
+28	Natação	12
+30	Navegação	36
+29	Náutica	4
+33	Persuasão	31
+34	Religião	17
+36	Seguir Trilhas	38
+38	Sobrevivência	39
+39	Trabalho em Metal	5
+40	Trabalhos Manuais	6
+42	Venefício	18
