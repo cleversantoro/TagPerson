@@ -1,0 +1,35 @@
+<RCC>
+  <qresource prefix="abas">
+    <file>pencil.png</file>
+    <file>shield.png</file>
+    <file>user.png</file>
+    <file>wand.png</file>
+    <file>warrior.png</file>
+    <file>wrench.png</file>
+  </qresource>
+  <qresource prefix="grid">
+    <file>bard.png</file>
+    <file>mage.png</file>
+    <file>priest.png</file>
+    <file>ranger.png</file>
+    <file>thief.png</file>
+    <file>warrior.png</file>
+  </qresource>
+  <qresource prefix="menu">
+    <file>dice.png</file>
+    <file>book.png</file>
+    <file>disk.png</file>
+    <file>folder_image.png</file>
+    <file>iconfinder_question_12319.png</file>
+    <file>page.png</file>
+    <file>printer.png</file>
+  </qresource>
+  <qresource prefix="localidade">
+    <file>caravan.svg</file>
+    <file>magic_stones.svg</file>
+    <file>obelisk.svg</file>
+    <file>pyramid.svg</file>
+    <file>statue.svg</file>
+    <file>sword_in_the_stone.svg</file>
+  </qresource>
+</RCC>

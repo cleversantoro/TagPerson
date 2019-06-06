@@ -1,0 +1,14 @@
+<RCC>
+  <qresource prefix="Principal">
+    <file>python.png</file>
+    <file>sqlite-database.png</file>
+    <file>tagmar_capa_berbert.png</file>
+    <file>tagmar_logo.ico</file>
+    <file>logo.jpg</file>
+    <file>tagmar_atributos.png</file>
+    <file>tagmar_combate.png</file>
+    <file>tagmar_descricao.png</file>
+    <file>tagmar_dinheiro.png</file>
+    <file>tagmar_equipamento.png</file>
+  </qresource>
+</RCC>

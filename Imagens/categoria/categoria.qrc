@@ -1,0 +1,10 @@
+<RCC>
+  <qresource prefix="categoria">
+    <file>agressao.png</file>
+    <file>ataque.png</file>
+    <file>postura.png</file>
+    <file>precisao.png</file>
+    <file>protecao.png</file>
+    <file>suporte.png</file>
+  </qresource>
+</RCC>

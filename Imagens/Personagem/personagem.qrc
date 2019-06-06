@@ -1,0 +1,18 @@
+<RCC>
+  <qresource prefix="Profissao">
+    <file>profissao/bardo.png</file>
+    <file>profissao/guerreiro.png</file>
+    <file>profissao/ladino.png</file>
+    <file>profissao/mago.png</file>
+    <file>profissao/rastreador.png</file>
+    <file>profissao/sacerdote.png</file>
+  </qresource>
+  <qresource prefix="Raca">
+    <file>raca/anao.png</file>
+    <file>raca/elfodourado.png</file>
+    <file>raca/elfoflorestal.png</file>
+    <file>raca/humano.png</file>
+    <file>raca/meioelfo.png</file>
+    <file>raca/pequenino.png</file>
+  </qresource>
+</RCC>
