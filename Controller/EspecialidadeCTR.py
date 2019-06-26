@@ -11,3 +11,5 @@ class EspecialidadeCTR:
     def get_specialization(id):
         return dao.get_specialization(id)
 
+    def get_specialization_from_profession(profession_id):
+        return dao.get_specialization_from_profession(profession_id)

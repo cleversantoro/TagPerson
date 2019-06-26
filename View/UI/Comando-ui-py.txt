@@ -1,0 +1,18 @@
+pyuic5 -x FrmPesqAluguel.ui -o FrmPesqAluguel.py  - PyQt5
+
+pyrcc5 -o tela.py resource/tela.qrc
+pyuic5 -x filename.ui -o filename.py
+
+comandos para imagens
+pyrcc5 -o tela.py tela.qrc
+pyrcc5 -o icones.py icones.qrc
+pyrcc5 -o categoria.py categoria.qrc
+pyrcc5 -o personagem.py personagem.qrc
+
+
+comandos para tela
+pyuic5 -x FrmPrincipal.ui -o ../FrmPrincipal_UI.py
+pyuic5 -x FrmSobre.ui -o FrmSobre_UI.py
+pyuic5 -x FrmNovoPersonagem.ui -o FrmNovoPersonagem_UI.py 
+
+pyuic5 -x QwtCombateBasicas.ui -o QwtCombateBasicas_UI.py 

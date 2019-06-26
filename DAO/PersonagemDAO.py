@@ -86,6 +86,7 @@ class PersonagemDAO:
 
             persona.skills, persona.skills_specs = PersonagemDAO.get_persona_skills(id)
             persona.spells = PersonagemDAO.get_persona_spells(id)
+            persona.combat_skills = PersonagemDAO.get_persona_combat_skills(id)
             persona.equipment = PersonagemDAO.get_persona_equipment(id)
 
             i = 0
@@ -124,9 +125,24 @@ class PersonagemDAO:
 
         return (skills, specs)
 
+    def get_persona_combat(persona_id,combat_group_id):
+        query = "SELECT c.id, c.nome as descricao, ifnull(pc.nivel,0) as nivel, cg.custo, c.atributo as ajuste, "\
+                " 0 as total, c.id_categoria, ct.nome categoria, ct.icon as icone "\
+                " FROM combate c "\
+                " inner join combate_grupo_custo cg on c.id = cg.id_combate "\
+                " left join personagem_combate pc on c.id = pc.id_combate and pc.id_personagem ={} " \
+                " inner join categoria ct on c.id_categoria = ct.id "\
+                " WHERE cg.id_combate_grupo={} ".format(persona_id,combat_group_id) 
+
+        cursor  = cur_usr.execute(query)
+        return cursor.fetchall()
+
+    def get_persona_combat_skills(persona_id):
+        return PersonagemDAO.__get_persona_something(persona_id, 'personagem_combate','id_combate, nivel')
+
     def get_persona_spells(persona_id):
         return PersonagemDAO.__get_persona_something(persona_id, 'personagem_magia','id_magia, nivel')
-
+ 
     def get_persona_equipment(persona_id):
         return PersonagemDAO.__get_persona_something(persona_id, 'personagem_equipamento','id_equipamento, quantidade')
 
@@ -234,6 +250,9 @@ class PersonagemDAO:
 
     def save_persona_spells(persona):
         PersonagemDAO.__save_persona_list(persona.id, persona.spells, 'magia')
+
+    def save_persona_combat_skills(persona):
+        PersonagemDAO.__save_persona_list(persona.id, persona.combat_skills, 'combate')
 
     def save_persona_skills(persona):
         PersonagemDAO.__save_persona_list(persona.id, persona.skills, 'habilidade')

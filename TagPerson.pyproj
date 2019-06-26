@@ -43,6 +43,7 @@
     <Folder Include="tests\" />
     <Folder Include="View\" />
     <Folder Include="View\UI\" />
+    <Folder Include="View\UI\__pycache__\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DataBase\sql\bonus.txt" />
@@ -52,12 +53,17 @@
     <Content Include="DataBase\sql\habilidade-new.txt" />
     <Content Include="DataBase\sql\habilidades.json" />
     <Content Include="DataBase\sql\habilidade_insert.sql" />
+    <Content Include="DataBase\sql\script-3.sql" />
+    <Content Include="DataBase\sql\script4.sql" />
     <Content Include="DataBase\sql\script5.sql" />
     <Content Include="DataBase\sql\script-2.sql" />
     <Content Include="DataBase\sql\script.sql" />
+    <Content Include="DataBase\sql\script6.sql" />
     <Content Include="DataBase\sql\tagperson-060619.sql" />
     <Content Include="DataBase\sql\tagperson-dados-sqlite.sql" />
     <Content Include="DataBase\sql\tagperson-estrura-sqlite.sql" />
+    <Content Include="DataBase\sql\tagperson130619.html" />
+    <Content Include="DataBase\sql\tagperson130619.sql" />
     <Content Include="DataBase\tagperson.db" />
     <Content Include="Imagens\Brasao\cabadom.png" />
     <Content Include="Imagens\Brasao\cacordo.png" />
@@ -87,6 +93,7 @@
     <Content Include="Imagens\Brasao\tagmar_mapa.png" />
     <Content Include="Imagens\categoria\agressao.png" />
     <Content Include="Imagens\categoria\ataque.png" />
+    <Content Include="Imagens\categoria\categoria.qrc" />
     <Content Include="Imagens\categoria\postura.png" />
     <Content Include="Imagens\categoria\precisao.png" />
     <Content Include="Imagens\categoria\protecao.png" />
@@ -98,6 +105,7 @@
     <Content Include="Imagens\ico\dice.png" />
     <Content Include="Imagens\ico\disk.png" />
     <Content Include="Imagens\ico\folder_image.png" />
+    <Content Include="Imagens\ico\icones.qrc" />
     <Content Include="Imagens\ico\iconfinder_question_12319.png" />
     <Content Include="Imagens\ico\mage.png" />
     <Content Include="Imagens\ico\magic_stones.svg" />
@@ -131,6 +139,7 @@
     <Content Include="Imagens\Item\item_espada.png" />
     <Content Include="Imagens\Item\item_machado_de_guerra.png" />
     <Content Include="Imagens\Item\item_mangual.png" />
+    <Content Include="Imagens\Personagem\personagem.qrc" />
     <Content Include="Imagens\Personagem\raca\anao.png" />
     <Content Include="Imagens\Personagem\profissao\bardo.png" />
     <Content Include="Imagens\Personagem\raca\elfodourado.png" />
@@ -170,10 +179,24 @@
     <Content Include="Imagens\tela\tagmar_logo.ico" />
     <Content Include="Imagens\tela\tagmar_logo.png" />
     <Content Include="Imagens\tela\tagmar_magia.png" />
+    <Content Include="Imagens\tela\tela.qrc" />
     <Content Include="requirements.txt" />
+    <Content Include="tests\teste.ui" />
+    <Content Include="View\UI\Comando prompt - ui - py.txt" />
+    <Content Include="View\UI\Comando-ui-py.txt" />
+    <Content Include="View\UI\FrmNovoPersonagem.ui" />
+    <Content Include="View\UI\FrmPrincipal-old.ui" />
+    <Content Include="View\UI\FrmPrincipal.ui" />
+    <Content Include="View\UI\FrmSobre.ui" />
+    <Content Include="View\UI\QwtCombateBasicas.ui" />
+    <Content Include="View\UI\__pycache__\FrmNovoPersonagem_UI.cpython-37.pyc" />
+    <Content Include="View\UI\__pycache__\FrmSobre2_UI.cpython-37.pyc" />
+    <Content Include="View\UI\__pycache__\FrmSobre_UI.cpython-37.pyc" />
+    <Content Include="View\UI\__pycache__\__init__.cpython-37.pyc" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Main.py" />
+    <Compile Include="Controller\CombateCTR.py" />
+    <Compile Include="DAO\CombateDAO.py" />
     <Compile Include="Helpers\constantes.py" />
     <Compile Include="Controller\DivindadeCTR.py" />
     <Compile Include="Controller\EquipamentoCTR.py" />
@@ -207,6 +230,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Model\Armas.py" />
+    <Compile Include="Model\Combate.py" />
     <Compile Include="Model\__Base__.py" />
     <Compile Include="Model\Defesa.py" />
     <Compile Include="Model\Escudo.py" />
@@ -224,15 +248,20 @@
     <Compile Include="resources\personagem.py" />
     <Compile Include="resources\tela.py" />
     <Compile Include="resources\__init__.py" />
+    <Compile Include="tests\teste.py" />
+    <Compile Include="tests\teste2.py" />
     <Compile Include="View\FrmNovoPersonagem.py" />
     <Compile Include="View\FrmPrincipal_UI.py" />
     <Compile Include="View\FrmSobre.py" />
     <Compile Include="tests\tests.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Main.py" />
     <Compile Include="View\UI\FrmNovoPersonagem_UI.py" />
     <Compile Include="View\UI\FrmPrincipal.py" />
     <Compile Include="View\UI\FrmSobre_UI.py" />
+    <Compile Include="View\UI\QwtCombateDefault_UI.py" />
+    <Compile Include="View\UI\__init__.py" />
     <Compile Include="View\__init__.py" />
   </ItemGroup>
   <ItemGroup>

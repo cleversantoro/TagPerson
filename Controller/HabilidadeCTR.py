@@ -23,6 +23,6 @@ class HabilidadeCTR:
     def get_skill_group_name(id):
         return dao.get_skill_group_name(id)
 
-    def get_skill_specialization_suggestions():
-        return dao.get_skill_specialization_suggestions()
+    def get_skill_specialization_suggestions(id):
+        return dao.get_skill_specialization_suggestions(id)
 

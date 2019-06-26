@@ -1,6 +1,7 @@
 from Helpers.constantes import const
 from Model.__Base__ import Base
 from Model.Raca import Race
+from Model.Items import Item
 
 class Persona(Base):
     def __init__(self, name='', id=-1):
@@ -50,6 +51,7 @@ class Persona(Base):
 
         self.combat_equip = const.COMBAT_EQUIP * [None]
 
+        self.combats = {}
         self.spells = {}
         self.equipment = {}
         self.skills = {}
@@ -156,7 +158,7 @@ class Persona(Base):
             self.combat_equip[item_kind] = item
 
     def unequip_item(self, item):
-        item_kind = get_item_kind(item)
+        item_kind = Item.get_item_kind(item)
         if item_kind > -1 and self.combat_equip[item_kind] is not None and \
            self.combat_equip[item_kind].id == item.id:
             self.combat_equip[item_kind] = None

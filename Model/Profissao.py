@@ -5,10 +5,11 @@ class Profession(Base):
         Base.__init__(self, name, prof_id)
         self.eh = 0
         self.equipment = []
-        self.posessions = (0, 0, 0)
+        self.posessions = []
         self.skill_points = 0
         self.weapon_points = 0
         self.combat_points = 0
+        self.eh = 0
         self.penalized_skill_group = -1
         self.specialization_skill = -1
         self.attribute_for_magic = -1

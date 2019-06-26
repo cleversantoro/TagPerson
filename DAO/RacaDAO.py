@@ -26,16 +26,17 @@ class RacaDAO:
                 return None
             else:
                 race = Race(row[1], row[0])
-                race.image = row[2]
-                
+                race.image = row[3]
+                race.description = row[2]
+
                 for i in range(7):
-                    race.attribute_bonus[i] = row[i+3]
+                    race.attribute_bonus[i] = row[i+4]
                 
-                race.base_speed = row[10]
-                race.ef = row[11]
-                race.base_height = row[12]
-                race.base_weight = row[13]
-                race.age = (row[14], row[15])
+                race.base_speed = row[11]
+                race.ef = row[12]
+                race.base_height = row[13]
+                race.base_weight = row[14]
+                race.age = (row[15], row[16])
                 race.available_professions = [av_prof[0] for av_prof in av_prof_rows]
                 return race
 

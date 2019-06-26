@@ -9,7 +9,7 @@ from Controller.PersonagemCTR import PersonagemCTR as ctrPerso
 from Controller.ProfissaoCTR import ProfissaoCTR  as ctrProf
 from Controller.RacaCTR import RacaCTR as ctrRaca
 from Controller.TempoCTR import  TempoCTR as ctrTemp
-from Model.Personagem import Persona 
+from Controller.CombateCTR import  CombateCTR as ctrCombat
 
 class test:
 
@@ -21,7 +21,7 @@ class test:
     def equipamento():
         teste1 = ctrEquip.get_equipment_from_group(1)
         teste2 = ctrEquip.get_equipment_groups()
-        teste3 = ctrEquip.get_equipment_item(1)
+        teste3 = ctrEquip.get_equipment_item(230)
         teste4 = ctrEquip.get_equipment_list()
         print('')
     
@@ -29,6 +29,7 @@ class test:
         teste1 = ctrEsp.get_specialization(1)
         teste2 = ctrEsp.get_specialization_name(1)
         teste3 = ctrEsp.get_specializations_list()
+        teste4 = ctrEsp.get_specialization_from_profession(1)
         print('')
 
     def habilidade():
@@ -37,9 +38,21 @@ class test:
         teste3 = ctrHabil.get_skill_group_name(1)
         teste4 = ctrHabil.get_skill_group_parents()
         teste5 = ctrHabil.get_skill_name(1)
-        teste6 = ctrHabil.get_skill_specialization_suggestions()
+        teste6 = ctrHabil.get_skill_specialization_suggestions(22)
         teste7 = ctrHabil.get_skills_from_group(4)
         teste8 = ctrHabil.get_skills_list()
+        print('')
+
+    def combat():
+        teste1 = ctrCombat.get_combat(1)
+        teste3 = ctrCombat.get_combat_group_name(1)
+        teste4 = ctrCombat.get_combat_group_parents()
+        teste9 = ctrCombat.get_combat_group_children(1)
+        teste10 = ctrCombat.get_combat_group_children(2)
+        teste2 = ctrCombat.get_combat_group_children(3)
+        teste5 = ctrCombat.get_combat_name(4)
+        teste7 = ctrCombat.get_combat_from_group(1)
+        teste8 = ctrCombat.get_combat_list()
         print('')
 
     def localidade():
@@ -64,6 +77,7 @@ class test:
         teste3 = ctrPerso.get_persona_list()
         teste4 = ctrPerso.get_persona_skills(8)
         teste5 = ctrPerso.get_persona_spells(9)
+        teste11 = ctrPerso.get_persona_combat(9)
         teste6 = ctrPerso.get_players_names()
         persona = teste1
         teste7 = ctrPerso.save_persona(persona)
@@ -96,8 +110,9 @@ if __name__ == '__main__':
     #test.habilidade()
     #test.localidade()
     #test.magia()
-    #test.personagem()
+    test.personagem()
     #test.profissao()
     #test.raca()
     #test.tempo()
+    #test.combat()
     print('fim')

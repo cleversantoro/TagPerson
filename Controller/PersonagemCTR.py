@@ -11,6 +11,9 @@ class PersonagemCTR:
     def get_persona(id):
         return dao.get_persona(id)
 
+    def get_persona_combat(persona_id):
+        return dao.get_persona_combat(persona_id)
+    
     def get_persona_skills(persona_id):
         return dao.get_persona_skills(persona_id)
 
@@ -25,9 +28,15 @@ class PersonagemCTR:
 
     def save_persona_spells(persona):
         return dao.save_persona_spells(persona)
+    
+    def save_persona_combat_skills(persona):
+        return dao.save_persona_combat_skills(persona)
 
     def save_persona_skills(persona):
         return dao.save_persona_skills(persona)
 
     def save_persona_equipment(persona):
         return dao.save_persona_equipment(persona)
+
+    def get_persona_combat(persona_id,combat_group_id):
+        return dao.get_persona_combat(persona_id,combat_group_id)

@@ -22,9 +22,12 @@ class ProfissaoDAO:
                 return None
             else:
                 profession = Profession(row[1], row[0])
-                #profession.image = get_image_pixbuf(self.images_path, row[2])
+                profession.image = row[2]
                 profession.description = row[3]
-                profession.posessions = (row[4], 0, 0)
+                #av_prof[0] for av_prof in row[4]
+                
+                profession.posessions = row[4].split("|")
+                
                 profession.eh = row[5]
                 profession.skill_points = row[6]
                 profession.weapon_points = row[7]

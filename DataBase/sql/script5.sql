@@ -73,19 +73,35 @@ INSERT INTO [ARMA] ([id],[Tipo],[Custo],[Arma],[Alcance],[Forca_Min],[Bônus],[L
 INSERT INTO [ARMA] ([id],[Tipo],[Custo],[Arma],[Alcance],[Forca_Min],[Bônus],[L],[M],[P],[25],[50],[75],[100],[Pq],[An],[El],[ME],[Hu]) VALUES(48,'PpB',	3,		'Besta'						,'80m',		1,			'PER',	0,	1,		2,			5,		10,		15,		20,		'2m',	'1m',	'1m',	'1m',		'1m');
 INSERT INTO [ARMA] ([id],[Tipo],[Custo],[Arma],[Alcance],[Forca_Min],[Bônus],[L],[M],[P],[25],[50],[75],[100],[Pq],[An],[El],[ME],[Hu]) VALUES(49,'PpB',	3,		'Besta Pesada'				,'140',		2,			'PER',	-1,	1,		3,			6,		12,		18,		24,		'2m',	'2m',	'2m',	'2m',		'2m');
 
-[equipamentos_defesa],[defesa_base],[Absorcao],[fisico_minimo],[forca_minima],[P],[A],[E],[M],[H]
-'Nada'						,	'L0','0'	,'--','--','--','--'	,'--','--','--'
-'Couro Leve'				,	'L1','+8'	,'-2','--','--','--'	,'--','--','--'
-'Couro Rígido'				,	'L2','+12'	,'-1','--','--','--'	,'--','--','--'
-'Cota de Malha Parcial'		,	'M1','+18'	,'0','--','--'	,'--'	,'--','--','--'
-'Cota de Malha Completa'	,	'M2','+22'	,'0','--','--'	,'--'	,'--','--','--'
-'Couraça Parcial'			,	'P1','+28'	,'1','--','--'	,'--'	,'--','--','--'
-'Couraça Completa'			,	'P2','+32'	,'1','--','--'	,'--'	,'--','--','--'
-'Escudo Pequeno'			,	'+1','+4'	,'--','-1','1m','1m'	,'1m','1m','1m'
-'Escudo Grande'				,	'+1','+8'	,'--','0','2m'	,'1m'	,'1m','1m','1m'
-'Escudo Torre'				,	'+2','+12'	,'--','1','X'	,'1m'	,'1m','1m','1m'
-'Elmo Aberto'				,	'--','+2'	,'--','--','--','--'	,'--','--','--'
-'Elmo Fechado'				,	'--','+4'	,'--','--','--','--'	,'--','--','--'
+
+CREATE TABLE [defesa]
+(
+	[id] int NOT NULL, 
+	[nome] nvarchar(50) NULL,
+	[defesa_base] nvarchar(3)  NULL,
+	[Absorcao] int NULL,
+	[fisico_minimo] int NULL,
+	[forca_minima] int  NULL,
+	[P] int  NULL,
+	[A] int  NULL,
+	[E] int  NULL,
+	[M] int  NULL,
+	[H] int  NULL,
+	CONSTRAINT [PK_defesa] PRIMARY KEY([id])
+);
+
+INSERT INTO [defesa] ([id],[nome],[defesa_base],[Absorcao],[fisico_minimo],[forca_minima],[P],[A],[E],[M],[H]) VALUES(1,'Nada'					,'L0',0,0,0,0,0,0,0,0);
+INSERT INTO [defesa] ([id],[nome],[defesa_base],[Absorcao],[fisico_minimo],[forca_minima],[P],[A],[E],[M],[H]) VALUES(2,'Couro Leve'			,'L1',8,-2,0,0,0,0,0,0);
+INSERT INTO [defesa] ([id],[nome],[defesa_base],[Absorcao],[fisico_minimo],[forca_minima],[P],[A],[E],[M],[H]) VALUES(3,'Couro Rígido'			,'L2',12,-1,0,0,0,0,0,0);
+INSERT INTO [defesa] ([id],[nome],[defesa_base],[Absorcao],[fisico_minimo],[forca_minima],[P],[A],[E],[M],[H]) VALUES(4,'Cota de Malha Parcial'	,'M1',18,0,0,0,0,0,0,0);
+INSERT INTO [defesa] ([id],[nome],[defesa_base],[Absorcao],[fisico_minimo],[forca_minima],[P],[A],[E],[M],[H]) VALUES(5,'Cota de Malha Completa','M2',22,0,0,0,0,0,0,0);
+INSERT INTO [defesa] ([id],[nome],[defesa_base],[Absorcao],[fisico_minimo],[forca_minima],[P],[A],[E],[M],[H]) VALUES(6,'Couraça Parcial'		,'P1',28,1,0,0,0,0,0,0);
+INSERT INTO [defesa] ([id],[nome],[defesa_base],[Absorcao],[fisico_minimo],[forca_minima],[P],[A],[E],[M],[H]) VALUES(7,'Couraça Completa'		,'P2',32,1,0,0,0,0,0,0);
+INSERT INTO [defesa] ([id],[nome],[defesa_base],[Absorcao],[fisico_minimo],[forca_minima],[P],[A],[E],[M],[H]) VALUES(8,'Escudo Pequeno'		,'+1',4,0,-1,1,1,1,1,1);
+INSERT INTO [defesa] ([id],[nome],[defesa_base],[Absorcao],[fisico_minimo],[forca_minima],[P],[A],[E],[M],[H]) VALUES(9,'Escudo Grande'			,'+1',8,0,0,2,1,1,1,1);
+INSERT INTO [defesa] ([id],[nome],[defesa_base],[Absorcao],[fisico_minimo],[forca_minima],[P],[A],[E],[M],[H]) VALUES(10,'Escudo Torre'			,'+2',12,0,1,0,1,1,1,1);
+INSERT INTO [defesa] ([id],[nome],[defesa_base],[Absorcao],[fisico_minimo],[forca_minima],[P],[A],[E],[M],[H]) VALUES(11,'Elmo Aberto'			,'--',2,0,0,0,0,0,0,0);
+INSERT INTO [defesa] ([id],[nome],[defesa_base],[Absorcao],[fisico_minimo],[forca_minima],[P],[A],[E],[M],[H]) VALUES(12,'Elmo Fechado'			,'--',4,0,0,0,0,0,0,0);
 
 
 

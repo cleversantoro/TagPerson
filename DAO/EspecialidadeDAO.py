@@ -32,3 +32,10 @@ class EspecialidadeDAO:
 
         return build_object(cur_sys.fetchone())
 
+    def get_specialization_from_profession(profession_id):
+        query = " SELECT id, nome FROM especializacao " \
+                " WHERE id_profissao=" + str(profession_id)
+
+        cur_sys.execute(query)
+        return cur_sys.fetchall()
+

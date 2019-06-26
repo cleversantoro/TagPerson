@@ -7,6 +7,11 @@ class Ui_NovoPersonagem(QtWidgets.QMainWindow, Ui_FrmNovoPersonagem):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+        self.appEvents()
+
+    def appEvents(self):
+        pass
+         
 
 
 
