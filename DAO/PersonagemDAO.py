@@ -125,14 +125,42 @@ class PersonagemDAO:
 
         return (skills, specs)
 
-    def get_persona_combat(persona_id,combat_group_id):
+    def get_combat_persona(persona_id,combat_group_id):
         query = "SELECT c.id, c.nome as descricao, ifnull(pc.nivel,0) as nivel, cg.custo, c.atributo as ajuste, "\
                 " 0 as total, c.id_categoria, ct.nome categoria, ct.icon as icone "\
                 " FROM combate c "\
                 " inner join combate_grupo_custo cg on c.id = cg.id_combate "\
                 " left join personagem_combate pc on c.id = pc.id_combate and pc.id_personagem ={} " \
                 " inner join categoria ct on c.id_categoria = ct.id "\
-                " WHERE cg.id_combate_grupo={} ".format(persona_id,combat_group_id) 
+                " WHERE cg.id_combate_grupo={} "\
+                " ORDER BY c.nome asc".format(persona_id,combat_group_id) 
+
+        cursor  = cur_usr.execute(query)
+        return cursor.fetchall()
+
+    def get_spell_persona(persona_id,spell_group_id):
+        query = " SELECT m.id, m.nome as descricao, ifnull(pm.nivel,0) as nivel, mgc.custo, 0 as total "\
+                " FROM magia m "\
+                " inner join magia_grupo_custo mgc on m.id = mgc.id_magia "\
+                " left join personagem_magia pm on m.id = pm.id_magia and pm.id_personagem = {} "\
+                " WHERE mgc.id_magia_grupo= {} "\
+                " order by m.nome asc ".format(persona_id,spell_group_id) 
+
+        cursor  = cur_usr.execute(query)
+        return cursor.fetchall()
+
+    def get_skills_persona(persona_id,skills_group_id):
+        query = " SELECT m.id, m.nome as descricao, "\
+                " CASE m.restrita "\
+                "     WHEN 1 THEN 'SIM' "\
+                "     WHEN 0 THEN '' "\
+                " END as restrito, ifnull(pm.nivel,0) as nivel, mgc.custo, "\
+                " m.atributo as ajuste, 0 as total "\
+                " FROM habilidade m "\
+                " inner join habilidade_grupo_custo mgc on m.id = mgc.id_habilidade "\
+                " left join personagem_habilidade pm on m.id = pm.id_habilidade and pm.id_personagem = {} "\
+                " WHERE mgc.id_habilidade_grupo= {} "\
+                " order by m.nome asc ".format(persona_id,skills_group_id)
 
         cursor  = cur_usr.execute(query)
         return cursor.fetchall()

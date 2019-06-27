@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1517</width>
-    <height>784</height>
+    <width>1525</width>
+    <height>922</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -36,7 +36,7 @@
       <x>5</x>
       <y>10</y>
       <width>220</width>
-      <height>681</height>
+      <height>819</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -92,8 +92,8 @@
      <rect>
       <x>227</x>
       <y>101</y>
-      <width>1288</width>
-      <height>590</height>
+      <width>1294</width>
+      <height>729</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -106,7 +106,7 @@
      <enum>QTabWidget::North</enum>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>4</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="icon">
@@ -122,7 +122,7 @@
         <x>3</x>
         <y>9</y>
         <width>971</width>
-        <height>540</height>
+        <height>593</height>
        </rect>
       </property>
       <property name="autoFillBackground">
@@ -2283,8 +2283,8 @@
        <rect>
         <x>980</x>
         <y>9</y>
-        <width>281</width>
-        <height>540</height>
+        <width>302</width>
+        <height>593</height>
        </rect>
       </property>
       <property name="autoFillBackground">
@@ -2299,8 +2299,8 @@
       <widget class="QLabel" name="lblimgAtributos">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>323</y>
+         <x>18</x>
+         <y>372</y>
          <width>261</width>
          <height>211</height>
         </rect>
@@ -2321,9 +2321,9 @@
       <widget class="QLabel" name="lblRf">
        <property name="geometry">
         <rect>
-         <x>11</x>
-         <y>62</y>
-         <width>138</width>
+         <x>10</x>
+         <y>59</y>
+         <width>177</width>
          <height>21</height>
         </rect>
        </property>
@@ -2339,9 +2339,9 @@
       <widget class="QLabel" name="lblRm">
        <property name="geometry">
         <rect>
-         <x>11</x>
-         <y>97</y>
-         <width>154</width>
+         <x>10</x>
+         <y>103</y>
+         <width>177</width>
          <height>21</height>
         </rect>
        </property>
@@ -2357,9 +2357,9 @@
       <widget class="QLabel" name="lblspeed">
        <property name="geometry">
         <rect>
-         <x>11</x>
-         <y>129</y>
-         <width>86</width>
+         <x>10</x>
+         <y>141</y>
+         <width>177</width>
          <height>21</height>
         </rect>
        </property>
@@ -2375,8 +2375,8 @@
       <widget class="QLabel" name="label_14">
        <property name="geometry">
         <rect>
-         <x>11</x>
-         <y>195</y>
+         <x>10</x>
+         <y>223</y>
          <width>177</width>
          <height>21</height>
         </rect>
@@ -2395,9 +2395,9 @@
       <widget class="QLabel" name="label_15">
        <property name="geometry">
         <rect>
-         <x>11</x>
-         <y>159</y>
-         <width>54</width>
+         <x>10</x>
+         <y>181</y>
+         <width>177</width>
          <height>21</height>
         </rect>
        </property>
@@ -2413,10 +2413,10 @@
       <widget class="QLabel" name="label_16">
        <property name="geometry">
         <rect>
-         <x>11</x>
-         <y>263</y>
-         <width>123</width>
-         <height>21</height>
+         <x>10</x>
+         <y>301</y>
+         <width>177</width>
+         <height>33</height>
         </rect>
        </property>
        <property name="font">
@@ -2431,10 +2431,10 @@
       <widget class="QLabel" name="label_17">
        <property name="geometry">
         <rect>
-         <x>11</x>
-         <y>230</y>
-         <width>109</width>
-         <height>21</height>
+         <x>10</x>
+         <y>258</y>
+         <width>177</width>
+         <height>33</height>
         </rect>
        </property>
        <property name="font">
@@ -2472,9 +2472,9 @@
       <widget class="QLabel" name="lblResistenciaFisica">
        <property name="geometry">
         <rect>
-         <x>170</x>
-         <y>58</y>
-         <width>101</width>
+         <x>186</x>
+         <y>59</y>
+         <width>102</width>
          <height>30</height>
         </rect>
        </property>
@@ -2495,9 +2495,9 @@
       <widget class="QLabel" name="lblResistenciaMagia">
        <property name="geometry">
         <rect>
-         <x>175</x>
-         <y>95</y>
-         <width>91</width>
+         <x>186</x>
+         <y>103</y>
+         <width>102</width>
          <height>30</height>
         </rect>
        </property>
@@ -2518,9 +2518,9 @@
       <widget class="QLabel" name="lblVelocidade">
        <property name="geometry">
         <rect>
-         <x>170</x>
-         <y>127</y>
-         <width>101</width>
+         <x>186</x>
+         <y>141</y>
+         <width>102</width>
          <height>30</height>
         </rect>
        </property>
@@ -2541,9 +2541,9 @@
       <widget class="QLabel" name="lblKarma">
        <property name="geometry">
         <rect>
-         <x>170</x>
-         <y>157</y>
-         <width>101</width>
+         <x>186</x>
+         <y>181</y>
+         <width>102</width>
          <height>30</height>
         </rect>
        </property>
@@ -2564,9 +2564,9 @@
       <widget class="QLabel" name="lblDefesa">
        <property name="geometry">
         <rect>
-         <x>167</x>
-         <y>193</y>
-         <width>111</width>
+         <x>186</x>
+         <y>223</y>
+         <width>102</width>
          <height>30</height>
         </rect>
        </property>
@@ -2587,10 +2587,10 @@
       <widget class="QLabel" name="lblEnergiaFisica">
        <property name="geometry">
         <rect>
-         <x>171</x>
-         <y>228</y>
-         <width>101</width>
-         <height>30</height>
+         <x>186</x>
+         <y>258</y>
+         <width>102</width>
+         <height>33</height>
         </rect>
        </property>
        <property name="font">
@@ -2610,10 +2610,10 @@
       <widget class="QLabel" name="lblEnergiaHeroica">
        <property name="geometry">
         <rect>
-         <x>171</x>
-         <y>260</y>
-         <width>101</width>
-         <height>30</height>
+         <x>186</x>
+         <y>301</y>
+         <width>102</width>
+         <height>33</height>
         </rect>
        </property>
        <property name="font">
@@ -2640,28 +2640,6 @@
      <attribute name="title">
       <string>Habilidades</string>
      </attribute>
-     <widget class="QGroupBox" name="groupBox">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>107</y>
-        <width>391</width>
-        <height>221</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>11</pointsize>
-        <weight>75</weight>
-        <italic>false</italic>
-        <bold>true</bold>
-        <underline>false</underline>
-       </font>
-      </property>
-      <property name="title">
-       <string>Professional</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_135">
       <property name="geometry">
        <rect>
@@ -2858,6 +2836,324 @@
        <string>...</string>
       </property>
      </widget>
+     <widget class="QTableWidget" name="tblProfissional">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>105</y>
+        <width>370</width>
+        <height>290</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 7pt &quot;Arial&quot;;</string>
+      </property>
+      <column>
+       <property name="text">
+        <string>Profissional</string>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="textAlignment">
+        <set>AlignLeading|AlignVCenter</set>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Restrito</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Nivel</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Custo</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Ajuste</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Total</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QTableWidget" name="tblProfissional_2">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>400</y>
+        <width>370</width>
+        <height>290</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 7pt &quot;Arial&quot;;</string>
+      </property>
+      <column>
+       <property name="text">
+        <string>Conhecimento</string>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="textAlignment">
+        <set>AlignLeading|AlignVCenter</set>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Restrito</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Nivel</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Custo</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Ajuste</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Total</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QTableWidget" name="tblProfissional_3">
+      <property name="geometry">
+       <rect>
+        <x>475</x>
+        <y>399</y>
+        <width>370</width>
+        <height>290</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 7pt &quot;Arial&quot;;</string>
+      </property>
+      <column>
+       <property name="text">
+        <string>Subterfúgio</string>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="textAlignment">
+        <set>AlignLeading|AlignVCenter</set>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Restrito</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Nivel</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Custo</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Ajuste</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Total</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QTableWidget" name="tblProfissional_4">
+      <property name="geometry">
+       <rect>
+        <x>475</x>
+        <y>104</y>
+        <width>370</width>
+        <height>290</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 7pt &quot;Arial&quot;;</string>
+      </property>
+      <column>
+       <property name="text">
+        <string>Influência</string>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="textAlignment">
+        <set>AlignLeading|AlignVCenter</set>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Restrito</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Nivel</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Custo</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Ajuste</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Total</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QTableWidget" name="tblProfissional_5">
+      <property name="geometry">
+       <rect>
+        <x>890</x>
+        <y>399</y>
+        <width>370</width>
+        <height>290</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 7pt &quot;Arial&quot;;</string>
+      </property>
+      <column>
+       <property name="text">
+        <string>Geral</string>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="textAlignment">
+        <set>AlignLeading|AlignVCenter</set>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Restrito</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Nivel</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Custo</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Ajuste</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Total</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QTableWidget" name="tblProfissional_6">
+      <property name="geometry">
+       <rect>
+        <x>890</x>
+        <y>104</y>
+        <width>370</width>
+        <height>290</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 7pt &quot;Arial&quot;;</string>
+      </property>
+      <column>
+       <property name="text">
+        <string>Manobras</string>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="textAlignment">
+        <set>AlignLeading|AlignVCenter</set>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Restrito</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Nivel</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Custo</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Ajuste</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Total</string>
+       </property>
+      </column>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_2">
      <attribute name="icon">
@@ -2872,8 +3168,8 @@
        <rect>
         <x>3</x>
         <y>220</y>
-        <width>430</width>
-        <height>331</height>
+        <width>427</width>
+        <height>471</height>
        </rect>
       </property>
       <property name="font">
@@ -2893,8 +3189,8 @@
         <rect>
          <x>3</x>
          <y>22</y>
-         <width>423</width>
-         <height>302</height>
+         <width>420</width>
+         <height>441</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -2952,8 +3248,8 @@
        <rect>
         <x>436</x>
         <y>220</y>
-        <width>431</width>
-        <height>331</height>
+        <width>428</width>
+        <height>471</height>
        </rect>
       </property>
       <property name="font">
@@ -2973,8 +3269,8 @@
         <rect>
          <x>3</x>
          <y>22</y>
-         <width>423</width>
-         <height>302</height>
+         <width>420</width>
+         <height>441</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -3030,10 +3326,10 @@
      <widget class="QGroupBox" name="groupBox_12">
       <property name="geometry">
        <rect>
-        <x>869</x>
-        <y>0</y>
-        <width>411</width>
-        <height>551</height>
+        <x>866</x>
+        <y>-2</y>
+        <width>418</width>
+        <height>693</height>
        </rect>
       </property>
       <property name="font">
@@ -3051,14 +3347,14 @@
       <widget class="QTableWidget" name="tblProfissao">
        <property name="geometry">
         <rect>
-         <x>3</x>
+         <x>5</x>
          <y>21</y>
-         <width>407</width>
-         <height>521</height>
+         <width>406</width>
+         <height>665</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">font: 7pt &quot;Arial&quot;;</string>
+        <string notr="true">font: 6.5pt &quot;Arial&quot;;</string>
        </property>
        <column>
         <property name="text">
@@ -3337,7 +3633,7 @@
        <rect>
         <x>406</x>
         <y>0</y>
-        <width>461</width>
+        <width>458</width>
         <height>221</height>
        </rect>
       </property>
@@ -4342,10 +4638,10 @@
      <widget class="QGroupBox" name="groupBox_13">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>20</y>
+        <x>5</x>
+        <y>-1</y>
         <width>421</width>
-        <height>531</height>
+        <height>691</height>
        </rect>
       </property>
       <property name="font">
@@ -4360,14 +4656,62 @@
       <property name="title">
        <string>Magias Básicas</string>
       </property>
+      <widget class="QTableWidget" name="tblMagiaBasica">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>24</y>
+         <width>410</width>
+         <height>661</height>
+        </rect>
+       </property>
+       <column>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>8</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="textAlignment">
+         <set>AlignLeading|AlignVCenter</set>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Nivel</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Custo</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Total</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </column>
+      </widget>
      </widget>
      <widget class="QGroupBox" name="groupBox_14">
       <property name="geometry">
        <rect>
-        <x>435</x>
-        <y>20</y>
+        <x>430</x>
+        <y>-1</y>
         <width>421</width>
-        <height>531</height>
+        <height>691</height>
        </rect>
       </property>
       <property name="font">
@@ -4382,14 +4726,59 @@
       <property name="title">
        <string>Magias da Especialização</string>
       </property>
+      <widget class="QTableWidget" name="tblMagiaEspecializacao">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>24</y>
+         <width>410</width>
+         <height>661</height>
+        </rect>
+       </property>
+       <column>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>8</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="textAlignment">
+         <set>AlignLeading|AlignVCenter</set>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Nivel</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Custo</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Total</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string/>
+        </property>
+       </column>
+      </widget>
      </widget>
      <widget class="QGroupBox" name="groupBox_9">
       <property name="geometry">
        <rect>
-        <x>866</x>
-        <y>20</y>
-        <width>400</width>
-        <height>531</height>
+        <x>855</x>
+        <y>-2</y>
+        <width>429</width>
+        <height>691</height>
        </rect>
       </property>
       <property name="font">
@@ -4405,9 +4794,9 @@
       <widget class="QLineEdit" name="txtNomeMagia">
        <property name="geometry">
         <rect>
-         <x>10</x>
+         <x>8</x>
          <y>40</y>
-         <width>381</width>
+         <width>413</width>
          <height>22</height>
         </rect>
        </property>
@@ -4415,9 +4804,9 @@
       <widget class="QLineEdit" name="txtEvocacao">
        <property name="geometry">
         <rect>
-         <x>10</x>
+         <x>8</x>
          <y>90</y>
-         <width>113</width>
+         <width>135</width>
          <height>22</height>
         </rect>
        </property>
@@ -4425,9 +4814,9 @@
       <widget class="QLineEdit" name="txtAlcance">
        <property name="geometry">
         <rect>
-         <x>140</x>
+         <x>146</x>
          <y>90</y>
-         <width>113</width>
+         <width>135</width>
          <height>22</height>
         </rect>
        </property>
@@ -4435,9 +4824,9 @@
       <widget class="QLineEdit" name="txtDuracao">
        <property name="geometry">
         <rect>
-         <x>280</x>
+         <x>284</x>
          <y>90</y>
-         <width>113</width>
+         <width>135</width>
          <height>22</height>
         </rect>
        </property>
@@ -4445,20 +4834,20 @@
       <widget class="QTextEdit" name="txtEfeitos">
        <property name="geometry">
         <rect>
-         <x>10</x>
+         <x>8</x>
          <y>140</y>
-         <width>381</width>
-         <height>161</height>
+         <width>413</width>
+         <height>187</height>
         </rect>
        </property>
       </widget>
       <widget class="QTextEdit" name="txtDescricao">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>330</y>
-         <width>381</width>
-         <height>191</height>
+         <x>8</x>
+         <y>360</y>
+         <width>413</width>
+         <height>321</height>
         </rect>
        </property>
       </widget>
@@ -4483,7 +4872,7 @@
       <widget class="QLabel" name="label_436">
        <property name="geometry">
         <rect>
-         <x>12</x>
+         <x>10</x>
          <y>73</y>
          <width>71</width>
          <height>16</height>
@@ -4501,7 +4890,7 @@
       <widget class="QLabel" name="label_437">
        <property name="geometry">
         <rect>
-         <x>143</x>
+         <x>149</x>
          <y>74</y>
          <width>55</width>
          <height>16</height>
@@ -4519,7 +4908,7 @@
       <widget class="QLabel" name="label_438">
        <property name="geometry">
         <rect>
-         <x>282</x>
+         <x>288</x>
          <y>73</y>
          <width>55</width>
          <height>16</height>
@@ -4556,7 +4945,7 @@
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>313</y>
+         <y>342</y>
          <width>71</width>
          <height>16</height>
         </rect>
@@ -4583,10 +4972,10 @@
      <widget class="QGroupBox" name="groupBox_34">
       <property name="geometry">
        <rect>
-        <x>639</x>
-        <y>443</y>
+        <x>660</x>
+        <y>582</y>
         <width>241</width>
-        <height>101</height>
+        <height>112</height>
        </rect>
       </property>
       <property name="font">
@@ -4706,7 +5095,7 @@
        <rect>
         <x>7</x>
         <y>110</y>
-        <width>625</width>
+        <width>646</width>
         <height>111</height>
        </rect>
       </property>
@@ -4943,8 +5332,8 @@
        <rect>
         <x>6</x>
         <y>223</y>
-        <width>311</width>
-        <height>321</height>
+        <width>319</width>
+        <height>471</height>
        </rect>
       </property>
       <property name="font">
@@ -4962,8 +5351,8 @@
         <rect>
          <x>5</x>
          <y>20</y>
-         <width>291</width>
-         <height>291</height>
+         <width>308</width>
+         <height>441</height>
         </rect>
        </property>
        <property name="font">
@@ -4977,10 +5366,10 @@
      <widget class="QGroupBox" name="groupBox_16">
       <property name="geometry">
        <rect>
-        <x>324</x>
+        <x>334</x>
         <y>223</y>
-        <width>311</width>
-        <height>321</height>
+        <width>318</width>
+        <height>471</height>
        </rect>
       </property>
       <property name="font">
@@ -4998,8 +5387,8 @@
         <rect>
          <x>6</x>
          <y>19</y>
-         <width>291</width>
-         <height>291</height>
+         <width>306</width>
+         <height>441</height>
         </rect>
        </property>
        <property name="font">
@@ -5013,10 +5402,10 @@
      <widget class="QGroupBox" name="groupBox_17">
       <property name="geometry">
        <rect>
-        <x>642</x>
+        <x>659</x>
         <y>-1</y>
         <width>621</width>
-        <height>431</height>
+        <height>571</height>
        </rect>
       </property>
       <property name="font">
@@ -5171,10 +5560,10 @@
      <widget class="QGroupBox" name="groupBox_18">
       <property name="geometry">
        <rect>
-        <x>891</x>
-        <y>433</y>
+        <x>908</x>
+        <y>582</y>
         <width>371</width>
-        <height>111</height>
+        <height>112</height>
        </rect>
       </property>
       <property name="title">
@@ -5448,7 +5837,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1517</width>
+     <width>1525</width>
      <height>26</height>
     </rect>
    </property>

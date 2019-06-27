@@ -59,9 +59,12 @@
     <Content Include="DataBase\sql\script-2.sql" />
     <Content Include="DataBase\sql\script.sql" />
     <Content Include="DataBase\sql\script6.sql" />
+    <Content Include="DataBase\sql\script7.sql" />
     <Content Include="DataBase\sql\tagperson-060619.sql" />
     <Content Include="DataBase\sql\tagperson-dados-sqlite.sql" />
     <Content Include="DataBase\sql\tagperson-estrura-sqlite.sql" />
+    <Content Include="DataBase\sql\tagperson-estrutura-250619.sql" />
+    <Content Include="DataBase\sql\tagperson-personagem-250619.sql" />
     <Content Include="DataBase\sql\tagperson130619.html" />
     <Content Include="DataBase\sql\tagperson130619.sql" />
     <Content Include="DataBase\tagperson.db" />

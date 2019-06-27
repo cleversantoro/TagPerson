@@ -1,30 +1,37 @@
-id	nome	id_old
-2	Acrobacias		7
-5	Arte			26
-1	Ações Furtivas	19
-6	Carpintaria		1
-8	Corrida			8
-12	Engenharia			2
-13	Escalar Superfícies	9
-14	Escapar				22
-15	Escrita				13
-16	Etiqueta			29
-18	Furtar Objetos		24
-19	Jogatina			25
-20	Lidar com Animais	34
-21	Liderança			30
-23	Malabarismo			10
-24	Manusear Armadilhas	35
-25	Medicina			3
-26	Misticismo	16
-27	Montar Animais	11
-28	Natação	12
-30	Navegação	36
-29	Náutica	4
-33	Persuasão	31
-34	Religião	17
-36	Seguir Trilhas	38
-38	Sobrevivência	39
-39	Trabalho em Metal	5
-40	Trabalhos Manuais	6
-42	Venefício	18
+insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 3,	1);
+insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 6,	1);
+insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 12,	1);
+insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 29,	1);
+insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 32,	1);
+insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 39,	1);
+insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 40,	1);insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 1	,2 );
+insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 7	,2 );
+insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 9	,2 );
+insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 11	,2 );
+insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 14	,2 );
+insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 18	,2 );
+insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 19	,2 );insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 2	,3 );
+insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 4	,3 );
+insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 8	,3 );
+insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 13	,3 );
+insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 23	,3 );
+insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 27	,3 );
+insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 28	,3 );insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 5	,4 );
+insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 10	,4 );
+insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 16	,4 );
+insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 17	,4 );
+insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 21	,4 );
+insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 31	,4 );
+insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 33	,4 );insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 15	,5 );
+insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 22	,5 );
+insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 25	,5 );
+insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 26	,5 );
+insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 34	,5 );
+insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 35	,5 );
+insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 42	,5 );insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 20	,6 );
+insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 24	,6 );
+insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 30	,6 );
+insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 36	,6 );
+insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 37	,6 );
+insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 38	,6 );
+insert into habilidade_grupo_custo ([id_habilidade],[id_habilidade_grupo]) values ( 41	,6 );

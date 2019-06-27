@@ -25,11 +25,18 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-        self.setFixedSize(1525, 784)
+        self.setFixedSize(1525, 922)
+        self.center()
 
         self.AppEvents()
         self.PopularTela()
     
+    def center(self):
+        qr = self.frameGeometry()
+        cp = QDesktopWidget().availableGeometry().center()
+        qr.moveCenter(cp)
+        self.move(qr.topLeft())
+
     def AppEvents(self):
         self.tblPersonagens.doubleClicked.connect(self.getPersonagem)
         self.actionSobre.triggered.connect(self.ShowFrmSobre)
@@ -53,7 +60,7 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
 
     def popularCombateTecnicasBasicas(self,persona):
         person = persona
-        rows = personagem.get_persona_combat(person.id,1)        
+        rows = personagem.get_combat_persona(person.id,1)        
 
         self.tblCombate.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.tblCombate.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
@@ -98,9 +105,10 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
             self.tblCombate.setItem(row, 5, categoria)
             self.tblCombate.setItem(row, 6, icone)
             row = row + 1
+
     def popularCombateTecnicasEspecializacao(self,persona):
         person = persona
-        rows = personagem.get_persona_combat(person.id,1)        
+        rows = personagem.get_combat_persona(person.id,1)        
 
         self.tblEspecializacao.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.tblEspecializacao.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
@@ -143,13 +151,13 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
             self.tblEspecializacao.setItem(row, 6, icone)
             row = row + 1
 
-    def popularCombateTecnicasRestritas(self,persona,):
+    def popularCombateTecnicasRestritas(self,persona):
         person = persona
 
         if persona.profession.id == 1:
-            rows = personagem.get_persona_combat(person.id,4)        
+            rows = personagem.get_combat_persona(person.id,4)        
         elif persona.profession.id == 2:
-            rows = personagem.get_persona_combat(person.id,5)        
+            rows = personagem.get_combat_persona(person.id,5)        
 
         self.tblProfissao.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.tblProfissao.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
@@ -194,6 +202,101 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
             self.tblProfissao.setItem(row, 5, categoria)
             self.tblProfissao.setItem(row, 6, icone)
             row = row + 1
+
+    def popularMagiaBasica(self,persona):
+        person = persona
+        rows = personagem.get_spell_persona(person.id,4)        
+
+        self.tblMagiaBasica.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+        self.tblMagiaBasica.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
+        self.tblMagiaBasica.verticalHeader().hide()
+
+        header = self.tblMagiaBasica.horizontalHeader()       
+        header.setSectionResizeMode(0, QtWidgets.QHeaderView.ResizeToContents)
+        header.setSectionResizeMode(1, QtWidgets.QHeaderView.ResizeToContents)
+        header.setSectionResizeMode(2, QtWidgets.QHeaderView.ResizeToContents)
+        header.setSectionResizeMode(3, QtWidgets.QHeaderView.ResizeToContents)
+        header.setSectionResizeMode(4, QtWidgets.QHeaderView.ResizeToContents)
+
+        #while (self.tblMagiaBasica.rowCount() > 0):
+        #        self.tblMagiaBasica.removeRow(0)
+
+        row = 0
+        for item in rows:
+            self.tblMagiaBasica.insertRow(row)
+            descricao = QTableWidgetItem(str(item[1]))
+            
+            self.nivel = QtWidgets.QSpinBox()
+            self.nivel.setValue(item[2])
+            #self.nivel.valueChanged.connect()
+
+            custo = QTableWidgetItem(str(item[3]))
+            total = QTableWidgetItem(str(item[4]))
+            
+            icon = QtGui.QIcon(QtGui.QPixmap(":/menu/iconfinder_question_12319.png"))
+            
+            self.icone = QTableWidgetItem(icon,None) #setTextAlignment(QtCore.Qt.AlignHCenter|QtCore.Qt.AlignVCenter)
+            #self.icone.itemClicked.connect(self.on_tableWidget_itemClicked)
+
+
+            self.tblMagiaBasica.setItem(row, 0, descricao)
+            self.tblMagiaBasica.setCellWidget(row, 1, self.nivel)
+            self.tblMagiaBasica.setItem(row, 2, custo)
+            self.tblMagiaBasica.setItem(row, 3, total)
+            self.tblMagiaBasica.setItem(row, 4, self.icone)
+            row = row + 1
+
+    def popularHabiidadeProfissional(self,persona):
+        person = persona
+        rows = personagem.get_skills_persona(person.id,1)        
+
+        self.tblProfissional.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+        self.tblProfissional.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
+        self.tblProfissional.verticalHeader().hide()
+
+        header = self.tblProfissional.horizontalHeader()       
+        header.setSectionResizeMode(0, QtWidgets.QHeaderView.ResizeToContents)
+        header.setSectionResizeMode(1, QtWidgets.QHeaderView.ResizeToContents)
+        header.setSectionResizeMode(2, QtWidgets.QHeaderView.ResizeToContents)
+        header.setSectionResizeMode(3, QtWidgets.QHeaderView.ResizeToContents)
+        header.setSectionResizeMode(4, QtWidgets.QHeaderView.ResizeToContents)
+        header.setSectionResizeMode(5, QtWidgets.QHeaderView.ResizeToContents)
+
+        while (self.tblProfissional.rowCount() > 0):
+                self.tblProfissional.removeRow(0)
+
+        row = 0
+        for item in rows:
+            self.tblProfissional.insertRow(row)
+            descricao = QTableWidgetItem(str(item[1]))
+            restrito = QTableWidgetItem(str(item[2]))
+            
+            self.nivel = QtWidgets.QSpinBox()
+            self.nivel.setValue(item[3])
+            #self.nivel.valueChanged.connect()
+
+            custo = QTableWidgetItem(str(item[4]))
+            ajuste = QTableWidgetItem(str(item[5]))
+            total = QTableWidgetItem(str(item[6]))
+
+            self.tblProfissional.setItem(row, 0, descricao)
+            self.tblProfissional.setItem(row, 1, restrito)
+            self.tblProfissional.setCellWidget(row, 2, self.nivel)
+            self.tblProfissional.setItem(row, 3, custo)
+            self.tblProfissional.setItem(row, 4, ajuste)
+            self.tblProfissional.setItem(row, 5, total)
+            row = row + 1
+        
+            width = self.tblCombate.verticalHeader().width()
+
+        #width += self.tblProfissional.horizontalHeader().length()
+        #if self.tblProfissional.verticalScrollBar().isVisible():
+        #    width += self.tblProfissional.verticalScrollBar().width()
+        #width += self.tblProfissional.frameWidth() * 2
+        #self.tblProfissional.setFixedWidth(width)
+
+    def on_tableWidget_itemClicked(self):
+        pass
 
     def popularGridPersonagens(self):
         rows = personagem.get_persona_list()
@@ -296,12 +399,12 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
             self.cbxArma01.insertItem(item[0],item[1])
 
     def setTableWidthPersonagems(self):
-        width = self.tblPersonagens.verticalHeader().width()
-        width += self.tblPersonagens.horizontalHeader().length()
-        if self.tblPersonagens.verticalScrollBar().isVisible():
-            width += self.tblPersonagens.verticalScrollBar().width()
-        width += self.tblPersonagens.frameWidth() * 2
-        self.tblPersonagens.setFixedWidth(width)
+        width = self.tblCombate.verticalHeader().width()
+        width += self.tblCombate.horizontalHeader().length()
+        if self.tblCombate.verticalScrollBar().isVisible():
+            width += self.tblCombate.verticalScrollBar().width()
+        width += self.tblCombate.frameWidth() * 2
+        self.tblCombate.setFixedWidth(width)
 
     def getPersonagem(self):
         while (self.tblProfissao.rowCount() > 0):
@@ -309,6 +412,9 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
 
         while (self.tblEspecializacao.rowCount() > 0):
                 self.tblEspecializacao.removeRow(0)
+
+        while (self.tblMagiaBasica.rowCount() > 0):
+                self.tblMagiaBasica.removeRow(0)
 
         linha = self.tblPersonagens.currentItem().row()
         id_persona = self.tblPersonagens.item(linha, 0).text()
@@ -325,12 +431,19 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         if persona.profession.id == 1 or persona.profession.id == 2:
             self.popularCombateTecnicasRestritas(persona)
 
+        #self.popularCombateTecnicasBasicas(persona)
+        if persona.profession.id != 1 and persona.profession.id != 2 :
+            self.popularMagiaBasica(persona)
+
+        self.popularHabiidadeProfissional(persona)
+        
         index = self.cbxClasseSocial.findText(persona.social_class, QtCore.Qt.MatchFixedString)
         if index >= 0:
             self.cbxClasseSocial.setCurrentIndex(index)
         else:
             self.cbxClasseSocial.setCurrentIndex(0)
 
+        
         god =divindade.get_god_name(persona.god)
         index = self.cbxDivindade.findText(god,QtCore.Qt.MatchFixedString)
         if index >= 0:

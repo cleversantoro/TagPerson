@@ -38,5 +38,12 @@ class PersonagemCTR:
     def save_persona_equipment(persona):
         return dao.save_persona_equipment(persona)
 
-    def get_persona_combat(persona_id,combat_group_id):
-        return dao.get_persona_combat(persona_id,combat_group_id)
+    def get_combat_persona(persona_id,combat_group_id):
+        return dao.get_combat_persona(persona_id,combat_group_id)
+
+    def get_spell_persona(persona_id,spell_group_id):
+        return dao.get_spell_persona(persona_id,spell_group_id)
+
+    def get_skills_persona(persona_id,skills_group_id):
+        return dao.get_skills_persona(persona_id,skills_group_id)
+    
