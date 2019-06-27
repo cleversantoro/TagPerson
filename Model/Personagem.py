@@ -51,9 +51,9 @@ class Persona(Base):
 
         self.combat_equip = const.COMBAT_EQUIP * [None]
 
-        self.combats = {}
         self.spells = {}
         self.equipment = {}
+        self.combat_skills = {}
         self.skills = {}
         self.skills_specs = {}
 

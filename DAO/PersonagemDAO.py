@@ -232,13 +232,14 @@ class PersonagemDAO:
             fields['local_nascimento'] = -1
 
         if persona.id == -1:
-            persona.id = __insert_persona(fields)
+            persona.id = PersonagemDAO.__insert_persona(fields)
         else:
             PersonagemDAO.__update_persona(persona.id, fields)
 
         PersonagemDAO.save_persona_spells(persona)
         PersonagemDAO.save_persona_skills(persona)
         PersonagemDAO.save_persona_equipment(persona)
+        PersonagemDAO.save_persona_combat_skills(persona)
 
     def __insert_persona(fields):
         field_list = ', '.join([f for f in fields.keys() if fields[f] is not None])

@@ -83,7 +83,6 @@ class Ui_MainWindow(object):
 
     def populaTabela(self):
         self.pers = personagem.get_persona(9)
-
         rows = personagem.get_persona_combat(self.pers.id ,1)
         
         #self.tblCombate.setColumnHidden(0,True)
