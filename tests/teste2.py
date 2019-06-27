@@ -147,7 +147,6 @@ class Ui_MainWindow(object):
         self.ID = item.text()
         self.nivel
 
-
     def teste(self, index):
         value = index
         row = self.tblCombate.currentRow()

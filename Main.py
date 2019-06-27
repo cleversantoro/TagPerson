@@ -78,6 +78,7 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         while (self.tblCombate.rowCount() > 0):
                 self.tblCombate.removeRow(0)
 
+        self.niveisCombat = []
         row = 0
         for item in rows:
             self.tblCombate.insertRow(row)
@@ -85,10 +86,12 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
             descricao = QTableWidgetItem(str(item[1]))
             
             self.nivel = QtWidgets.QSpinBox()
+            self.nivel.setObjectName('nivelcombat_{}'.format(row))
             self.nivel.setValue(item[2])
-            #self.nivel.valueChanged.connect()
+            self.nivel.valueChanged.connect(self.on_Change_NivelCombat)
 
-            #nivel = QTableWidgetItem(niv,None)
+            self.niveisCombat.append({'spin':self.nivel,'name':'nivelcombat_{}'.format(row),'idcombate':item[0]}) 
+
             custo = QTableWidgetItem(str(item[3]))
             ajuste = QTableWidgetItem(str(item[4]))
             total = QTableWidgetItem(str(item[5]))
@@ -96,7 +99,6 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
             icon = QtGui.QIcon(QtGui.QPixmap(":/categoria/{}".format(item[8])))
             icone = QTableWidgetItem(icon,None)
 
-            #self.tblCombate.setItem(row, 0, id)
             self.tblCombate.setItem(row, 0, descricao)
             self.tblCombate.setCellWidget(row, 1, self.nivel)
             self.tblCombate.setItem(row, 2, custo)
@@ -105,6 +107,25 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
             self.tblCombate.setItem(row, 5, categoria)
             self.tblCombate.setItem(row, 6, icone)
             row = row + 1
+
+    def on_Change_NivelCombat(self, index):
+        value = index
+        row = self.tblCombate.currentRow()
+        #column = self.tblCombate.currentColumn()
+        #self.ID = self.tblCombate. item(row, 4)
+        self.tblCombate.item(row,4).setText('2')
+        #index  = self.tblCombate.currentIndex()
+        nome = self.niveisCombat[row]['name']
+        valor = self.niveisCombat[row]['spin'].value()
+        idhabilidade = self.niveisCombat[row]['idcombate']
+        self.niveisCombat
+
+    def gravarCombate(self,persona):
+        for item in self.niveisCombat:
+            persona.combat_skills[item['idcombate']] = item['spin'].value()
+        
+        persona.combat_skills
+        personagem.save_persona_combat_skills(self.persona)
 
     def popularCombateTecnicasEspecializacao(self,persona):
         person = persona
@@ -288,12 +309,6 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
             row = row + 1
         
             width = self.tblCombate.verticalHeader().width()
-
-        #width += self.tblProfissional.horizontalHeader().length()
-        #if self.tblProfissional.verticalScrollBar().isVisible():
-        #    width += self.tblProfissional.verticalScrollBar().width()
-        #width += self.tblProfissional.frameWidth() * 2
-        #self.tblProfissional.setFixedWidth(width)
 
     def on_tableWidget_itemClicked(self):
         pass
