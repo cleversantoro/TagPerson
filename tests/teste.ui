@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>587</width>
-    <height>457</height>
+    <width>450</width>
+    <height>520</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,8 +19,8 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>501</width>
-      <height>391</height>
+      <width>421</width>
+      <height>421</height>
      </rect>
     </property>
     <column>
@@ -69,14 +69,27 @@
      </property>
     </column>
    </widget>
+   <widget class="QPushButton" name="btnGravar">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>440</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Gravar</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>587</width>
-     <height>26</height>
+     <width>450</width>
+     <height>21</height>
     </rect>
    </property>
   </widget>

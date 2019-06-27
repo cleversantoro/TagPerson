@@ -12,11 +12,11 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(500, 457)
+        MainWindow.resize(450, 520)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.tblCombate = QtWidgets.QTableWidget(self.centralwidget)
-        self.tblCombate.setGeometry(QtCore.QRect(10, 10, 471, 391))
+        self.tblCombate.setGeometry(QtCore.QRect(10, 10, 421, 421))
         self.tblCombate.setObjectName("tblCombate")
         self.tblCombate.setColumnCount(7)
         self.tblCombate.setRowCount(0)
@@ -40,9 +40,12 @@ class Ui_MainWindow(object):
         self.tblCombate.setHorizontalHeaderItem(5, item)
         item = QtWidgets.QTableWidgetItem()
         self.tblCombate.setHorizontalHeaderItem(6, item)
+        self.btnGravar = QtWidgets.QPushButton(self.centralwidget)
+        self.btnGravar.setGeometry(QtCore.QRect(20, 440, 75, 23))
+        self.btnGravar.setObjectName("btnGravar")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 500, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 450, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -69,6 +72,7 @@ class Ui_MainWindow(object):
         item.setText(_translate("MainWindow", "categoria"))
         item = self.tblCombate.horizontalHeaderItem(6)
         item.setText(_translate("MainWindow", "icone"))
+        self.btnGravar.setText(_translate("MainWindow", "Gravar"))
 
 
 

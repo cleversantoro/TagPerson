@@ -13,11 +13,11 @@ import os
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(500, 457)
+        MainWindow.resize(450, 520)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.tblCombate = QtWidgets.QTableWidget(self.centralwidget)
-        self.tblCombate.setGeometry(QtCore.QRect(10, 10, 471, 391))
+        self.tblCombate.setGeometry(QtCore.QRect(10, 10, 421, 421))
         self.tblCombate.setObjectName("tblCombate")
         self.tblCombate.setColumnCount(7)
         self.tblCombate.setRowCount(0)
@@ -41,9 +41,12 @@ class Ui_MainWindow(object):
         self.tblCombate.setHorizontalHeaderItem(5, item)
         item = QtWidgets.QTableWidgetItem()
         self.tblCombate.setHorizontalHeaderItem(6, item)
+        self.btnGravar = QtWidgets.QPushButton(self.centralwidget)
+        self.btnGravar.setGeometry(QtCore.QRect(20, 440, 75, 23))
+        self.btnGravar.setObjectName("btnGravar")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 500, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 450, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -52,7 +55,6 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-
         self.appEvents()
 
     def retranslateUi(self, MainWindow):
@@ -72,15 +74,21 @@ class Ui_MainWindow(object):
         item.setText(_translate("MainWindow", "categoria"))
         item = self.tblCombate.horizontalHeaderItem(6)
         item.setText(_translate("MainWindow", "icone"))
+        self.btnGravar.setText(_translate("MainWindow", "Gravar"))
 
     def appEvents(self):
-        self.person = personagem.get_persona(8)
-        rows = personagem.get_persona_combat(self.person.id,1)        
+        #self.populaTabela()
+        self.btnGravar.clicked.connect(self.gravarCombate)
+        #self.setTableWidthPersonagems()
 
+    def populaTabela(self):
+        self.pers = personagem.get_persona(9)
+
+        rows = personagem.get_persona_combat(self.pers.id ,1)
+        
         #self.tblCombate.setColumnHidden(0,True)
         self.tblCombate.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.tblCombate.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
-        self.tblCombate.verticalHeader().hide()
 
         header = self.tblCombate.horizontalHeader()       
         header.setSectionResizeMode(0, QtWidgets.QHeaderView.ResizeToContents)
@@ -92,23 +100,28 @@ class Ui_MainWindow(object):
         header.setSectionResizeMode(6, QtWidgets.QHeaderView.ResizeToContents)
         #header.setSectionResizeMode(7, QtWidgets.QHeaderView.Stretch)
         #self.tblCombate.setColumnWidth(2, 180);
-        
-
+        #self.tblCombate.cellClicked.connect(self.cell_was_clicked)
         #item = QtGui.QTableWidgetItem(icon, "") # Second argument (required !) is text
         #self.tableWidget.setItem(0, 0, item)
 
         while (self.tblCombate.rowCount() > 0):
                 self.tblCombate.removeRow(0)
 
+        self.niveis = []
         row = 0
         for item in rows:
             self.tblCombate.insertRow(row)
             #id = QTableWidgetItem(str(item[0]))
             descricao = QTableWidgetItem(str(item[1]))
+
             
             self.nivel = QtWidgets.QSpinBox()
+            self.nivel.setObjectName('nivel_{}'.format(row))
             self.nivel.setValue(item[2])
             self.nivel.valueChanged.connect(self.teste)
+
+            self.niveis.append({'spin':self.nivel,'name':'nivel_{}'.format(row),'idcombate':item[0]}) 
+
 
             #nivel = QTableWidgetItem(niv,None)
             custo = QTableWidgetItem(str(item[3]))
@@ -127,13 +140,33 @@ class Ui_MainWindow(object):
             self.tblCombate.setItem(row, 5, categoria)
             self.tblCombate.setItem(row, 6, icone)
             row = row + 1
+
+    def cell_was_clicked(self, row, column):
+        item = self.tblCombate.itemAt(row, column)
+        index = self.tblCombate.SelectItems
+        self.ID = item.text()
+        self.nivel
+
+
+    def teste(self, index):
+        value = index
+        row = self.tblCombate.currentRow()
+        #column = self.tblCombate.currentColumn()
+        #self.ID = self.tblCombate. item(row, 4)
+        self.tblCombate.item(row,4).setText('2')
+        #index  = self.tblCombate.currentIndex()
+        nome = self.niveis[row]['name']
+        valor = self.niveis[row]['spin'].value()
+        idhabilidade = self.niveis[row]['idcombate']
+
+        self.niveis
+
+    def gravarCombate(self):
+        for item in self.niveis:
+            self.pers.combat_skills[item['idcombate']] = item['spin'].value()
         
-        #self.setTableWidthPersonagems()
-    def teste(self):
-        item = self.nivel.value()
-        msg = QMessageBox()
-        msg.setText(str(item))
-        msg.exec();
+        self.pers.combat_skills
+        personagem.save_persona_combat_skills(self.pers)
 
     def setTableWidthPersonagems(self):
         width = self.tblCombate.verticalHeader().width()
