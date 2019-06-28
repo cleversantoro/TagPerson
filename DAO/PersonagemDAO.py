@@ -47,18 +47,20 @@ class PersonagemDAO:
             persona.attributes[data.AGI] = row[9]
             persona.attributes[data.PER] = row[10]
 
+            persona.race = racedao.get_race(row[17])
+            raca = persona.race.__str__()
+            persona.profession = profidao.get_profession(row[18])
+            profissao = persona.profession.__str__()
+            persona.specialization = especdao.get_specialization(row[19])
+            persona.xp = row[39]
+            persona.level = utils.get_level(persona.xp)
+
             persona.active_defense = row[11]
             persona.passive_defense = row[12]
             persona.max_eh = row[13]
             persona.eh = row[14]
             persona.ef = row[15]
             persona.absorption = row[16]
-
-            persona.race = racedao.get_race(row[17])
-            persona.profession = profidao.get_profession(row[18])
-            persona.specialization = especdao.get_specialization(row[19])
-            persona.xp = row[20]
-            persona.level = utils.get_level(persona.xp)
 
             persona.skill_points = row[21]
             persona.weapon_points = row[22]
@@ -78,11 +80,11 @@ class PersonagemDAO:
             persona.social_class = row[33]
             persona.homeland = locdao.get_place(row[34])
             persona.history = row[35]
-            persona.goals = row[36]
+            #persona.goals = row[36]
 
-            persona.copper_coins = row[data.COMBAT_EQUIP]
-            persona.silver_coins = row[data.COMBAT_EQUIP+1]
-            persona.gold_coins = row[data.COMBAT_EQUIP+2]
+            persona.copper_coins = row[36]#data.COMBAT_EQUIP]
+            persona.silver_coins = row[37]#data.COMBAT_EQUIP+1]
+            persona.gold_coins = row[38]#data.COMBAT_EQUIP+2]
 
             persona.skills, persona.skills_specs = PersonagemDAO.get_persona_skills(id)
             persona.spells = PersonagemDAO.get_persona_spells(id)

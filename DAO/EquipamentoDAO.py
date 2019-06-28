@@ -12,6 +12,9 @@ class EquipamentoDAO:
     def get_equipment_list():
         return dao.get_list('equipamento')
 
+    def get_equipment_name(id):
+        return dao.get_name(id,'equipamento')
+
     def get_equipment_item(id):
         query = "SELECT * FROM equipamento WHERE id=" + str(id)
         cur_sys.execute(query)
@@ -22,7 +25,10 @@ class EquipamentoDAO:
 
             is_weapon = (row[6] == 1)
             is_defense = (row[7] == 1)
+            
             is_armour = (row[8] == 1)
+            is_shield = (row[9] ==1)
+            is_helmet = (row[10] ==1)
 
             if is_weapon:
                 if is_defense:
@@ -35,7 +41,6 @@ class EquipamentoDAO:
                 item = Defense(row[2])
             else:
                 item = Item(row[2])
-
 
             if is_weapon:
                 query = "SELECT * FROM equipamento_armas WHERE id_equipamento=" + str(id)
@@ -60,8 +65,6 @@ class EquipamentoDAO:
                 item.Me = wrow[17]
                 item.Hu = wrow[18]
                 item.itemtype = 'weapon'
-                #item.skill_id = wrow[1]
-                #item.min_damage = wrow[3]
 
             if is_defense:
                 query = "SELECT * FROM equipamento_defesa WHERE id_equipamento=" + str(id)
@@ -78,26 +81,28 @@ class EquipamentoDAO:
                 item.E = drow[8]
                 item.M = drow[9]
                 item.H = drow[10]
-                if type(item) == Shield:
+                
+                if(is_armour):
+                    item.itemtype = 'armour'
+                elif(is_helmet):
+                    item.itemtype = 'helmet'
+                elif(is_shield):
                     item.itemtype = 'shield'
-                else:
-                    if(is_armour):
-                        item.itemtype = 'armour'
-                    else:                
-                        item.itemtype = 'defense'
+                else:                
+                    item.itemtype = 'defense'
 
-                #item.type = drow[1]
+            if type(item) == Item:
+                pass
+
+            item.itemtype = 'item'
 
             item.group = row[1]
             item.description = row[3]
             item.price = row[5]
 
-            if type(item) == Item:
-                item.itemtype = 'item'
-
             image_file = row[4]
             if image_file is not None:
-                item.image = row[4] #None #get_image_pixbuf(self.images_path, image_file)
+                item.image = row[4] 
 
             return item
 

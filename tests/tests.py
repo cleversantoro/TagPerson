@@ -73,17 +73,26 @@ class test:
 
     def personagem():
         teste1 = ctrPerso.get_persona(8)
-        teste2 = ctrPerso.get_persona_equipment(8)
-        teste3 = ctrPerso.get_persona_list()
-        teste4 = ctrPerso.get_persona_skills(8)
-        teste5 = ctrPerso.get_persona_spells(9)
-        teste11 = ctrPerso.get_persona_combat(9)
-        teste6 = ctrPerso.get_players_names()
-        persona = teste1
-        teste7 = ctrPerso.save_persona(persona)
-        teste8 = ctrPerso.save_persona_equipment(persona)
-        teste9 = ctrPerso.save_persona_skills(persona)
-        teste10 = ctrPerso.save_persona_spells(persona)
+        
+        for item in teste1.combat_equip:
+            if(item.itemtype == 'shield'):
+                escudo = item.name
+            elif(item.itemtype == 'helmet'):
+                elmo = item.name
+            elif(item.itemtype == 'armour'):
+                armadura = item.name
+
+        #teste2 = ctrPerso.get_persona_equipment(8)
+        #teste3 = ctrPerso.get_persona_list()
+        #teste4 = ctrPerso.get_persona_skills(8)
+        #teste5 = ctrPerso.get_persona_spells(9)
+        #teste11 = ctrPerso.get_persona_combat(9)
+        #teste6 = ctrPerso.get_players_names()
+        #persona = teste1
+        #teste7 = ctrPerso.save_persona(persona)
+        #teste8 = ctrPerso.save_persona_equipment(persona)
+        #teste9 = ctrPerso.save_persona_skills(persona)
+        #teste10 = ctrPerso.save_persona_spells(persona)
         print('')
 
     def profissao():
@@ -110,7 +119,7 @@ if __name__ == '__main__':
     #test.habilidade()
     #test.localidade()
     #test.magia()
-    #test.personagem()
+    test.personagem()
     #test.profissao()
     #test.raca()
     #test.tempo()

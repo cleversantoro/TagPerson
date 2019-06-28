@@ -10,10 +10,7 @@ class Persona(Base):
         self.player = ''
         self.avatar_file = None
 
-        self.level = 1
-        self.xp = 0
         self.attributes = [0, 0, 0, 0, 0, 0, 0]
-        self.karma = 0
         self.active_defense = 0
         self.passive_defense = 0
         self.max_eh = 0
@@ -24,6 +21,11 @@ class Persona(Base):
         self.race =  -1
         self.profession = -1
         self.specialization = -1
+
+        self.level = 1
+        self.xp = 0
+        self.karma = 0
+        self.goals = ''
 
         self.skill_points = 0
         self.combat_points = 0
@@ -43,13 +45,14 @@ class Persona(Base):
         self.social_class = 2
         self.homeland = None
         self.history = ''
-        self.goals = ''
 
         self.copper_coins = const.INITIAL_COPPER
         self.silver_coins = const.INITIAL_SILVER
         self.gold_coins = const.INITIAL_GOLD
 
         self.combat_equip = const.COMBAT_EQUIP * [None]
+        #self.combat_equip = const.COMBAT_EQUIP * [None]
+        #self.combat_equip = const.COMBAT_EQUIP * [None]
 
         self.spells = {}
         self.equipment = {}

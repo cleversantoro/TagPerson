@@ -4,6 +4,9 @@ class EquipamentoCTR:
 
     def get_equipment_list():
         return dao.get_equipment_list()
+    
+    def get_equipment_name(id):
+        return dao.get_equipment_name(id)
 
     def get_equipment_item(id):
         return dao.get_equipment_item(id)
