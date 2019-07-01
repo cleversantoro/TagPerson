@@ -92,9 +92,7 @@ class EquipamentoDAO:
                     item.itemtype = 'defense'
 
             if type(item) == Item:
-                pass
-
-            item.itemtype = 'item'
+                item.itemtype = 'item'
 
             item.group = row[1]
             item.description = row[3]
@@ -112,6 +110,12 @@ class EquipamentoDAO:
         return dao.get_list('equipamento_grupos')
 
     def get_equipment_from_group(group_id):
+        query = "SELECT id, nome, descricao, valor FROM equipamento " \
+                "WHERE id_grupo =" + str(group_id)
+        cur_sys.execute(query)
+        return cur_sys.fetchall()
+
+    def get_equipment_misc(group_id):
         query = "SELECT id, nome, descricao, valor FROM equipamento " \
                 "WHERE id_grupo =" + str(group_id)
         cur_sys.execute(query)

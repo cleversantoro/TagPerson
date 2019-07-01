@@ -20,10 +20,10 @@ class MagiaDAO:
             if row is None:
                 return None
             spell = Spell(row[1],row[0])
-            spell.description = row[2]
-            spell.evocation = row[3]
-            spell.range = row[4]
-            spell.duration = row[5]
+            spell.evocation = row[2]
+            spell.range = row[3]
+            spell.duration = row[4]
+            spell.description = row[5]
             spell.level = row[6]
             return spell
 

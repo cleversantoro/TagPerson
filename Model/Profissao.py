@@ -14,6 +14,11 @@ class Profession(Base):
         self.specialization_skill = -1
         self.attribute_for_magic = -1
         self.spell_group = -1
+        self.specialization_name = ''
+
+
+    def is_magic_user(self):
+        return self.attribute_for_magic > -1
 
     def __str__(self):
         return '%s\n%s\n%s\n%s\neh:%d\nph:%d\nghp:%s\nespH:%s\npa:%d,pc:%d' % \

@@ -2,6 +2,7 @@ from Helpers.constantes import const
 from Model.__Base__ import Base
 from Model.Raca import Race
 from Model.Items import Item
+import operator,math
 
 class Persona(Base):
     def __init__(self, name='', id=-1):
@@ -51,8 +52,7 @@ class Persona(Base):
         self.gold_coins = const.INITIAL_GOLD
 
         self.combat_equip = const.COMBAT_EQUIP * [None]
-        #self.combat_equip = const.COMBAT_EQUIP * [None]
-        #self.combat_equip = const.COMBAT_EQUIP * [None]
+        self.combat_weapon = {}
 
         self.spells = {}
         self.equipment = {}
@@ -76,7 +76,10 @@ class Persona(Base):
 
     def get_attributes_total(self):
         if self.attributes and self.race:
-            return map(int.__add__, self.attributes, self.race.attribute_bonus)
+            soma = sum(self.attributes)
+            #soma = map(operator.add, self.race.attribute_bonus)
+            #soma = reduce(lambda x, y: x + y, self.race.attribute_bonus)
+            return soma
         return None
 
     def get_attribute_by_short_name(self, short_name):
@@ -165,12 +168,6 @@ class Persona(Base):
         if item_kind > -1 and self.combat_equip[item_kind] is not None and \
            self.combat_equip[item_kind].id == item.id:
             self.combat_equip[item_kind] = None
-
-    def get_melee_weapon(self):
-        return self.combat_equip[const.MELEE_WEAPON]
-
-    def get_ranged_weapon(self):
-        return self.combat_equip[const.RANGED_WEAPON]
 
     def get_armour(self):
         return self.combat_equip[const.ARMOUR]

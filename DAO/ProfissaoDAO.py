@@ -24,18 +24,16 @@ class ProfissaoDAO:
                 profession = Profession(row[1], row[0])
                 profession.image = row[2]
                 profession.description = row[3]
-                #av_prof[0] for av_prof in row[4]
-                
+                profession.cooper_coins = row[5]
                 profession.posessions = row[4].split("|")
-                
-                profession.eh = row[5]
-                profession.skill_points = row[6]
-                profession.weapon_points = row[7]
-                profession.combat_points = row[8]
-                profession.penalized_skill_group = row[9]
-                profession.specialized_skill = row[10]
-                profession.attribute_for_magic = row[11]
-                profession.spell_group = row[12]
+                profession.eh = row[6]
+                profession.skill_points = row[7]
+                profession.weapon_points = row[8]
+                profession.combat_points = row[9]
+                profession.penalized_skill_group = row[10]
+                profession.specialized_skill = row[11]
+                profession.attribute_for_magic = row[12]
+                profession.spell_group = row[13]
                 return profession
 
         return build_object(cur_sys.fetchone())

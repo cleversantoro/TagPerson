@@ -114,12 +114,12 @@ class test:
 
 if __name__ == '__main__':
     #test.divindade()
-    #test.equipamento()
+    test.equipamento()
     #test.especialidade()
     #test.habilidade()
     #test.localidade()
     #test.magia()
-    test.personagem()
+    #test.personagem()
     #test.profissao()
     #test.raca()
     #test.tempo()

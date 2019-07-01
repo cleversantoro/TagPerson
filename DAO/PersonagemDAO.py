@@ -89,12 +89,25 @@ class PersonagemDAO:
             persona.skills, persona.skills_specs = PersonagemDAO.get_persona_skills(id)
             persona.spells = PersonagemDAO.get_persona_spells(id)
             persona.combat_skills = PersonagemDAO.get_persona_combat_skills(id)
-            persona.equipment = PersonagemDAO.get_persona_equipment(id)
+            #persona.equipment = PersonagemDAO.get_persona_equipment(id)
 
             i = 0
-            for x in persona.equipment:
-                persona.combat_equip[i] = equipdao.get_equipment_item(x)
-                i += 1
+            y = 0
+            for x in PersonagemDAO.get_persona_equipment(id):
+                equip = equipdao.get_equipment_item(x) 
+
+                if( equip.itemtype == 'armour'):
+                    persona.combat_equip[0] = equip
+                elif(equip.itemtype == 'helmet'):
+                    persona.combat_equip[1] = equip
+                elif(equip.itemtype == 'shield'):
+                    persona.combat_equip[2] = equip
+                elif(equip.itemtype == 'weapon'):
+                    persona.combat_weapon[y] = equip
+                    y += 1
+                elif(equip.itemtype == 'item'):
+                    persona.equipment[i] = equip
+                    i += 1
 
             return persona
 
@@ -202,7 +215,7 @@ class PersonagemDAO:
         fields['pontos_combate'] = persona.combat_points
         fields['pontos_arma'] = persona.weapon_points
         fields['pontos_magia'] = persona.magic_points
-        #fields['xp'] = persona.xp
+        fields['experiencia'] = persona.xp
         fields['idade'] = persona.age
         fields['altura'] = persona.height
         fields['peso'] = persona.weight
