@@ -49,6 +49,7 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         self.actionNovo.triggered.connect(self.ShowFrmNovoPersonagem)
         self.actionSalvar_toolbar.triggered.connect(self.gravarPersonagem)
         self.tblMagiaBasica.cellClicked.connect(self.on_Clicked_CellMagia)
+        self.cbxPertencesGrupo.currentIndexChanged.connect(self.on_Change_ComboPertencesGrupo)
 
     def PopularTela(self):
         self.popularGridPersonagens()
@@ -59,6 +60,7 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         self.ComboEscudo()
         self.ComboCapacete()
         self.ComboArmas()
+        self.ComboPertencesGrupo()
 
     def on_Change_NivelCombat(self, index):
         value = index
@@ -94,6 +96,10 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
             self.txtDuracao.setText(str(mg.duration))
             self.txtEfeitos.setText(str(mg.level))
             self.txtDescricao.setText(str(mg.description))
+
+    def on_Change_ComboPertencesGrupo(self,index):
+        group_id = self.cbxPertencesGrupo.itemData(index)
+        self.ComboPertencesItens(group_id)
 
     def gravarPersonagem(self):
         self.gravarCombate()
@@ -163,7 +169,6 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
 
     def popularCombateArmas(self,persona):
         person = persona
-        rows = person.combat_weapon        
 
         self.tblArma.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.tblArma.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
@@ -601,6 +606,37 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
             self.tblGeral.setItem(row, 5, total)
             row = row + 1
 
+    def popularPertences(self,persona):
+        person = persona
+
+        self.tblPertences.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+        self.tblPertences.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
+        self.tblPertences.verticalHeader().hide()
+
+        header = self.tblPertences.horizontalHeader()       
+        header.setSectionResizeMode(0, QtWidgets.QHeaderView.ResizeToContents)
+        header.setSectionResizeMode(1, QtWidgets.QHeaderView.ResizeToContents)
+        header.setSectionResizeMode(2, QtWidgets.QHeaderView.ResizeToContents)
+
+        while (self.tblPertences.rowCount() > 0):
+                self.tblPertences.removeRow(0)
+
+        row = 0
+        for item in person.equipment:
+            self.tblPertences.insertRow(row)
+            
+            value, coin = utils.convert_to_coins_single(person.equipment[item].price)
+            money_fmt = '{} {}'.format(int(value), const.COIN_LABEL[coin])
+
+            nome = QTableWidgetItem(str(person.equipment[item].name))
+            descricao = QTableWidgetItem(str(person.equipment[item].description))
+            valor = QTableWidgetItem(str(money_fmt))
+
+            self.tblPertences.setItem(row, 0, nome)
+            self.tblPertences.setItem(row, 1, descricao)
+            self.tblPertences.setItem(row, 2, valor)
+            row = row + 1
+
     def on_tableWidget_itemClicked(self):
         pass
 
@@ -653,14 +689,29 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         
         self.setTableWidthPersonagems
 
+    def ComboPertencesGrupo(self):
+        itens = equipamento.get_equipment_groups_misc()
+        self.cbxPertencesGrupo.clear()
+        self.cbxPertencesGrupo.addItem('Selecione o Grupo',-1)
+        for item in itens:
+            self.cbxPertencesGrupo.addItem(item[1],item[0])
+
+    def ComboPertencesItens(self,group_id):
+        if(group_id > 0):
+            itens = equipamento. get_equipment_from_group(group_id)
+            self.cbxPertencesItem.clear()
+            self.cbxPertencesItem.addItem('Selecione o Item',-1)
+            for item in itens:
+                self.cbxPertencesItem.addItem(item[1],item[0])
+
     def ComboDivindade(self):
         #divindade = DivindadeCTR
         itens = divindade.get_gods_list()
         self.cbxDivindade.clear()
         self.cbxDivindade.insertItem(-1,'Selecione uma Divindade')
         for item in itens:
-            self.cbxDivindade.insertItem(item[0],str(item[1]))
             #'{}-({})'.format(item[1],item[2]))
+            self.cbxDivindade.insertItem(item[0],str(item[1]))
 
     def ComboClasseSocial(self):
         const.SOCIAL_CLASS.sort()
@@ -755,6 +806,7 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         self.popularHabilidadeConhecimento(persona)
         self.popularHabilidadeGeral(persona)
         self.popularCombateArmas(persona)
+        self.popularPertences(persona)
         
         index = self.cbxClasseSocial.findText(persona.social_class, QtCore.Qt.MatchFixedString)
         if index >= 0:

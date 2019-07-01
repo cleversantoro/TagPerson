@@ -17,6 +17,9 @@ class EquipamentoCTR:
     def get_equipment_from_group(group_id):
         return dao.get_equipment_from_group(group_id)
 
+    def get_equipment_groups_misc():
+        return dao.get_equipment_groups_misc()
+
     def get_equipment_from_group_armour(group_id):
         return dao.get_equipment_from_group_armour(group_id)
 

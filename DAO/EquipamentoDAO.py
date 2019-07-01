@@ -115,9 +115,11 @@ class EquipamentoDAO:
         cur_sys.execute(query)
         return cur_sys.fetchall()
 
-    def get_equipment_misc(group_id):
-        query = "SELECT id, nome, descricao, valor FROM equipamento " \
-                "WHERE id_grupo =" + str(group_id)
+    def get_equipment_groups_misc():
+        query = " SELECT id, nome FROM equipamento_grupos"\
+                " WHERE id in (1,2,3,4,5,8,9,10,11,12)"\
+                " ORDER BY nome"
+
         cur_sys.execute(query)
         return cur_sys.fetchall()
 

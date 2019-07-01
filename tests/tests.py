@@ -19,6 +19,7 @@ class test:
         print('')
 
     def equipamento():
+        teste1 = ctrEquip.get_equipment_groups_misc()        
         teste1 = ctrEquip.get_equipment_from_group(1)
         teste2 = ctrEquip.get_equipment_groups()
         teste3 = ctrEquip.get_equipment_item(230)

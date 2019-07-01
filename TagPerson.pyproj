@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>be0ecd80-27a5-4c41-aefe-4e07a499fb5c</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>tests\tests.py</StartupFile>
+    <StartupFile>Main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -185,13 +185,7 @@
     <Content Include="Imagens\tela\tela.qrc" />
     <Content Include="requirements.txt" />
     <Content Include="tests\teste.ui" />
-    <Content Include="View\UI\Comando prompt - ui - py.txt" />
     <Content Include="View\UI\Comando-ui-py.txt" />
-    <Content Include="View\UI\FrmNovoPersonagem.ui" />
-    <Content Include="View\UI\FrmPrincipal-old.ui" />
-    <Content Include="View\UI\FrmPrincipal.ui" />
-    <Content Include="View\UI\FrmSobre.ui" />
-    <Content Include="View\UI\QwtCombateBasicas.ui" />
     <Content Include="View\UI\__pycache__\FrmNovoPersonagem_UI.cpython-37.pyc" />
     <Content Include="View\UI\__pycache__\FrmSobre2_UI.cpython-37.pyc" />
     <Content Include="View\UI\__pycache__\FrmSobre_UI.cpython-37.pyc" />
@@ -263,7 +257,6 @@
     <Compile Include="View\UI\FrmNovoPersonagem_UI.py" />
     <Compile Include="View\UI\FrmPrincipal.py" />
     <Compile Include="View\UI\FrmSobre_UI.py" />
-    <Compile Include="View\UI\QwtCombateDefault_UI.py" />
     <Compile Include="View\UI\__init__.py" />
     <Compile Include="View\__init__.py" />
   </ItemGroup>
