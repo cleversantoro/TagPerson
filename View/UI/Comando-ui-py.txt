@@ -14,5 +14,6 @@ comandos para tela
 pyuic5 -x FrmPrincipal.ui -o ../FrmPrincipal_UI.py
 pyuic5 -x FrmSobre.ui -o FrmSobre_UI.py
 pyuic5 -x FrmNovoPersonagem.ui -o FrmNovoPersonagem_UI.py 
+pyuic5 -x FrmEquipamento.ui -o FrmEquipamento_UI.py 
 
 pyuic5 -x QwtCombateBasicas.ui -o QwtCombateBasicas_UI.py 

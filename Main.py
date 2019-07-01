@@ -19,6 +19,7 @@ from resources.personagem import *
 
 from View.FrmSobre import Ui_Sobre
 from View.FrmNovoPersonagem import Ui_NovoPersonagem
+from View.FrmEquipamento import Ui_Equipamento
 
 import os
 
@@ -50,6 +51,7 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         self.actionSalvar_toolbar.triggered.connect(self.gravarPersonagem)
         self.tblMagiaBasica.cellClicked.connect(self.on_Clicked_CellMagia)
         self.cbxPertencesGrupo.currentIndexChanged.connect(self.on_Change_ComboPertencesGrupo)
+        #self.tblArma.doubleClicked.connect(self.on_Clicked_CellArma)
 
     def PopularTela(self):
         self.popularGridPersonagens()
@@ -85,7 +87,20 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         #valor = self.niveisHabilidade[row]['spin'].value()
         #idhabilidade = self.niveisHabilidade[row]['idhabilidade']
         self.niveisHabilidade
-    
+
+    def on_Clicked_CellArma(self):
+        self.ShowFrmEquipamento()
+        #if(column == 4):
+        #    idmagia = self.niveisMagia[row]['idmagia']
+        #    mg = magia.get_spell(idmagia)
+        #    self.txtNomeMagia.setText(str(mg.name))
+        #    self.txtEvocacao.setText(str(mg.evocation))
+        #    self.txtAlcance.setText(str(mg.range))
+        #    self.txtDuracao.setText(str(mg.duration))
+        #    self.txtEfeitos.setText(str(mg.level))
+        #    self.txtDescricao.setText(str(mg.description))
+        #pass
+        
     def on_Clicked_CellMagia(self, row, column):
         if(column == 4):
             idmagia = self.niveisMagia[row]['idmagia']
@@ -932,7 +947,15 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         self.ui.setupUi(self.FrmNovoPersonagem)
         self.FrmNovoPersonagem.show()
 
+    def ShowFrmEquipamento(self):
+        #self.person.combat_weapon
+        self.FrmEquipamento = QtWidgets.QMainWindow()
+        self.ui = Ui_Equipamento()
+        self.ui.setupUi(self.FrmEquipamento)        
+        #self.ui.preencherEquipamento(self)
+        self.FrmEquipamento.show()
 
+                                                     
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
     tela = TelaPrincipal()

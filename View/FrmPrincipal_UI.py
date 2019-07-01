@@ -2686,8 +2686,7 @@ class Ui_FrmPrincipal(object):
         self.actionNovo_toolbar.setToolTip(_translate("FrmPrincipal", "Novo Prsonagem"))
         self.actionSalvar_toolbar.setText(_translate("FrmPrincipal", "Salvar"))
         self.actionSalvar_toolbar.setToolTip(_translate("FrmPrincipal", "Salvar Personagem"))
-
-
+ 
 
 if __name__ == "__main__":
     import sys

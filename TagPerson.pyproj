@@ -186,6 +186,11 @@
     <Content Include="requirements.txt" />
     <Content Include="tests\teste.ui" />
     <Content Include="View\UI\Comando-ui-py.txt" />
+    <Content Include="View\UI\FrmEquipamento.ui" />
+    <Content Include="View\UI\FrmNovoPersonagem.ui" />
+    <Content Include="View\UI\FrmPrincipal-old.ui" />
+    <Content Include="View\UI\FrmPrincipal.ui" />
+    <Content Include="View\UI\FrmSobre.ui" />
     <Content Include="View\UI\__pycache__\FrmNovoPersonagem_UI.cpython-37.pyc" />
     <Content Include="View\UI\__pycache__\FrmSobre2_UI.cpython-37.pyc" />
     <Content Include="View\UI\__pycache__\FrmSobre_UI.cpython-37.pyc" />
@@ -249,13 +254,14 @@
     <Compile Include="tests\teste2.py" />
     <Compile Include="View\FrmNovoPersonagem.py" />
     <Compile Include="View\FrmPrincipal_UI.py" />
+    <Compile Include="View\FrmEquipamento.py" />
     <Compile Include="View\FrmSobre.py" />
     <Compile Include="tests\tests.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Main.py" />
+    <Compile Include="View\UI\FrmEquipamento_UI.py" />
     <Compile Include="View\UI\FrmNovoPersonagem_UI.py" />
-    <Compile Include="View\UI\FrmPrincipal.py" />
     <Compile Include="View\UI\FrmSobre_UI.py" />
     <Compile Include="View\UI\__init__.py" />
     <Compile Include="View\__init__.py" />
