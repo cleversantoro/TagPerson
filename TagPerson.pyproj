@@ -135,6 +135,7 @@
     <Content Include="Imagens\Item\item2.png" />
     <Content Include="Imagens\Item\item3.png" />
     <Content Include="Imagens\Item\item4.png" />
+    <Content Include="Imagens\Item\item_arco_composto.png" />
     <Content Include="Imagens\Item\item_arco_de_guerra.png" />
     <Content Include="Imagens\Item\item_couro_rigido.png" />
     <Content Include="Imagens\Item\item_elmo_fechado.png" />

@@ -27,7 +27,7 @@ class EspecialidadeDAO:
             special.description = row[2]
             special.profession = row[3]
             special.spell_group = row[4]
-            special.technique_group = row[5]
+            special.combat_group = row[5]
             return special
 
         return build_object(cur_sys.fetchone())

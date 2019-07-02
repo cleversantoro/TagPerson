@@ -1,4 +1,8 @@
+from os.path import join
+
 class const:
+    IMAGES = join('..', 'Imagens\\Item')
+
     INT = 0 
     AUR = 1
     CAR = 2

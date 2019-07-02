@@ -48,9 +48,7 @@ class PersonagemDAO:
             persona.attributes[data.PER] = row[10]
 
             persona.race = racedao.get_race(row[17])
-            raca = persona.race.__str__()
             persona.profession = profidao.get_profession(row[18])
-            profissao = persona.profession.__str__()
             persona.specialization = especdao.get_specialization(row[19])
             persona.xp = row[39]
             persona.level = utils.get_level(persona.xp)
@@ -82,14 +80,13 @@ class PersonagemDAO:
             persona.history = row[35]
             #persona.goals = row[36]
 
-            persona.copper_coins = row[36]#data.COMBAT_EQUIP]
-            persona.silver_coins = row[37]#data.COMBAT_EQUIP+1]
-            persona.gold_coins = row[38]#data.COMBAT_EQUIP+2]
+            persona.copper_coins = row[36]
+            persona.silver_coins = row[37]
+            persona.gold_coins = row[38]
 
             persona.skills, persona.skills_specs = PersonagemDAO.get_persona_skills(id)
             persona.spells = PersonagemDAO.get_persona_spells(id)
             persona.combat_skills = PersonagemDAO.get_persona_combat_skills(id)
-            #persona.equipment = PersonagemDAO.get_persona_equipment(id)
 
             i = 0
             y = 0

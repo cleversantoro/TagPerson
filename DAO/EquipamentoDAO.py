@@ -93,6 +93,7 @@ class EquipamentoDAO:
 
             if type(item) == Item:
                 item.itemtype = 'item'
+                item.id = row[0]
 
             item.group = row[1]
             item.description = row[3]
@@ -100,7 +101,7 @@ class EquipamentoDAO:
 
             image_file = row[4]
             if image_file is not None:
-                item.image = row[4] 
+                item.image = '{}\{}'.format(const.IMAGES, row[4]) 
 
             return item
 

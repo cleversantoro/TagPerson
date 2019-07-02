@@ -23,8 +23,6 @@ class Weapon(Item):
         self.Me = None
         self.Hu = None
 
-
-
     def __str__(self):
         return '%s\n%s\n%s\nfm:%d\nat:%s,dn:%d' % \
                (Item.__str__(self), self.skill_group,

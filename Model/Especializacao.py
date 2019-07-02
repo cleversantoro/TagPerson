@@ -5,4 +5,4 @@ class Specialization(Base):
         Base.__init__(self, name, id)
         self.profession = 0
         self.spell_group = 0
-        self.technique_group = 0
+        self.combat_group = 0

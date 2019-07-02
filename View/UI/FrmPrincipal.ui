@@ -3688,6 +3688,11 @@
        </attribute>
        <column>
         <property name="text">
+         <string>id</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
          <string>Nome</string>
         </property>
         <property name="font">
@@ -5057,7 +5062,7 @@
      <x>0</x>
      <y>0</y>
      <width>1525</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">

@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>FrmEquipamento</class>
  <widget class="QMainWindow" name="FrmEquipamento">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -17,25 +20,34 @@
    <widget class="QLabel" name="lbl_imagem">
     <property name="geometry">
      <rect>
-      <x>14</x>
+      <x>9</x>
       <y>10</y>
-      <width>201</width>
-      <height>351</height>
+      <width>266</width>
+      <height>331</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string/>
+    </property>
+    <property name="scaledContents">
+     <bool>false</bool>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
     </property>
    </widget>
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>219</x>
+      <x>279</x>
       <y>9</y>
-      <width>551</width>
+      <width>491</width>
       <height>351</height>
      </rect>
     </property>
@@ -125,7 +137,7 @@
     <widget class="QLabel" name="label_6">
      <property name="geometry">
       <rect>
-       <x>11</x>
+       <x>7</x>
        <y>202</y>
        <width>31</width>
        <height>17</height>
@@ -145,7 +157,7 @@
     <widget class="QLabel" name="label_7">
      <property name="geometry">
       <rect>
-       <x>186</x>
+       <x>182</x>
        <y>202</y>
        <width>28</width>
        <height>17</height>
@@ -165,7 +177,7 @@
     <widget class="QLabel" name="label_8">
      <property name="geometry">
       <rect>
-       <x>361</x>
+       <x>357</x>
        <y>202</y>
        <width>28</width>
        <height>17</height>
@@ -185,7 +197,7 @@
     <widget class="QLabel" name="lblTipo">
      <property name="geometry">
       <rect>
-       <x>134</x>
+       <x>136</x>
        <y>28</y>
        <width>200</width>
        <height>16</height>
@@ -205,7 +217,7 @@
     <widget class="QLabel" name="lblAlcance">
      <property name="geometry">
       <rect>
-       <x>134</x>
+       <x>136</x>
        <y>70</y>
        <width>200</width>
        <height>16</height>
@@ -225,7 +237,7 @@
     <widget class="QLabel" name="lblForcaMinima">
      <property name="geometry">
       <rect>
-       <x>134</x>
+       <x>136</x>
        <y>113</y>
        <width>200</width>
        <height>16</height>
@@ -245,7 +257,7 @@
     <widget class="QLabel" name="lblBonus">
      <property name="geometry">
       <rect>
-       <x>134</x>
+       <x>136</x>
        <y>155</y>
        <width>200</width>
        <height>16</height>
@@ -265,7 +277,7 @@
     <widget class="QLabel" name="label_13">
      <property name="geometry">
       <rect>
-       <x>142</x>
+       <x>123</x>
        <y>254</y>
        <width>61</width>
        <height>17</height>
@@ -285,7 +297,7 @@
     <widget class="QLabel" name="label_14">
      <property name="geometry">
       <rect>
-       <x>274</x>
+       <x>247</x>
        <y>254</y>
        <width>61</width>
        <height>17</height>
@@ -305,7 +317,7 @@
     <widget class="QLabel" name="label_15">
      <property name="geometry">
       <rect>
-       <x>11</x>
+       <x>5</x>
        <y>254</y>
        <width>61</width>
        <height>17</height>
@@ -325,7 +337,7 @@
     <widget class="QLabel" name="label_16">
      <property name="geometry">
       <rect>
-       <x>117</x>
+       <x>100</x>
        <y>311</y>
        <width>41</width>
        <height>17</height>
@@ -345,9 +357,9 @@
     <widget class="QLabel" name="label_17">
      <property name="geometry">
       <rect>
-       <x>222</x>
+       <x>200</x>
        <y>311</y>
-       <width>28</width>
+       <width>30</width>
        <height>17</height>
       </rect>
      </property>
@@ -365,7 +377,7 @@
     <widget class="QLabel" name="label_18">
      <property name="geometry">
       <rect>
-       <x>12</x>
+       <x>8</x>
        <y>311</y>
        <width>41</width>
        <height>17</height>
@@ -385,9 +397,9 @@
     <widget class="QLabel" name="label_19">
      <property name="geometry">
       <rect>
-       <x>327</x>
+       <x>290</x>
        <y>311</y>
-       <width>41</width>
+       <width>40</width>
        <height>17</height>
       </rect>
      </property>
@@ -405,9 +417,9 @@
     <widget class="QLabel" name="label_20">
      <property name="geometry">
       <rect>
-       <x>432</x>
+       <x>380</x>
        <y>311</y>
-       <width>41</width>
+       <width>40</width>
        <height>17</height>
       </rect>
      </property>
@@ -425,7 +437,7 @@
     <widget class="QLabel" name="label_21">
      <property name="geometry">
       <rect>
-       <x>405</x>
+       <x>362</x>
        <y>254</y>
        <width>71</width>
        <height>17</height>
@@ -445,7 +457,7 @@
     <widget class="QLabel" name="lbl_leve">
      <property name="geometry">
       <rect>
-       <x>39</x>
+       <x>35</x>
        <y>203</y>
        <width>90</width>
        <height>16</height>
@@ -465,7 +477,7 @@
     <widget class="QLabel" name="lbl_media">
      <property name="geometry">
       <rect>
-       <x>219</x>
+       <x>215</x>
        <y>203</y>
        <width>100</width>
        <height>16</height>
@@ -485,9 +497,9 @@
     <widget class="QLabel" name="lbl_pesada">
      <property name="geometry">
       <rect>
-       <x>394</x>
+       <x>390</x>
        <y>203</y>
-       <width>120</width>
+       <width>80</width>
        <height>16</height>
       </rect>
      </property>
@@ -505,9 +517,9 @@
     <widget class="QLabel" name="lbl_25">
      <property name="geometry">
       <rect>
-       <x>71</x>
+       <x>63</x>
        <y>254</y>
-       <width>60</width>
+       <width>50</width>
        <height>16</height>
       </rect>
      </property>
@@ -525,9 +537,9 @@
     <widget class="QLabel" name="lbl_50">
      <property name="geometry">
       <rect>
-       <x>203</x>
+       <x>182</x>
        <y>254</y>
-       <width>60</width>
+       <width>50</width>
        <height>16</height>
       </rect>
      </property>
@@ -545,9 +557,9 @@
     <widget class="QLabel" name="lbl_75">
      <property name="geometry">
       <rect>
-       <x>337</x>
+       <x>306</x>
        <y>254</y>
-       <width>60</width>
+       <width>50</width>
        <height>16</height>
       </rect>
      </property>
@@ -565,9 +577,9 @@
     <widget class="QLabel" name="lbl_100">
      <property name="geometry">
       <rect>
-       <x>477</x>
+       <x>432</x>
        <y>254</y>
-       <width>60</width>
+       <width>40</width>
        <height>16</height>
       </rect>
      </property>
@@ -585,9 +597,9 @@
     <widget class="QLabel" name="lbl_pq">
      <property name="geometry">
       <rect>
-       <x>51</x>
+       <x>47</x>
        <y>312</y>
-       <width>50</width>
+       <width>40</width>
        <height>16</height>
       </rect>
      </property>
@@ -605,9 +617,9 @@
     <widget class="QLabel" name="lbl_an">
      <property name="geometry">
       <rect>
-       <x>157</x>
+       <x>141</x>
        <y>312</y>
-       <width>50</width>
+       <width>40</width>
        <height>16</height>
       </rect>
      </property>
@@ -625,9 +637,9 @@
     <widget class="QLabel" name="lbl_el">
      <property name="geometry">
       <rect>
-       <x>255</x>
+       <x>232</x>
        <y>312</y>
-       <width>50</width>
+       <width>40</width>
        <height>16</height>
       </rect>
      </property>
@@ -645,9 +657,9 @@
     <widget class="QLabel" name="lbl_me">
      <property name="geometry">
       <rect>
-       <x>369</x>
-       <y>311</y>
-       <width>50</width>
+       <x>330</x>
+       <y>312</y>
+       <width>40</width>
        <height>16</height>
       </rect>
      </property>
@@ -665,10 +677,10 @@
     <widget class="QLabel" name="lbl_hu">
      <property name="geometry">
       <rect>
-       <x>474</x>
-       <y>311</y>
+       <x>421</x>
+       <y>310</y>
        <width>50</width>
-       <height>16</height>
+       <height>20</height>
       </rect>
      </property>
      <property name="font">
@@ -682,6 +694,26 @@
       <string>N/D</string>
      </property>
     </widget>
+   </widget>
+   <widget class="QLabel" name="lblNome">
+    <property name="geometry">
+     <rect>
+      <x>6</x>
+      <y>345</y>
+      <width>268</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>N/D</string>
+    </property>
    </widget>
   </widget>
  </widget>
