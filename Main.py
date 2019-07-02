@@ -190,9 +190,9 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         self.tblArma.verticalHeader().hide()
 
         header = self.tblArma.horizontalHeader()       
-        header.setSectionResizeMode(0, QtWidgets.QHeaderView.ResizeToContents)
-        header.setSectionResizeMode(1, QtWidgets.QHeaderView.ResizeToContents)
-        header.setSectionResizeMode(2, QtWidgets.QHeaderView.ResizeToContents)
+        #header.setSectionResizeMode(0, QtWidgets.QHeaderView.ResizeToContents)
+        #header.setSectionResizeMode(1, QtWidgets.QHeaderView.ResizeToContents)
+        #header.setSectionResizeMode(2, QtWidgets.QHeaderView.ResizeToContents)
 
         while (self.tblArma.rowCount() > 0):
                 self.tblArma.removeRow(0)
@@ -629,9 +629,9 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         self.tblPertences.verticalHeader().hide()
 
         header = self.tblPertences.horizontalHeader()       
-        header.setSectionResizeMode(0, QtWidgets.QHeaderView.ResizeToContents)
-        header.setSectionResizeMode(1, QtWidgets.QHeaderView.ResizeToContents)
-        header.setSectionResizeMode(2, QtWidgets.QHeaderView.ResizeToContents)
+        #header.setSectionResizeMode(0, QtWidgets.QHeaderView.ResizeToContents)
+        #header.setSectionResizeMode(1, QtWidgets.QHeaderView.ResizeToContents)
+        #header.setSectionResizeMode(2, QtWidgets.QHeaderView.ResizeToContents)
 
         while (self.tblPertences.rowCount() > 0):
                 self.tblPertences.removeRow(0)
