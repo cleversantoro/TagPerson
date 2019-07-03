@@ -25,7 +25,7 @@ class const:
     ATTRIBUTE_VALUE = {'Int' : 0, 'Aur' : 1, 'Car' : 2, 'For' : 3, 'Fís' : 4, 'Agi' : 5, 'Per' : 6}
 
     COIN_LABEL = ['m.c.', 'm.p.', 'm.o.']
-    SOCIAL_CLASS = ['Ex-escravo', 'Ex-servo', 'Livre', 'Artífice', 'Pequeno comerciante', 'Grande comerciante', 'Baixa nobreza', 'Alta nobreza']
+    SOCIAL_CLASS = ['Alta nobreza','Artífice','Baixa nobreza','Ex-escravo', 'Ex-servo','Grande comerciante','Livre','Pequeno comerciante']
     EVOLUTION_TABLE = [10, 20, 30, 45, 60, 75, 95, 115, 135, 165, 195, 225, 265,
                        305, 345, 385, 435, 485, 535, 585, 645, 705, 765, 825, 895,
                        965, 1035, 1105, 1185, 1265, 1345, 1425, 1515, 1605, 1695,

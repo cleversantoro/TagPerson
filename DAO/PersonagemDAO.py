@@ -251,6 +251,7 @@ class PersonagemDAO:
         PersonagemDAO.save_persona_spells(persona)
         PersonagemDAO.save_persona_skills(persona)
         PersonagemDAO.save_persona_equipment(persona)
+        PersonagemDAO.save_persona_combat_equipment(persona)
         PersonagemDAO.save_persona_weapon(persona)
         PersonagemDAO.save_persona_combat_skills(persona)
 
@@ -303,6 +304,14 @@ class PersonagemDAO:
         equip = {}
         for item in persona.equipment:
             equip[persona.equipment[item].id] = 1
+        PersonagemDAO.__save_persona_list(persona.id, equip, 'equipamento', 'quantidade')
+
+    def save_persona_combat_equipment(persona):
+        equip = {}
+        for item in persona.combat_equip:
+            if(item is not None):
+                equip[item.equipment_id] = 1
+
         PersonagemDAO.__save_persona_list(persona.id, equip, 'equipamento', 'quantidade')
 
     def save_persona_weapon(persona):
