@@ -67,55 +67,6 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         self.ComboArmas()
         self.ComboPertencesGrupo()
 
-    def popularGridPersonagens(self):
-        rows = personagem.get_persona_list()
-        self.tblPersonagens.setColumnHidden(0,True)
-        #self.tblPersonagens.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
-        self.tblPersonagens.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
-        self.tblPersonagens.verticalHeader().hide()
-
-        header = self.tblPersonagens.horizontalHeader()       
-        header.setSectionResizeMode(0, QtWidgets.QHeaderView.ResizeToContents)
-        header.setSectionResizeMode(1, QtWidgets.QHeaderView.ResizeToContents)
-        header.setSectionResizeMode(2, QtWidgets.QHeaderView.ResizeToContents)
-        header.setSectionResizeMode(3, QtWidgets.QHeaderView.ResizeToContents)
-        
-        while (self.tblPersonagens.rowCount() > 0):
-                self.tblPersonagens.removeRow(0)
-        
-        row = 0
-        for item in rows:
-            self.tblPersonagens.insertRow(row)
-            id = QTableWidgetItem(str(item[0]))
-            
-            if item[3]== 1:
-                icon = QtGui.QIcon(QtGui.QPixmap(":/grid/warrior.png"))
-            elif item[3]== 2:
-                icon = QtGui.QIcon(QtGui.QPixmap(":/grid/thief.png"))
-            elif item[3]== 3:
-                icon = QtGui.QIcon(QtGui.QPixmap(":/grid/priest.png"))
-            elif item[3]== 4:
-                icon = QtGui.QIcon(QtGui.QPixmap(":/grid/mage.png"))
-            elif item[3]== 5:
-                icon = QtGui.QIcon(QtGui.QPixmap(":/grid/ranger.png"))
-            elif item[3]== 6:
-                icon = QtGui.QIcon(QtGui.QPixmap(":/grid/bard.png"))
-            else:
-                icon = None
-            
-            prof = QTableWidgetItem(icon,None)
-            
-            nome = QTableWidgetItem(str(item[1]))
-            nivel = QTableWidgetItem(str(item[4]))
-
-            self.tblPersonagens.setItem(row, 0, id)
-            self.tblPersonagens.setItem(row, 1, prof)
-            self.tblPersonagens.setItem(row, 2, nome)
-            self.tblPersonagens.setItem(row, 3, nivel)
-            row = row + 1
-        
-        self.setTableWidthPersonagems
-
     def setTableWidthPersonagems(self):
         width = self.tblCombate.verticalHeader().width()
         width += self.tblCombate.horizontalHeader().length()
@@ -183,21 +134,73 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
 
     def on_Clicked_btnAdicionarArma(self):
         weapon_id = self.cbxArma.itemData(self.cbxArma.currentIndex())
-        index = self.tblArma.rowCount()
-        equip = equipamento.get_equipment_item(weapon_id)
-        self.person.combat_weapon[index] = equip
-        self.popularArmas(self.person)
+        if(weapon_id > 0):
+            index = self.tblArma.rowCount()
+            equip = equipamento.get_equipment_item(weapon_id)
+            self.person.combat_weapon[index] = equip
+            self.popularArmas(self.person)
 
     def on_Clicked_btnAdicionarPertences(self):
-        weapon_group_id = self.cbxPertencesGrupo.itemData(self.cbxPertencesGrupo.currentIndex())
         weapon_id = self.cbxPertencesItem.itemData(self.cbxPertencesItem.currentIndex())
-        self.person.equipment[weapon_id] = 1
-        #group_id = self.cbxPertencesGrupo.itemData(index)
-        #self.ComboPertencesItens(group_id)
-        pass
+        if(weapon_id > 0):
+            index = self.tblPertences.rowCount()
+            equip = equipamento.get_equipment_item(weapon_id)
+            self.person.equipment[index] = equip
+            self.popularPertences(self.person)
 
     def on_tableWidget_itemClicked(self):
         pass
+
+
+    ### Personagens #####
+    def popularGridPersonagens(self):
+        rows = personagem.get_persona_list()
+        self.tblPersonagens.setColumnHidden(0,True)
+        #self.tblPersonagens.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+        self.tblPersonagens.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
+        self.tblPersonagens.verticalHeader().hide()
+
+        header = self.tblPersonagens.horizontalHeader()       
+        header.setSectionResizeMode(0, QtWidgets.QHeaderView.ResizeToContents)
+        header.setSectionResizeMode(1, QtWidgets.QHeaderView.ResizeToContents)
+        header.setSectionResizeMode(2, QtWidgets.QHeaderView.ResizeToContents)
+        header.setSectionResizeMode(3, QtWidgets.QHeaderView.ResizeToContents)
+        
+        while (self.tblPersonagens.rowCount() > 0):
+                self.tblPersonagens.removeRow(0)
+        
+        row = 0
+        for item in rows:
+            self.tblPersonagens.insertRow(row)
+            id = QTableWidgetItem(str(item[0]))
+            
+            if item[3]== 1:
+                icon = QtGui.QIcon(QtGui.QPixmap(":/grid/warrior.png"))
+            elif item[3]== 2:
+                icon = QtGui.QIcon(QtGui.QPixmap(":/grid/thief.png"))
+            elif item[3]== 3:
+                icon = QtGui.QIcon(QtGui.QPixmap(":/grid/priest.png"))
+            elif item[3]== 4:
+                icon = QtGui.QIcon(QtGui.QPixmap(":/grid/mage.png"))
+            elif item[3]== 5:
+                icon = QtGui.QIcon(QtGui.QPixmap(":/grid/ranger.png"))
+            elif item[3]== 6:
+                icon = QtGui.QIcon(QtGui.QPixmap(":/grid/bard.png"))
+            else:
+                icon = None
+            
+            prof = QTableWidgetItem(icon,None)
+            
+            nome = QTableWidgetItem(str(item[1]))
+            nivel = QTableWidgetItem(str(item[4]))
+
+            self.tblPersonagens.setItem(row, 0, id)
+            self.tblPersonagens.setItem(row, 1, prof)
+            self.tblPersonagens.setItem(row, 2, nome)
+            self.tblPersonagens.setItem(row, 3, nivel)
+            row = row + 1
+        
+        self.setTableWidthPersonagems
 
 
     ### CRUD #####
@@ -364,6 +367,48 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         self.person = persona
 
     def gravarPersonagem(self):
+        self.person.name = self.txtNome.text()
+        self.person.player = self.txtJogador.text()
+        self.person.age = self.lblIdade.text()
+        self.person.height = self.lblAltura.tetx()
+        self.person.weight = self.lblPeso.text()
+        self.person.hair = self.txtCabelo.text()
+        self.person.skin = self.txtPele.text()
+        self.person.eyes = self.txtOlhos.text()
+        self.person.appearance = self.txtAparencia.text()
+        self.person.description = self.txtObjetivos.text()
+        self.person.history = self.txtDescricaoPersonagem.text()
+        self.person.copper_coins = self.txtMC.text() 
+        self.person.silver_coins = self.txtMP.text()
+        self.person.gold_coins = self.txtMO.text()
+         
+        #self.person.social_class 
+        #self.person.specialization 
+        #self.person.god 
+        #self.person.homeland
+        #self.person.profession 
+        #self.person.race 
+
+        #self.person.goals
+        #self.person.image 
+        #self.person.avatar_file 
+
+        #self.person.attributes 
+        #self.person.absorption
+        #self.person.active_defense
+        #self.person.passive_defense
+        #self.person.ef 
+        #self.person.eh 
+        #self.person.max_eh 
+        #self.person.karma 
+        #self.person.xp 
+        #self.person.level
+
+        #self.person.magic_points 
+        #self.person.skill_points 
+        #self.person.weapon_points
+        #self.person.combat_points 
+
         self.gravarCombate()
         self.gravarHabilidade()
         self.gravarMagia()
