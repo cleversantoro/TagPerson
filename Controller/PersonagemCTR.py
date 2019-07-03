@@ -38,6 +38,9 @@ class PersonagemCTR:
     def save_persona_equipment(persona):
         return dao.save_persona_equipment(persona)
 
+    def save_persona_weapon(persona):
+        return dao.save_persona_weapon(persona)
+
     def get_combat_persona(persona_id,combat_group_id):
         return dao.get_combat_persona(persona_id,combat_group_id)
 

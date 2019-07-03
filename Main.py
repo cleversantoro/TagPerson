@@ -32,7 +32,6 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         
         self.niveisHabilidade = []
         self.niveisCombat = []
-        self.niveisMagia = []
         self.personArmas = []
         self.personPertences = []
 
@@ -51,9 +50,11 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         self.actionNovo.triggered.connect(self.ShowFrmNovoPersonagem)
         self.actionSalvar_toolbar.triggered.connect(self.gravarPersonagem)
         self.tblMagiaBasica.cellClicked.connect(self.on_Clicked_CellMagia)
-        self.tblMagiaEspecializacao.cellClicked.connect(self.on_Clicked_CellMagia)
+        self.tblMagiaEspecializacao.cellClicked.connect(self.on_Clicked_CellMagiaEsp)
         self.cbxPertencesGrupo.currentIndexChanged.connect(self.on_Change_ComboPertencesGrupo)
         self.tblArma.doubleClicked.connect(self.on_Clicked_CellArma)
+        self.btnAdicionarArma.clicked.connect(self.on_Clicked_btnAdicionarArma)
+        self.btnAdicionarPertences.clicked.connect(self.on_Clicked_btnAdicionarPertences)
 
     def PopularTela(self):
         self.popularGridPersonagens()
@@ -165,9 +166,35 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
             self.txtEfeitos.setText(str(mg.level))
             self.txtDescricao.setText(str(mg.description))
 
+    def on_Clicked_CellMagiaEsp(self, row, column):
+        if(column == 4):
+            idmagia = self.niveisMagiaEsp[row]['idmagia']
+            mg = magia.get_spell(idmagia)
+            self.txtNomeMagia.setText(str(mg.name))
+            self.txtEvocacao.setText(str(mg.evocation))
+            self.txtAlcance.setText(str(mg.range))
+            self.txtDuracao.setText(str(mg.duration))
+            self.txtEfeitos.setText(str(mg.level))
+            self.txtDescricao.setText(str(mg.description))
+
     def on_Change_ComboPertencesGrupo(self,index):
         group_id = self.cbxPertencesGrupo.itemData(index)
         self.ComboPertencesItens(group_id)
+
+    def on_Clicked_btnAdicionarArma(self):
+        weapon_id = self.cbxArma.itemData(self.cbxArma.currentIndex())
+        index = self.tblArma.rowCount()
+        equip = equipamento.get_equipment_item(weapon_id)
+        self.person.combat_weapon[index] = equip
+        self.popularArmas(self.person)
+
+    def on_Clicked_btnAdicionarPertences(self):
+        weapon_group_id = self.cbxPertencesGrupo.itemData(self.cbxPertencesGrupo.currentIndex())
+        weapon_id = self.cbxPertencesItem.itemData(self.cbxPertencesItem.currentIndex())
+        self.person.equipment[weapon_id] = 1
+        #group_id = self.cbxPertencesGrupo.itemData(index)
+        #self.ComboPertencesItens(group_id)
+        pass
 
     def on_tableWidget_itemClicked(self):
         pass
@@ -184,13 +211,15 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         while (self.tblMagiaBasica.rowCount() > 0):
                 self.tblMagiaBasica.removeRow(0)
 
+        while (self.tblMagiaEspecializacao.rowCount() > 0):
+                self.tblMagiaEspecializacao.removeRow(0)
+
         self.txtNomeMagia.setText(None)
         self.txtEvocacao.setText(None)
         self.txtAlcance.setText(None)
         self.txtDuracao.setText(None)
         self.txtEfeitos.setText(None)
         self.txtDescricao.setText(None)
-
 
         linha = self.tblPersonagens.currentItem().row()
         id_persona = self.tblPersonagens.item(linha, 0).text()
@@ -212,9 +241,7 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
 
         if(persona.specialization != None):
             self.popularCombateTecnicasEspecializacao(persona)
-            self.popularMagiaEspecializacao(persona)
-
-            
+            self.popularMagiaEspecializacao(persona)         
 
         self.popularHabilidadeProfissional(persona)
         self.popularHabilidadeSubterfugio(persona)
@@ -222,7 +249,7 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         self.popularHabilidadeInfluencia(persona)
         self.popularHabilidadeConhecimento(persona)
         self.popularHabilidadeGeral(persona)
-        self.popularCombateArmas(persona)
+        self.popularArmas(persona)
         self.popularPertences(persona)
         
         index = self.cbxClasseSocial.findText(persona.social_class, QtCore.Qt.MatchFixedString)
@@ -273,7 +300,6 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         else:
             self.cbxArmadura.setCurrentIndex(0)
 
-
         resistencia_fisica = persona.get_physical_resistance()
         resistencia_magia = persona.get_magical_resistance()
         velocidade = persona.get_speed()
@@ -283,13 +309,13 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         energia_heroica = utils.calc_eh(persona)
         absorcao = persona.calc_absorption()
 
-        self.lblDefesa.setText('{}/{}'.format(defesa[0],defesa[1]))#persona.active_defense,persona.passive_defense))
-        self.lblResistenciaFisica.setText(str(resistencia_magia))#persona.get_physical_resistance()))
+        self.lblDefesa.setText('{}/{}'.format(defesa[0],defesa[1]))
+        self.lblResistenciaFisica.setText(str(resistencia_magia))
         self.lblEnergiaFisica.setText(str('{}/{}'.format(energia_fisica,absorcao)))
         self.lblEnergiaHeroica.setText(str(energia_heroica)) 
-        self.lblResistenciaMagia.setText(str(resistencia_magia))#persona.get_magical_resistance()))
-        self.lblVelocidade.setText(str(velocidade))#persona.get_speed()))
-        self.lblKarma.setText(str(karma))#persona.get_karma()))
+        self.lblResistenciaMagia.setText(str(resistencia_magia))
+        self.lblVelocidade.setText(str(velocidade))
+        self.lblKarma.setText(str(karma))
         
         self.vsdIntelecto.setValue(persona.attributes[0])
         self.vsdAura.setValue(persona.attributes[1])
@@ -357,7 +383,7 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
 
 
     ### Armas/Pertences #####
-    def popularCombateArmas(self,persona):
+    def popularArmas(self,persona):
         person = persona
 
         self.tblArma.setColumnHidden(0,True)
@@ -578,6 +604,7 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
 
     ### Magia #####
     def popularMagiaBasica(self,persona):
+        self.niveisMagia = []
         person = persona
         rows = personagem.get_spell_persona(person.id, person.profession.spell_group)        
 
@@ -622,6 +649,7 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
             row = row + 1
 
     def popularMagiaEspecializacao(self,persona):
+        self.niveisMagiaEsp = []
         person = persona
         rows = personagem.get_spell_persona(person.id, person.specialization.spell_group)        
 
@@ -649,7 +677,7 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
             self.nivelmagiaesp.setObjectName('nivelmagiaesp_{}'.format(row))
             self.nivelmagiaesp.valueChanged.connect(self.on_Change_NivelCombat)
 
-            self.niveisMagia.append({'spin':self.nivelmagiaesp,'name':'nivelmagiaesp_{}'.format(row),'idmagia':item[0]}) 
+            self.niveisMagiaEsp.append({'spin':self.nivelmagiaesp,'name':'nivelmagiaesp_{}'.format(row),'idmagia':item[0]}) 
 
             custo = QTableWidgetItem(str(item[3]))
             total = QTableWidgetItem(str(item[4]))
@@ -952,10 +980,10 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         #divindade = DivindadeCTR
         itens = divindade.get_gods_list()
         self.cbxDivindade.clear()
-        self.cbxDivindade.insertItem(-1,'Selecione uma Divindade')
+        self.cbxDivindade.addItem('Selecione uma Divindade',0)
         for item in itens:
             #'{}-({})'.format(item[1],item[2]))
-            self.cbxDivindade.insertItem(item[0],str(item[1]))
+            self.cbxDivindade.addItem(item[1],str(item[0]))
 
     def ComboClasseSocial(self):
         const.SOCIAL_CLASS.sort()
@@ -967,37 +995,37 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
     def ComboEspecializacao(self):
         itens = especialidade.get_specializations_list()
         self.cbxEspecializao.clear()
-        self.cbxEspecializao.insertItem(-1,'Selecione uma Especialização')
+        self.cbxEspecializao.addItem('Selecione uma Especialização',0)
         for item in itens:
-            self.cbxEspecializao.insertItem(item[0],item[1])
+            self.cbxEspecializao.addItem(item[1],item[0])
 
     def ComboArmadura(self):
         itens = equipamento.get_equipment_from_group_armour(7)
         self.cbxArmadura.clear()
-        self.cbxArmadura.insertItem(-1,'Selecione a Armadura')
+        self.cbxArmadura.addItem('Selecione a Armadura',0)
         for item in itens:
-            self.cbxArmadura.insertItem(item[0],item[1])
+            self.cbxArmadura.addItem(item[1],item[0])
 
     def ComboEscudo(self):
         itens = equipamento.get_equipment_from_group_shield(7)
         self.cbxEscudos.clear()
-        self.cbxEscudos.insertItem(-1,'Selecione o Escudo')
+        self.cbxEscudos.addItem('Selecione o Escudo',0)
         for item in itens:
-            self.cbxEscudos.insertItem(item[0],item[1])
+            self.cbxEscudos.addItem(item[1],item[0])
 
     def ComboCapacete(self):
         itens = equipamento.get_equipment_from_group_helmet(7)
         self.cbxElmos.clear()
-        self.cbxElmos.insertItem(-1,'Selecione o Elmo')
+        self.cbxElmos.addItem('Selecione o Elmo',0)
         for item in itens:
-            self.cbxElmos.insertItem(item[0],item[1])
+            self.cbxElmos.addItem(item[1],item[0])
 
     def ComboArmas(self):
         itens = equipamento.get_equipment_from_group(6)
         self.cbxArma.clear()
-        self.cbxArma.insertItem(-1,'Selecione uma Arma')
+        self.cbxArma.addItem('Selecione uma Arma',0)
         for item in itens:
-            self.cbxArma.insertItem(item[0],item[1])
+            self.cbxArma.addItem(item[1],item[0])
 
 
     ### Modals #####

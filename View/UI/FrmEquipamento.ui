@@ -60,7 +60,7 @@
        <x>8</x>
        <y>31</y>
        <width>121</width>
-       <height>16</height>
+       <height>20</height>
       </rect>
      </property>
      <property name="font">
@@ -80,7 +80,7 @@
        <x>8</x>
        <y>73</y>
        <width>121</width>
-       <height>16</height>
+       <height>20</height>
       </rect>
      </property>
      <property name="font">
@@ -100,7 +100,7 @@
        <x>8</x>
        <y>116</y>
        <width>121</width>
-       <height>16</height>
+       <height>20</height>
       </rect>
      </property>
      <property name="font">
@@ -120,7 +120,7 @@
        <x>8</x>
        <y>158</y>
        <width>121</width>
-       <height>16</height>
+       <height>20</height>
       </rect>
      </property>
      <property name="font">
@@ -139,8 +139,8 @@
       <rect>
        <x>7</x>
        <y>202</y>
-       <width>31</width>
-       <height>17</height>
+       <width>56</width>
+       <height>20</height>
       </rect>
      </property>
      <property name="font">
@@ -151,16 +151,16 @@
       </font>
      </property>
      <property name="text">
-      <string>L - </string>
+      <string>Leve - </string>
      </property>
     </widget>
     <widget class="QLabel" name="label_7">
      <property name="geometry">
       <rect>
-       <x>182</x>
+       <x>158</x>
        <y>202</y>
-       <width>28</width>
-       <height>17</height>
+       <width>70</width>
+       <height>20</height>
       </rect>
      </property>
      <property name="font">
@@ -171,16 +171,16 @@
       </font>
      </property>
      <property name="text">
-      <string>M - </string>
+      <string>Média - </string>
      </property>
     </widget>
     <widget class="QLabel" name="label_8">
      <property name="geometry">
       <rect>
-       <x>357</x>
+       <x>331</x>
        <y>202</y>
-       <width>28</width>
-       <height>17</height>
+       <width>78</width>
+       <height>20</height>
       </rect>
      </property>
      <property name="font">
@@ -191,16 +191,16 @@
       </font>
      </property>
      <property name="text">
-      <string>P - </string>
+      <string>Pesada - </string>
      </property>
     </widget>
     <widget class="QLabel" name="lblTipo">
      <property name="geometry">
       <rect>
        <x>136</x>
-       <y>28</y>
+       <y>29</y>
        <width>200</width>
-       <height>16</height>
+       <height>20</height>
       </rect>
      </property>
      <property name="font">
@@ -209,6 +209,9 @@
        <weight>50</weight>
        <bold>false</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
       <string>N/D</string>
@@ -218,9 +221,9 @@
      <property name="geometry">
       <rect>
        <x>136</x>
-       <y>70</y>
+       <y>71</y>
        <width>200</width>
-       <height>16</height>
+       <height>20</height>
       </rect>
      </property>
      <property name="font">
@@ -229,6 +232,9 @@
        <weight>50</weight>
        <bold>false</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
       <string>N/D</string>
@@ -237,10 +243,10 @@
     <widget class="QLabel" name="lblForcaMinima">
      <property name="geometry">
       <rect>
-       <x>136</x>
-       <y>113</y>
+       <x>135</x>
+       <y>115</y>
        <width>200</width>
-       <height>16</height>
+       <height>20</height>
       </rect>
      </property>
      <property name="font">
@@ -249,6 +255,9 @@
        <weight>50</weight>
        <bold>false</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
       <string>N/D</string>
@@ -257,10 +266,10 @@
     <widget class="QLabel" name="lblBonus">
      <property name="geometry">
       <rect>
-       <x>136</x>
-       <y>155</y>
+       <x>135</x>
+       <y>158</y>
        <width>200</width>
-       <height>16</height>
+       <height>20</height>
       </rect>
      </property>
      <property name="font">
@@ -269,6 +278,9 @@
        <weight>50</weight>
        <bold>false</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
       <string>N/D</string>
@@ -357,7 +369,7 @@
     <widget class="QLabel" name="label_17">
      <property name="geometry">
       <rect>
-       <x>200</x>
+       <x>197</x>
        <y>311</y>
        <width>30</width>
        <height>17</height>
@@ -397,7 +409,7 @@
     <widget class="QLabel" name="label_19">
      <property name="geometry">
       <rect>
-       <x>290</x>
+       <x>285</x>
        <y>311</y>
        <width>40</width>
        <height>17</height>
@@ -457,10 +469,10 @@
     <widget class="QLabel" name="lbl_leve">
      <property name="geometry">
       <rect>
-       <x>35</x>
-       <y>203</y>
+       <x>64</x>
+       <y>202</y>
        <width>90</width>
-       <height>16</height>
+       <height>22</height>
       </rect>
      </property>
      <property name="font">
@@ -469,6 +481,9 @@
        <weight>50</weight>
        <bold>false</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
       <string>N/D</string>
@@ -477,10 +492,10 @@
     <widget class="QLabel" name="lbl_media">
      <property name="geometry">
       <rect>
-       <x>215</x>
-       <y>203</y>
+       <x>226</x>
+       <y>202</y>
        <width>100</width>
-       <height>16</height>
+       <height>22</height>
       </rect>
      </property>
      <property name="font">
@@ -489,6 +504,9 @@
        <weight>50</weight>
        <bold>false</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
       <string>N/D</string>
@@ -497,10 +515,10 @@
     <widget class="QLabel" name="lbl_pesada">
      <property name="geometry">
       <rect>
-       <x>390</x>
-       <y>203</y>
-       <width>80</width>
-       <height>16</height>
+       <x>407</x>
+       <y>202</y>
+       <width>77</width>
+       <height>22</height>
       </rect>
      </property>
      <property name="font">
@@ -509,6 +527,9 @@
        <weight>50</weight>
        <bold>false</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
       <string>N/D</string>
@@ -519,7 +540,7 @@
       <rect>
        <x>63</x>
        <y>254</y>
-       <width>50</width>
+       <width>52</width>
        <height>16</height>
       </rect>
      </property>
@@ -529,6 +550,9 @@
        <weight>50</weight>
        <bold>false</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
       <string>N/D</string>
@@ -539,7 +563,7 @@
       <rect>
        <x>182</x>
        <y>254</y>
-       <width>50</width>
+       <width>52</width>
        <height>16</height>
       </rect>
      </property>
@@ -549,6 +573,9 @@
        <weight>50</weight>
        <bold>false</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
       <string>N/D</string>
@@ -559,7 +586,7 @@
       <rect>
        <x>306</x>
        <y>254</y>
-       <width>50</width>
+       <width>52</width>
        <height>16</height>
       </rect>
      </property>
@@ -569,6 +596,9 @@
        <weight>50</weight>
        <bold>false</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
       <string>N/D</string>
@@ -579,7 +609,7 @@
       <rect>
        <x>432</x>
        <y>254</y>
-       <width>40</width>
+       <width>52</width>
        <height>16</height>
       </rect>
      </property>
@@ -589,6 +619,9 @@
        <weight>50</weight>
        <bold>false</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
       <string>N/D</string>
@@ -598,8 +631,8 @@
      <property name="geometry">
       <rect>
        <x>47</x>
-       <y>312</y>
-       <width>40</width>
+       <y>310</y>
+       <width>48</width>
        <height>16</height>
       </rect>
      </property>
@@ -609,6 +642,9 @@
        <weight>50</weight>
        <bold>false</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
       <string>N/D</string>
@@ -618,8 +654,8 @@
      <property name="geometry">
       <rect>
        <x>141</x>
-       <y>312</y>
-       <width>40</width>
+       <y>310</y>
+       <width>48</width>
        <height>16</height>
       </rect>
      </property>
@@ -629,6 +665,9 @@
        <weight>50</weight>
        <bold>false</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
       <string>N/D</string>
@@ -637,9 +676,9 @@
     <widget class="QLabel" name="lbl_el">
      <property name="geometry">
       <rect>
-       <x>232</x>
-       <y>312</y>
-       <width>40</width>
+       <x>229</x>
+       <y>310</y>
+       <width>48</width>
        <height>16</height>
       </rect>
      </property>
@@ -649,6 +688,9 @@
        <weight>50</weight>
        <bold>false</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
       <string>N/D</string>
@@ -657,9 +699,9 @@
     <widget class="QLabel" name="lbl_me">
      <property name="geometry">
       <rect>
-       <x>330</x>
-       <y>312</y>
-       <width>40</width>
+       <x>325</x>
+       <y>310</y>
+       <width>48</width>
        <height>16</height>
       </rect>
      </property>
@@ -669,6 +711,9 @@
        <weight>50</weight>
        <bold>false</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
       <string>N/D</string>
@@ -679,7 +724,7 @@
       <rect>
        <x>421</x>
        <y>310</y>
-       <width>50</width>
+       <width>48</width>
        <height>20</height>
       </rect>
      </property>
@@ -689,6 +734,9 @@
        <weight>50</weight>
        <bold>false</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
       <string>N/D</string>
@@ -700,8 +748,8 @@
      <rect>
       <x>6</x>
       <y>345</y>
-      <width>268</width>
-      <height>16</height>
+      <width>269</width>
+      <height>23</height>
      </rect>
     </property>
     <property name="font">
@@ -710,6 +758,9 @@
       <weight>75</weight>
       <bold>true</bold>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>N/D</string>

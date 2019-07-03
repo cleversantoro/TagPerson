@@ -251,6 +251,7 @@ class PersonagemDAO:
         PersonagemDAO.save_persona_spells(persona)
         PersonagemDAO.save_persona_skills(persona)
         PersonagemDAO.save_persona_equipment(persona)
+        PersonagemDAO.save_persona_weapon(persona)
         PersonagemDAO.save_persona_combat_skills(persona)
 
     def __insert_persona(fields):
@@ -299,7 +300,17 @@ class PersonagemDAO:
         PersonagemDAO.__save_persona_list(persona.id, persona.skills, 'habilidade')
 
     def save_persona_equipment(persona):
-        PersonagemDAO.__save_persona_list(persona.id, persona.equipment, 'equipamento', 'quantidade')
+        equip = {}
+        for item in persona.equipment:
+            equip[persona.equipment[item].id] = 1
+        PersonagemDAO.__save_persona_list(persona.id, equip, 'equipamento', 'quantidade')
+
+    def save_persona_weapon(persona):
+        weapon = {}
+        for item in persona.combat_weapon:
+            weapon[persona.combat_weapon[item].equipment_id] = 1
+
+        PersonagemDAO.__save_persona_list(persona.id, weapon, 'equipamento', 'quantidade')
 
     def __save_persona_list(persona_id, itemlist, listname,valuecol='nivel'):
 
