@@ -44,7 +44,7 @@ class test:
         teste8 = ctrHabil.get_skills_list()
         print('')
 
-    def combat():
+    def combate():
         teste1 = ctrCombat.get_combat(1)
         teste3 = ctrCombat.get_combat_group_name(1)
         teste4 = ctrCombat.get_combat_group_parents()
@@ -75,13 +75,17 @@ class test:
     def personagem():
         teste1 = ctrPerso.get_persona(8)
         
-        for item in teste1.combat_equip:
-            if(item.itemtype == 'shield'):
-                escudo = item.name
-            elif(item.itemtype == 'helmet'):
-                elmo = item.name
-            elif(item.itemtype == 'armour'):
-                armadura = item.name
+        #for item in teste1.combat_equip:
+        #    if(item.itemtype == 'shield'):
+        #        escudo = item.name
+        #    elif(item.itemtype == 'helmet'):
+        #        elmo = item.name
+        #    elif(item.itemtype == 'armour'):
+        #        armadura = item.name
+
+        idade_media  = teste1.race.calc_medium_age()
+        altura = teste1.race.calc_minmax_height()
+        peso = teste1.race.calc_minmax_weight()
 
         #teste2 = ctrPerso.get_persona_equipment(8)
         #teste3 = ctrPerso.get_persona_list()
@@ -115,14 +119,14 @@ class test:
 
 if __name__ == '__main__':
     #test.divindade()
-    test.equipamento()
+    #test.equipamento()
     #test.especialidade()
     #test.habilidade()
     #test.localidade()
     #test.magia()
-    #test.personagem()
+    test.personagem()
     #test.profissao()
     #test.raca()
     #test.tempo()
-    #test.combat()
+    #test.combate()
     print('fim')

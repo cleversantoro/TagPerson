@@ -62,6 +62,14 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         self.btnAdicionarArma.clicked.connect(self.on_Clicked_btnAdicionarArma)
         self.btnAdicionarPertences.clicked.connect(self.on_Clicked_btnAdicionarPertences)
 
+        #self.lblRandonIdade
+        #self.lblRandonPeso
+        #self.lblRandonAltura
+
+        self.hsdIdade.valueChanged.connect(self.on_Change_Idade)
+        self.hsdAltura.valueChanged.connect(self.on_Change_Altura)
+        self.hsdPeso.valueChanged.connect(self.on_Change_Peso)
+
     def PopularTela(self):
         self.popularGridPersonagens()
         self.ComboDivindade()
@@ -172,6 +180,19 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
             equip = equipamento.get_equipment_item(equipament_id)
             self.person.combat_equip[2] = equip
 
+    def on_Change_Altura(self):
+        #self.lblAltura.setText 
+        pass    
+
+    def on_Change_Idade(self):
+        #self.lblIdade
+        pass    
+
+    def on_Change_Peso(self):
+        #self.lblPeso
+        pass    
+
+
 
     ### Personagens #####
     def popularGridPersonagens(self):
@@ -248,6 +269,7 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         linha = self.tblPersonagens.currentItem().row()
         id_persona = self.tblPersonagens.item(linha, 0).text()
         persona = personagem.get_persona(id_persona)
+        self.person = persona
         
         self.txtNome.setText(persona.name)
         self.txtJogador.setText(persona.player)
@@ -306,21 +328,21 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         escudo = persona.get_shield()
         elmo = persona.get_helmet()
             
-        if(escudo != None):
+        if(escudo is not None):
             indexEsc = self.cbxEscudos.findText(escudo.name,QtCore.Qt.MatchFixedString)
             self.cbxEscudos.setCurrentIndex(indexEsc)
         else:
             self.cbxEscudos.setCurrentIndex(0)
         
-        if(elmo != None):
+        if(elmo is not None):
             indexElm = self.cbxElmos.findText(elmo.name,QtCore.Qt.MatchFixedString)
-            self.cbxElmos .setCurrentIndex(indexElm)
+            self.cbxElmos.setCurrentIndex(indexElm)
         else:
             self.cbxElmos.setCurrentIndex(0)
         
-        if(armadura != None):
+        if(armadura is not None):
             indexArm = self.cbxArmadura.findText(armadura.name,QtCore.Qt.MatchFixedString)
-            self.cbxArmadura .setCurrentIndex(indexArm)
+            self.cbxArmadura.setCurrentIndex(indexArm)
         else:
             self.cbxArmadura.setCurrentIndex(0)
 
@@ -370,6 +392,28 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         self.lblAgilidade_inicial.setText(str(persona.race.attribute_bonus[5]))
         self.lblPercepcao_inicial.setText(str(persona.race.attribute_bonus[6]))
 
+        idade_media  = persona.race.age #calc_medium_age()
+        altura = persona.race.calc_minmax_height()
+        peso = persona.race.calc_minmax_weight()
+        
+        self.hsdIdade.setMinimum(idade_media[0])
+        self.hsdIdade.setMaximum(55)
+        self.hsdIdade.setValue(persona.age)
+        self.hsdIdade.setTickPosition(QSlider.TicksBelow)
+        self.hsdIdade.setTickInterval(1)
+        
+        self.hsdPeso.setMinimum(peso[0])
+        self.hsdPeso.setMaximum(peso[1])
+        self.hsdPeso.setValue(persona.weight)
+        self.hsdPeso.setTickPosition(QSlider.TicksBelow)
+        self.hsdPeso.setTickInterval(1)
+
+        self.hsdAltura.setMinimum(altura[0])
+        self.hsdAltura.setMaximum(altura[1])
+        self.hsdAltura.setValue(persona.height)
+        self.hsdAltura.setTickPosition(QSlider.TicksBelow)
+        self.hsdAltura.setTickInterval(1)
+
         self.lblPontosAquisicao.setText(str(persona.skill_points))
         persona.spells
         persona.equipment
@@ -384,7 +428,7 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         self.txtEquipamentosIniciais.clear()
         for item in persona.profession.posessions:
             self.txtEquipamentosIniciais.insertPlainText('%s\n' % item)
-
+        
         self.person = persona
 
     def gravarPersonagem(self):
@@ -443,6 +487,15 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         #self.person.karma 
         #self.person.xp 
         #self.person.level
+
+        #self.lblDefesa.setText('{}/{}'.format(defesa[0],defesa[1]))
+        #self.lblResistenciaFisica.setText(str(resistencia_magia))
+        #self.lblEnergiaFisica.setText(str('{}/{}'.format(energia_fisica,absorcao)))
+        #self.lblEnergiaHeroica.setText(str(energia_heroica)) 
+        #self.lblResistenciaMagia.setText(str(resistencia_magia))
+        #self.lblVelocidade.setText(str(velocidade))
+        #self.lblKarma.setText(str(karma))
+
 
         #self.person.magic_points 
         #self.person.skill_points 
