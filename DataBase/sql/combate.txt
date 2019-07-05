@@ -1,21 +1,6 @@
-6	Ataque Oportuno	82
-10	Carga	85
-12	Carga Montada	101
-11	Carga de Arremesso	100
-16	Combate Montado	86
-14	Combate com Arco	96
-15	Combate com Escudo	102
-17	Combate não Letal	90
-23	Desequilibrar	104
-25	Direcionamento	97
-29	Esquiva	87
-34	Força Interior	91
-35	Fúria	105
-37	Golpe Giratório	92
-38	Golpe Letal	93
-42	Intimidar	106
-44	Luta às Cegas	88
-45	Mira	99
-54	Resistência à Dor	89
-54	Resistência à Dor	94
-60	Voz de Comando	95
+Guerreiro {286,1}|{277,1}|{134,1}|{94,1}|{272,1}|{225,1}|{233,1}|{192,1}
+Ladino	{286,1}|{277,1}|{134,1}|{233,1}|{138,1}|{145,1}|{276,1}|{100,1}|{220,1}
+Sacerdote {286,1}|{277,1}|{134,1}|{154,1}|{320,1}|{276,1}|{272,1}|{142,1}|{190,1}
+Mago {286,1}|{277,1}|{134,1}|{276,1}|{272,1}|{142,1}|{143,1}|{144,1}|{189,1}
+Rastreador {286,1}|{277,1}|{134,1}|{94,1}|{272,1}|{225,1}|{233,1}|{223,1}
+Bardo	{286,1}|{277,1}|{272,1}|{134,1}|{94,1}|{126,1}|{268,1}|{271,1}|{299,1}|{191,1}

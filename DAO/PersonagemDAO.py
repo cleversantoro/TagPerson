@@ -1,11 +1,13 @@
 from DataBase.ConexaoSQL import ConexaoSQL
 from DAO.GenericDAO import GenericDAO as dao
 from Model.Personagem import Persona
+
 from DAO.RacaDAO import RacaDAO as racedao
 from DAO.ProfissaoDAO import ProfissaoDAO as profidao
 from DAO.EspecialidadeDAO import EspecialidadeDAO as especdao
 from DAO.LocalidadeDAO import LocalidadeDAO as locdao
 from DAO.EquipamentoDAO import EquipamentoDAO as equipdao
+
 from Helpers.constantes import const as data
 from Helpers.helpers import utils
 import os

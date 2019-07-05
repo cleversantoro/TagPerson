@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>be0ecd80-27a5-4c41-aefe-4e07a499fb5c</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Main.py</StartupFile>
+    <StartupFile>View\FrmNovoPersonagem.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -43,7 +43,6 @@
     <Folder Include="tests\" />
     <Folder Include="View\" />
     <Folder Include="View\UI\" />
-    <Folder Include="View\UI\__pycache__\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DataBase\sql\bonus.txt" />
@@ -192,10 +191,6 @@
     <Content Include="View\UI\FrmPrincipal-old.ui" />
     <Content Include="View\UI\FrmPrincipal.ui" />
     <Content Include="View\UI\FrmSobre.ui" />
-    <Content Include="View\UI\__pycache__\FrmNovoPersonagem_UI.cpython-37.pyc" />
-    <Content Include="View\UI\__pycache__\FrmSobre2_UI.cpython-37.pyc" />
-    <Content Include="View\UI\__pycache__\FrmSobre_UI.cpython-37.pyc" />
-    <Content Include="View\UI\__pycache__\__init__.cpython-37.pyc" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\CombateCTR.py" />

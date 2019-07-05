@@ -193,7 +193,6 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         pass    
 
 
-
     ### Personagens #####
     def popularGridPersonagens(self):
         rows = personagem.get_persona_list()
