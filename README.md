@@ -2,6 +2,10 @@
 Gerador de Personagens Tagmar
 
 ![](https://github.com/cleversantoro/TagPerson/blob/develop/Imagens/screenshoot/screen%20(1).JPG)
+![](https://github.com/cleversantoro/TagPerson/blob/develop/Imagens/screenshoot/screen%20(2).JPG)
+![](https://github.com/cleversantoro/TagPerson/blob/develop/Imagens/screenshoot/screen%20(3).JPG)
+![](https://github.com/cleversantoro/TagPerson/blob/develop/Imagens/screenshoot/screen%20(4).JPG)
+![](https://github.com/cleversantoro/TagPerson/blob/develop/Imagens/screenshoot/screen%20(5).JPG)
 
 
 Gerador criado na Linguagem Python Usando PyQT e SQLite
