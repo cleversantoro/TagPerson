@@ -1,6 +1,12 @@
 # TagPerson
 Gerador de Personagens Tagmar
 
+![](https://pandao.github.io/editor.md/examples/images/4.jpg)
+![](https://pandao.github.io/editor.md/examples/images/4.jpg)
+![](https://pandao.github.io/editor.md/examples/images/4.jpg)
+![](https://pandao.github.io/editor.md/examples/images/4.jpg)
+![](https://pandao.github.io/editor.md/examples/images/4.jpg)
+
 Gerador criado na Linguagem Python Usando PyQT e SQLite
 
 ### Instalar PyQT5
