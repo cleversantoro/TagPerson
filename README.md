@@ -2,10 +2,6 @@
 Gerador de Personagens Tagmar
 
 ![](https://github.com/cleversantoro/TagPerson/blob/master/Imagens/Personagem/raca/elfodourado.png)
-![](https://pandao.github.io/editor.md/examples/images/4.jpg)
-![](https://pandao.github.io/editor.md/examples/images/4.jpg)
-![](https://pandao.github.io/editor.md/examples/images/4.jpg)
-![](https://pandao.github.io/editor.md/examples/images/4.jpg)
 
 Gerador criado na Linguagem Python Usando PyQT e SQLite
 
