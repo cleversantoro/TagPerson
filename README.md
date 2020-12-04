@@ -1,7 +1,23 @@
 # TagPerson
 Gerador de Personagens Tagmar
 
+![](https://github.com/cleversantoro/TagPerson/blob/master/Imagens/Personagem/raca/elfodourado.png)
+
 Gerador criado na Linguagem Python Usando PyQT e SQLite
+
+### Instalar PyQT5
+```
+pip3 install PyQt5
+```
+
+
+#### Link para QT Designer
+[Qt Designer](https://build-system.fman.io/qt-designer-download)
+
+
+
+#### Link SqLite
+[SqLite](https://www.sqlite.org/index.html)
 
 Como referência usei parte de código de Marcelo Lira dos Santos do taggen
 e a idéia inicial de suas telas.
