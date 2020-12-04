@@ -9,7 +9,7 @@ pip3 install PyQt5
 ```
 
 
-#### Link paara QT Designer
+#### Link para QT Designer
 [Qt Designer](https://build-system.fman.io/qt-designer-download)
 
 
