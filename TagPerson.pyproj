@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>be0ecd80-27a5-4c41-aefe-4e07a499fb5c</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>View\FrmNovoPersonagem.py</StartupFile>
+    <StartupFile>View\FrmPrincipal_UI.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -14,6 +14,7 @@
     <IsWindowsApplication>True</IsWindowsApplication>
     <InterpreterId>Global|PythonCore|3.7</InterpreterId>
     <SuppressPackageInstallationPrompt>True</SuppressPackageInstallationPrompt>
+    <TestFramework>Pytest</TestFramework>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>

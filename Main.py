@@ -1193,4 +1193,4 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication([])
     tela = TelaPrincipal()
     tela.show()
-    app.exec()
+    app.exec_()
