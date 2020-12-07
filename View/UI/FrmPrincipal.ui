@@ -3400,11 +3400,20 @@
        </column>
       </widget>
      </widget>
+    </widget>
+    <widget class="QWidget" name="tab_4">
+     <attribute name="icon">
+      <iconset resource="../../Imagens/ico/icones.qrc">
+       <normaloff>:/abas/shield.png</normaloff>:/abas/shield.png</iconset>
+     </attribute>
+     <attribute name="title">
+      <string>Equipamentos</string>
+     </attribute>
      <widget class="QGroupBox" name="groupBox_29">
       <property name="geometry">
        <rect>
-        <x>3</x>
-        <y>1</y>
+        <x>0</x>
+        <y>0</y>
         <width>427</width>
         <height>111</height>
        </rect>
@@ -3628,10 +3637,10 @@
      <widget class="QGroupBox" name="groupBox_31">
       <property name="geometry">
        <rect>
-        <x>433</x>
-        <y>0</y>
+        <x>0</x>
+        <y>160</y>
         <width>431</width>
-        <height>221</height>
+        <height>220</height>
        </rect>
       </property>
       <property name="font">
@@ -3728,6 +3737,247 @@
        </property>
        <property name="text">
         <string>+</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_18">
+      <property name="geometry">
+       <rect>
+        <x>910</x>
+        <y>563</y>
+        <width>371</width>
+        <height>131</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Equipamentos Iniciais</string>
+      </property>
+      <widget class="QTextEdit" name="txtEquipamentosIniciais">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>21</y>
+         <width>351</width>
+         <height>101</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_17">
+      <property name="geometry">
+       <rect>
+        <x>661</x>
+        <y>-1</y>
+        <width>621</width>
+        <height>551</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="title">
+       <string>Pertences e Afins</string>
+      </property>
+      <widget class="QTableWidget" name="tblPertences">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>90</y>
+         <width>610</width>
+         <height>451</height>
+        </rect>
+       </property>
+       <property name="selectionMode">
+        <enum>QAbstractItemView::SingleSelection</enum>
+       </property>
+       <property name="sortingEnabled">
+        <bool>true</bool>
+       </property>
+       <attribute name="horizontalHeaderDefaultSectionSize">
+        <number>201</number>
+       </attribute>
+       <column>
+        <property name="text">
+         <string>Nome</string>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>8</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="textAlignment">
+         <set>AlignLeading|AlignVCenter</set>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Descrição</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Valor</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QPushButton" name="btnAdicionarPertences">
+       <property name="geometry">
+        <rect>
+         <x>561</x>
+         <y>20</y>
+         <width>52</width>
+         <height>58</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>+</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="cbxPertencesGrupo">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>20</y>
+         <width>550</width>
+         <height>28</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="cbxPertencesItem">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>50</y>
+         <width>550</width>
+         <height>28</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_34">
+      <property name="geometry">
+       <rect>
+        <x>662</x>
+        <y>582</y>
+        <width>241</width>
+        <height>112</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+        <weight>75</weight>
+        <italic>false</italic>
+        <bold>true</bold>
+        <underline>false</underline>
+       </font>
+      </property>
+      <property name="title">
+       <string>Dinheiro</string>
+      </property>
+      <widget class="QLabel" name="label_826">
+       <property name="geometry">
+        <rect>
+         <x>8</x>
+         <y>66</y>
+         <width>121</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Moedas de Ouro:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="txtMC">
+       <property name="geometry">
+        <rect>
+         <x>139</x>
+         <y>18</y>
+         <width>90</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="txtMP">
+       <property name="geometry">
+        <rect>
+         <x>139</x>
+         <y>42</y>
+         <width>90</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="txtMO">
+       <property name="geometry">
+        <rect>
+         <x>139</x>
+         <y>66</y>
+         <width>90</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_831">
+       <property name="geometry">
+        <rect>
+         <x>6</x>
+         <y>19</y>
+         <width>130</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Moedas de Cobre:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_827">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>42</y>
+         <width>121</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Moedas de Prata:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </widget>
@@ -4116,127 +4366,6 @@
      <attribute name="title">
       <string>Características</string>
      </attribute>
-     <widget class="QGroupBox" name="groupBox_34">
-      <property name="geometry">
-       <rect>
-        <x>660</x>
-        <y>582</y>
-        <width>241</width>
-        <height>112</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>8</pointsize>
-        <weight>75</weight>
-        <italic>false</italic>
-        <bold>true</bold>
-        <underline>false</underline>
-       </font>
-      </property>
-      <property name="title">
-       <string>Dinheiro</string>
-      </property>
-      <widget class="QLabel" name="label_824">
-       <property name="geometry">
-        <rect>
-         <x>8</x>
-         <y>66</y>
-         <width>121</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>8</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Moedas de Ouro:</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="txtMC">
-       <property name="geometry">
-        <rect>
-         <x>139</x>
-         <y>18</y>
-         <width>90</width>
-         <height>22</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="txtMP">
-       <property name="geometry">
-        <rect>
-         <x>139</x>
-         <y>42</y>
-         <width>90</width>
-         <height>22</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="txtMO">
-       <property name="geometry">
-        <rect>
-         <x>139</x>
-         <y>66</y>
-         <width>90</width>
-         <height>22</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_830">
-       <property name="geometry">
-        <rect>
-         <x>6</x>
-         <y>19</y>
-         <width>130</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>8</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Moedas de Cobre:</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_825">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>42</y>
-         <width>121</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>8</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Moedas de Prata:</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </widget>
      <widget class="QTextEdit" name="txtAparencia">
       <property name="geometry">
        <rect>
@@ -4546,103 +4675,6 @@
        </property>
       </widget>
      </widget>
-     <widget class="QGroupBox" name="groupBox_17">
-      <property name="geometry">
-       <rect>
-        <x>659</x>
-        <y>-1</y>
-        <width>621</width>
-        <height>551</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>9</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="title">
-       <string>Pertences e Afins</string>
-      </property>
-      <widget class="QTableWidget" name="tblPertences">
-       <property name="geometry">
-        <rect>
-         <x>5</x>
-         <y>90</y>
-         <width>610</width>
-         <height>451</height>
-        </rect>
-       </property>
-       <property name="selectionMode">
-        <enum>QAbstractItemView::SingleSelection</enum>
-       </property>
-       <property name="sortingEnabled">
-        <bool>true</bool>
-       </property>
-       <attribute name="horizontalHeaderDefaultSectionSize">
-        <number>201</number>
-       </attribute>
-       <column>
-        <property name="text">
-         <string>Nome</string>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>8</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="textAlignment">
-         <set>AlignLeading|AlignVCenter</set>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Descrição</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Valor</string>
-        </property>
-       </column>
-      </widget>
-      <widget class="QPushButton" name="btnAdicionarPertences">
-       <property name="geometry">
-        <rect>
-         <x>561</x>
-         <y>20</y>
-         <width>52</width>
-         <height>58</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>+</string>
-       </property>
-      </widget>
-      <widget class="QComboBox" name="cbxPertencesGrupo">
-       <property name="geometry">
-        <rect>
-         <x>5</x>
-         <y>20</y>
-         <width>550</width>
-         <height>28</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QComboBox" name="cbxPertencesItem">
-       <property name="geometry">
-        <rect>
-         <x>5</x>
-         <y>50</y>
-         <width>550</width>
-         <height>28</height>
-        </rect>
-       </property>
-      </widget>
-     </widget>
      <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
@@ -4780,29 +4812,6 @@
         </widget>
        </item>
       </layout>
-     </widget>
-     <widget class="QGroupBox" name="groupBox_18">
-      <property name="geometry">
-       <rect>
-        <x>908</x>
-        <y>563</y>
-        <width>371</width>
-        <height>131</height>
-       </rect>
-      </property>
-      <property name="title">
-       <string>Equipamentos Iniciais</string>
-      </property>
-      <widget class="QTextEdit" name="txtEquipamentosIniciais">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>21</y>
-         <width>351</width>
-         <height>101</height>
-        </rect>
-       </property>
-      </widget>
      </widget>
     </widget>
    </widget>
@@ -5062,7 +5071,7 @@
      <x>0</x>
      <y>0</y>
      <width>1525</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -5197,23 +5206,13 @@
   <tabstop>lineEdit_6</tabstop>
   <tabstop>lineEdit_4</tabstop>
   <tabstop>lineEdit_5</tabstop>
-  <tabstop>cbxArmadura</tabstop>
-  <tabstop>cbxElmos</tabstop>
-  <tabstop>cbxEscudos</tabstop>
-  <tabstop>cbxArma</tabstop>
   <tabstop>tblPersonagens</tabstop>
-  <tabstop>txtmagicoArmadura</tabstop>
-  <tabstop>txtmagicoElmos</tabstop>
-  <tabstop>txtmagicoEscudos</tabstop>
   <tabstop>txtNomeMagia</tabstop>
   <tabstop>txtEvocacao</tabstop>
   <tabstop>txtAlcance</tabstop>
   <tabstop>txtDuracao</tabstop>
   <tabstop>txtEfeitos</tabstop>
   <tabstop>txtDescricao</tabstop>
-  <tabstop>txtMC</tabstop>
-  <tabstop>txtMP</tabstop>
-  <tabstop>txtMO</tabstop>
   <tabstop>txtAparencia</tabstop>
   <tabstop>txtOlhos</tabstop>
   <tabstop>txtCabelo</tabstop>
