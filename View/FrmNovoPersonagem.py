@@ -32,7 +32,6 @@ class Ui_NovoPersonagem(QtWidgets.QMainWindow, Ui_FrmNovoPersonagem):
         self.lblElfoDourado.mouseDoubleClickEvent = self.on_clicked_Raca(1)
         self.lblMeioElfo.mouseDoubleClickEvent = self.on_clicked_Raca(1)
 
-
     def on_clicked_Raca(self,id):
         self.lblRaca.setText('Humano')
         

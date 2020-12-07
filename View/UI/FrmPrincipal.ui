@@ -3164,9 +3164,9 @@
       <property name="geometry">
        <rect>
         <x>3</x>
-        <y>120</y>
+        <y>-2</y>
         <width>427</width>
-        <height>571</height>
+        <height>691</height>
        </rect>
       </property>
       <property name="font">
@@ -3187,12 +3187,15 @@
          <x>3</x>
          <y>24</y>
          <width>420</width>
-         <height>541</height>
+         <height>661</height>
         </rect>
        </property>
        <property name="styleSheet">
         <string notr="true">font: 7pt &quot;Arial&quot;;</string>
        </property>
+       <attribute name="horizontalHeaderDefaultSectionSize">
+        <number>138</number>
+       </attribute>
        <column>
         <property name="text">
          <string/>
@@ -3244,9 +3247,9 @@
       <property name="geometry">
        <rect>
         <x>433</x>
-        <y>220</y>
+        <y>-2</y>
         <width>431</width>
-        <height>471</height>
+        <height>691</height>
        </rect>
       </property>
       <property name="font">
@@ -3264,15 +3267,18 @@
       <widget class="QTableWidget" name="tblEspecializacao">
        <property name="geometry">
         <rect>
-         <x>3</x>
-         <y>22</y>
+         <x>4</x>
+         <y>24</y>
          <width>423</width>
-         <height>441</height>
+         <height>661</height>
         </rect>
        </property>
        <property name="styleSheet">
         <string notr="true">font: 7pt &quot;Arial&quot;;</string>
        </property>
+       <attribute name="horizontalHeaderDefaultSectionSize">
+        <number>139</number>
+       </attribute>
        <column>
         <property name="text">
          <string/>
@@ -3353,6 +3359,9 @@
        <property name="styleSheet">
         <string notr="true">font: 6.5pt &quot;Arial&quot;;</string>
        </property>
+       <attribute name="horizontalHeaderDefaultSectionSize">
+        <number>134</number>
+       </attribute>
        <column>
         <property name="text">
          <string/>
@@ -3412,9 +3421,9 @@
      <widget class="QGroupBox" name="groupBox_29">
       <property name="geometry">
        <rect>
-        <x>0</x>
+        <x>2</x>
         <y>0</y>
-        <width>427</width>
+        <width>531</width>
         <height>111</height>
        </rect>
       </property>
@@ -3433,7 +3442,7 @@
       <widget class="QLabel" name="label_336">
        <property name="geometry">
         <rect>
-         <x>365</x>
+         <x>468</x>
          <y>8</y>
          <width>50</width>
          <height>20</height>
@@ -3479,7 +3488,7 @@
        </property>
        <property name="geometry">
         <rect>
-         <x>359</x>
+         <x>462</x>
          <y>28</y>
          <width>61</width>
          <height>22</height>
@@ -3529,7 +3538,7 @@
        </property>
        <property name="geometry">
         <rect>
-         <x>359</x>
+         <x>462</x>
          <y>55</y>
          <width>61</width>
          <height>22</height>
@@ -3579,7 +3588,7 @@
        </property>
        <property name="geometry">
         <rect>
-         <x>359</x>
+         <x>462</x>
          <y>80</y>
          <width>61</width>
          <height>22</height>
@@ -3606,9 +3615,9 @@
       <widget class="QComboBox" name="cbxArmadura">
        <property name="geometry">
         <rect>
-         <x>90</x>
+         <x>83</x>
          <y>28</y>
-         <width>263</width>
+         <width>370</width>
          <height>22</height>
         </rect>
        </property>
@@ -3616,9 +3625,9 @@
       <widget class="QComboBox" name="cbxElmos">
        <property name="geometry">
         <rect>
-         <x>90</x>
+         <x>83</x>
          <y>54</y>
-         <width>263</width>
+         <width>370</width>
          <height>22</height>
         </rect>
        </property>
@@ -3626,9 +3635,9 @@
       <widget class="QComboBox" name="cbxEscudos">
        <property name="geometry">
         <rect>
-         <x>90</x>
+         <x>83</x>
          <y>80</y>
-         <width>263</width>
+         <width>370</width>
          <height>22</height>
         </rect>
        </property>
@@ -3637,10 +3646,10 @@
      <widget class="QGroupBox" name="groupBox_31">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>160</y>
-        <width>431</width>
-        <height>220</height>
+        <x>2</x>
+        <y>110</y>
+        <width>531</width>
+        <height>441</height>
        </rect>
       </property>
       <property name="font">
@@ -3660,7 +3669,7 @@
         <rect>
          <x>6</x>
          <y>19</y>
-         <width>364</width>
+         <width>460</width>
          <height>28</height>
         </rect>
        </property>
@@ -3670,8 +3679,8 @@
         <rect>
          <x>6</x>
          <y>54</y>
-         <width>420</width>
-         <height>160</height>
+         <width>521</width>
+         <height>381</height>
         </rect>
        </property>
        <property name="font">
@@ -3687,7 +3696,7 @@
         <bool>false</bool>
        </attribute>
        <attribute name="horizontalHeaderDefaultSectionSize">
-        <number>131</number>
+        <number>130</number>
        </attribute>
        <attribute name="horizontalHeaderMinimumSectionSize">
         <number>45</number>
@@ -3729,7 +3738,7 @@
       <widget class="QPushButton" name="btnAdicionarArma">
        <property name="geometry">
         <rect>
-         <x>376</x>
+         <x>472</x>
          <y>19</y>
          <width>51</width>
          <height>28</height>
@@ -3743,9 +3752,9 @@
      <widget class="QGroupBox" name="groupBox_18">
       <property name="geometry">
        <rect>
-        <x>910</x>
+        <x>280</x>
         <y>563</y>
-        <width>371</width>
+        <width>1001</width>
         <height>131</height>
        </rect>
       </property>
@@ -3757,7 +3766,7 @@
         <rect>
          <x>10</x>
          <y>21</y>
-         <width>351</width>
+         <width>981</width>
          <height>101</height>
         </rect>
        </property>
@@ -3766,9 +3775,9 @@
      <widget class="QGroupBox" name="groupBox_17">
       <property name="geometry">
        <rect>
-        <x>661</x>
+        <x>538</x>
         <y>-1</y>
-        <width>621</width>
+        <width>741</width>
         <height>551</height>
        </rect>
       </property>
@@ -3787,7 +3796,7 @@
         <rect>
          <x>5</x>
          <y>90</y>
-         <width>610</width>
+         <width>731</width>
          <height>451</height>
         </rect>
        </property>
@@ -3798,7 +3807,7 @@
         <bool>true</bool>
        </property>
        <attribute name="horizontalHeaderDefaultSectionSize">
-        <number>201</number>
+        <number>240</number>
        </attribute>
        <column>
         <property name="text">
@@ -3829,7 +3838,7 @@
       <widget class="QPushButton" name="btnAdicionarPertences">
        <property name="geometry">
         <rect>
-         <x>561</x>
+         <x>683</x>
          <y>20</y>
          <width>52</width>
          <height>58</height>
@@ -3844,7 +3853,7 @@
         <rect>
          <x>5</x>
          <y>20</y>
-         <width>550</width>
+         <width>670</width>
          <height>28</height>
         </rect>
        </property>
@@ -3854,7 +3863,7 @@
         <rect>
          <x>5</x>
          <y>50</y>
-         <width>550</width>
+         <width>670</width>
          <height>28</height>
         </rect>
        </property>
@@ -3863,9 +3872,9 @@
      <widget class="QGroupBox" name="groupBox_34">
       <property name="geometry">
        <rect>
-        <x>662</x>
-        <y>582</y>
-        <width>241</width>
+        <x>15</x>
+        <y>572</y>
+        <width>240</width>
         <height>112</height>
        </rect>
       </property>
@@ -4371,7 +4380,7 @@
        <rect>
         <x>7</x>
         <y>110</y>
-        <width>646</width>
+        <width>1271</width>
         <height>111</height>
        </rect>
       </property>
@@ -4381,7 +4390,7 @@
        <rect>
         <x>68</x>
         <y>4</y>
-        <width>261</width>
+        <width>671</width>
         <height>22</height>
        </rect>
       </property>
@@ -4391,7 +4400,7 @@
        <rect>
         <x>68</x>
         <y>30</y>
-        <width>261</width>
+        <width>671</width>
         <height>22</height>
        </rect>
       </property>
@@ -4401,7 +4410,7 @@
        <rect>
         <x>68</x>
         <y>56</y>
-        <width>261</width>
+        <width>671</width>
         <height>22</height>
        </rect>
       </property>
@@ -4409,9 +4418,9 @@
      <widget class="QSlider" name="hsdIdade">
       <property name="geometry">
        <rect>
-        <x>424</x>
+        <x>844</x>
         <y>8</y>
-        <width>160</width>
+        <width>401</width>
         <height>22</height>
        </rect>
       </property>
@@ -4428,9 +4437,9 @@
      <widget class="QSlider" name="hsdAltura">
       <property name="geometry">
        <rect>
-        <x>424</x>
+        <x>844</x>
         <y>60</y>
-        <width>160</width>
+        <width>401</width>
         <height>22</height>
        </rect>
       </property>
@@ -4447,9 +4456,9 @@
      <widget class="QSlider" name="hsdPeso">
       <property name="geometry">
        <rect>
-        <x>424</x>
+        <x>844</x>
         <y>34</y>
-        <width>160</width>
+        <width>401</width>
         <height>22</height>
        </rect>
       </property>
@@ -4466,7 +4475,7 @@
      <widget class="QLabel" name="lblIdade">
       <property name="geometry">
        <rect>
-        <x>389</x>
+        <x>820</x>
         <y>9</y>
         <width>31</width>
         <height>16</height>
@@ -4484,7 +4493,7 @@
      <widget class="QLabel" name="lblPeso">
       <property name="geometry">
        <rect>
-        <x>389</x>
+        <x>820</x>
         <y>34</y>
         <width>31</width>
         <height>16</height>
@@ -4502,7 +4511,7 @@
      <widget class="QLabel" name="lblAltura">
       <property name="geometry">
        <rect>
-        <x>389</x>
+        <x>820</x>
         <y>60</y>
         <width>31</width>
         <height>16</height>
@@ -4520,7 +4529,7 @@
      <widget class="QLabel" name="lblRandonIdade">
       <property name="geometry">
        <rect>
-        <x>598</x>
+        <x>1259</x>
         <y>6</y>
         <width>21</width>
         <height>21</height>
@@ -4542,7 +4551,7 @@
      <widget class="QLabel" name="lblRandonPeso">
       <property name="geometry">
        <rect>
-        <x>599</x>
+        <x>1260</x>
         <y>34</y>
         <width>21</width>
         <height>21</height>
@@ -4564,7 +4573,7 @@
      <widget class="QLabel" name="lblRandonAltura">
       <property name="geometry">
        <rect>
-        <x>600</x>
+        <x>1261</x>
         <y>61</y>
         <width>21</width>
         <height>21</height>
@@ -4608,7 +4617,7 @@
        <rect>
         <x>6</x>
         <y>223</y>
-        <width>319</width>
+        <width>651</width>
         <height>471</height>
        </rect>
       </property>
@@ -4627,7 +4636,7 @@
         <rect>
          <x>5</x>
          <y>20</y>
-         <width>308</width>
+         <width>641</width>
          <height>441</height>
         </rect>
        </property>
@@ -4642,9 +4651,9 @@
      <widget class="QGroupBox" name="groupBox_16">
       <property name="geometry">
        <rect>
-        <x>334</x>
+        <x>659</x>
         <y>223</y>
-        <width>318</width>
+        <width>621</width>
         <height>471</height>
        </rect>
       </property>
@@ -4662,8 +4671,8 @@
        <property name="geometry">
         <rect>
          <x>6</x>
-         <y>19</y>
-         <width>306</width>
+         <y>21</y>
+         <width>611</width>
          <height>441</height>
         </rect>
        </property>
@@ -4744,74 +4753,80 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="layoutWidget">
+     <widget class="QLabel" name="label_5">
       <property name="geometry">
        <rect>
-        <x>333</x>
-        <y>6</y>
-        <width>53</width>
-        <height>71</height>
+        <x>770</x>
+        <y>37</y>
+        <width>33</width>
+        <height>16</height>
        </rect>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_2">
-       <item>
-        <widget class="QLabel" name="label_4">
-         <property name="font">
-          <font>
-           <pointsize>9</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="layoutDirection">
-          <enum>Qt::LeftToRight</enum>
-         </property>
-         <property name="text">
-          <string>Idade:</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_5">
-         <property name="font">
-          <font>
-           <pointsize>9</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Peso:</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_6">
-         <property name="font">
-          <font>
-           <pointsize>9</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="layoutDirection">
-          <enum>Qt::LeftToRight</enum>
-         </property>
-         <property name="text">
-          <string>Altura:</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-      </layout>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Peso:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>763</x>
+        <y>13</y>
+        <width>39</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="text">
+       <string>Idade:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>760</x>
+        <y>63</y>
+        <width>42</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="text">
+       <string>Altura:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
      </widget>
     </widget>
    </widget>
