@@ -299,8 +299,10 @@ class PersonagemDAO:
     def save_persona_combat_skills(persona):
         PersonagemDAO.__save_persona_list(persona.id, persona.combat_skills, 'combate')
 
-    def save_persona_skills(persona):
-        PersonagemDAO.__save_persona_list(persona.id, persona.skills, 'habilidade')
+    def save_persona_skill(idpersona, idskill, value):
+        query = 'INSERT or REPLACE INTO personagem_habilidade (id_personagem, id_habilidade, nivel) values ({},{},{});'.format(idpersona,idskill,value)
+        cur_usr.execute(query)
+        conn_usr.commit()
 
     def save_persona_equipment(persona):
         equip = {}

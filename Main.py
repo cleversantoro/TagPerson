@@ -24,7 +24,6 @@ import os
 
 class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
 
-
     def __init__(self):
         super().__init__()
         self.setupUi(self)
@@ -38,7 +37,7 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         self.personArmas = []
         self.personPertences = []
 
-        self.AppEvents()
+        self.AppSignals()
         self.PopularTela()
     
     def center(self):
@@ -47,7 +46,7 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         qr.moveCenter(cp)
         self.move(qr.topLeft())
 
-    def AppEvents(self):
+    def AppSignals(self):
         self.tblPersonagens.doubleClicked.connect(self.getPersonagem)
         self.tblMagiaBasica.cellClicked.connect(self.on_Clicked_CellMagia)
         self.tblMagiaEspecializacao.cellClicked.connect(self.on_Clicked_CellMagiaEsp)
@@ -91,9 +90,8 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         width += self.tblCombate.frameWidth() * 2
         self.tblCombate.setFixedWidth(width)
 
-
-    ###Eventos#####
-    def on_Change_NivelCombat(self, index):
+    ###Slots#####
+    def on_Change_NivelCombat(self, value):
         value = index
         #row = self.tblCombate.currentRow()
         #column = self.tblCombate.currentColumn()
@@ -107,21 +105,45 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
     
     def on_Change_NivelProfissional(self, value):
         valueSpin = value
-        #item = QTableWidgetItem()
-        #list = QList()
         indexRow = self.tblProfissional.currentRow()
-        item = (self.tblProfissional.item(indexRow,0)).text()
-        list = self.tblProfissional.findItems(item,QtCore.Qt.MatchFixedString)
-        #for item in list:
-        #    item
-        #column = self.tblCombate.currentColumn()
-        #self.ID = self.tblCombate.  item(row, 4)
-        #self.tblProfissional.item(row,4).setText('2')
-        #index = self.tblProfissional.currentIndex()
-        #nome = self.niveisHabilidade[row]['name']
-        #valor = self.niveisHabilidade[row]['spin'].value()
-        #idhabilidade = self.niveisHabilidade[row]['idhabilidade']
-        self.niveisHabilidade
+        idSkill = int((self.tblProfissional.item(indexRow,6)).text())
+        idPerson = int((self.tblProfissional.item(indexRow,7)).text())
+        personagem.save_persona_skill(idPerson, idSkill, valueSpin)
+
+    def on_Change_NivelInfluencia(self, value):
+        valueSpin = value
+        indexRow = self.tblInfluencia.currentRow()
+        idSkill = int((self.tblInfluencia.item(indexRow,6)).text())
+        idPerson = int((self.tblInfluencia.item(indexRow,7)).text())
+        personagem.save_persona_skill(idPerson, idSkill, valueSpin)
+
+    def on_Change_NivelManobras(self, value):
+        valueSpin = value
+        indexRow = self.tblManobras.currentRow()
+        idSkill = int((self.tblManobras.item(indexRow,6)).text())
+        idPerson = int((self.tblManobras.item(indexRow,7)).text())
+        personagem.save_persona_skill(idPerson, idSkill, valueSpin)
+
+    def on_Change_NivelConhecimento(self, value):
+        valueSpin = value
+        indexRow = self.tblConhecimento.currentRow()
+        idSkill = int((self.tblConhecimento.item(indexRow,6)).text())
+        idPerson = int((self.tblConhecimento.item(indexRow,7)).text())
+        personagem.save_persona_skill(idPerson, idSkill, valueSpin)
+
+    def on_Change_NivelSubterfugio(self, value):
+        valueSpin = value
+        indexRow = self.tblSubterfugio.currentRow()
+        idSkill = int((self.tblSubterfugio.item(indexRow,6)).text())
+        idPerson = int((self.tblSubterfugio.item(indexRow,7)).text())
+        personagem.save_persona_skill(idPerson, idSkill, valueSpin)
+
+    def on_Change_NivelGeral(self, value):
+        valueSpin = value
+        indexRow = self.tblGeral.currentRow()
+        idSkill = int((self.tblGeral.item(indexRow,6)).text())
+        idPerson = int((self.tblGeral.item(indexRow,7)).text())
+        personagem.save_persona_skill(idPerson, idSkill, valueSpin)
 
     def on_Clicked_CellArma(self, index):
         row = self.tblArma.currentRow()
@@ -198,8 +220,13 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
 
     def on_Change_Peso(self):
         #self.lblPeso
-        pass    
-
+        pass 
+    
+    @QtCore.pyqtSlot()
+    def on_Change_Level(self,value):
+        level = utils.get_level(int(value))
+        nextlevel = utils.get_xp_next(level)
+        return level
 
     ### Personagens #####
     def popularGridPersonagens(self):
@@ -251,7 +278,6 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         
         self.setTableWidthPersonagems
 
-
     ### CRUD #####
     @QtCore.pyqtSlot()
     def getPersonagem(self):
@@ -277,9 +303,9 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         self.txtNome.setText(persona.name)
         self.txtJogador.setText(persona.player)
         self.lblRaca.setText(persona.race.name)
-        self.lblProfissao.setText(persona.profession.name)
+        self.lblProfissao.setText(persona.profession.name)        
         self.txtExperiencia.setText(str(persona.xp))
-        self.spnNivel.setValue(persona.level)
+        self.spnNivel.setValue(self.on_Change_Level(persona.xp))
 
         #god = divindade.get_god_name(persona.god)
         #index = self.cbxDivindade.findText(god,QtCore.Qt.MatchFixedString)
@@ -542,8 +568,6 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
             msg.setText("Erro ao gravar o personagem!")
             msg.setIcon(QMessageBox.Warning)
             msg.exec_()
-            #str(e)
-            #error_dialog.showMessage(str(e))
 
     def gravarCombate(self):
         for item in self.niveisCombat:
@@ -556,7 +580,6 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
     def gravarMagia(self):
         for item in self.niveisMagia:
             self.person.spells[item['idmagia']] = item['spin'].value()
-
 
     ### Armas/Pertences #####
     def popularArmas(self,persona):
@@ -626,7 +649,6 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
             self.tblPertences.setItem(row, 1, descricao)
             self.tblPertences.setItem(row, 2, valor)
             row = row + 1
-
 
     ### Combate #####
     def popularCombateTecnicasBasicas(self,persona):
@@ -777,7 +799,6 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
             self.tblProfissao.setItem(row, 6, icone)
             row = row + 1
 
-
     ### Magia #####
     def popularMagiaBasica(self,persona):
         self.niveisMagia = []
@@ -869,18 +890,18 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
             self.tblMagiaEspecializacao.setItem(row, 4, self.icone)
             row = row + 1
 
-
     ### Habilidades#####
     def popularHabilidadeProfissional(self,persona):
         person = persona
         rows = personagem.get_skills_persona(person.id,1)        
 
+        self.tblProfissional.setColumnHidden(6,True)
+        self.tblProfissional.setColumnHidden(7,True)
         self.tblProfissional.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.tblProfissional.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
         self.tblProfissional.verticalHeader().hide()
 
         header = self.tblProfissional.horizontalHeader()       
-        #header.setSectionResizeMode(0, QtWidgets.QHeaderView.ResizeToContents)
         header.setSectionResizeMode(1, QtWidgets.QHeaderView.ResizeToContents)
         header.setSectionResizeMode(2, QtWidgets.QHeaderView.ResizeToContents)
         header.setSectionResizeMode(3, QtWidgets.QHeaderView.ResizeToContents)
@@ -893,6 +914,8 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         row = 0
         for item in rows:
             self.tblProfissional.insertRow(row)
+            id = QTableWidgetItem(str(item[0]))
+            idperson = QTableWidgetItem(str(person.id))
             descricao = QTableWidgetItem(str(item[1]))
             restrito = QTableWidgetItem(str(item[2]))
             
@@ -913,18 +936,21 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
             self.tblProfissional.setItem(row, 3, custo)
             self.tblProfissional.setItem(row, 4, ajuste)
             self.tblProfissional.setItem(row, 5, total)
+            self.tblProfissional.setItem(row, 6, id)
+            self.tblProfissional.setItem(row, 7, idperson)
             row = row + 1
 
     def popularHabilidadeSubterfugio(self,persona):
         person = persona
         rows = personagem.get_skills_persona(person.id,2)        
 
+        self.tblSubterfugio.setColumnHidden(6,True)
+        self.tblSubterfugio.setColumnHidden(7,True)
         self.tblSubterfugio.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.tblSubterfugio.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
         self.tblSubterfugio.verticalHeader().hide()
 
         header = self.tblSubterfugio.horizontalHeader()       
-        header.setSectionResizeMode(0, QtWidgets.QHeaderView.ResizeToContents)
         header.setSectionResizeMode(1, QtWidgets.QHeaderView.ResizeToContents)
         header.setSectionResizeMode(2, QtWidgets.QHeaderView.ResizeToContents)
         header.setSectionResizeMode(3, QtWidgets.QHeaderView.ResizeToContents)
@@ -937,13 +963,15 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         row = 0
         for item in rows:
             self.tblSubterfugio.insertRow(row)
+            id = QTableWidgetItem(str(item[0]))
+            idperson = QTableWidgetItem(str(person.id))
             descricao = QTableWidgetItem(str(item[1]))
             restrito = QTableWidgetItem(str(item[2]))
             
             self.nivelSubterfugio = QtWidgets.QSpinBox()
             self.nivelSubterfugio.setValue(item[3])
             self.nivelSubterfugio.setObjectName('nivelsubterfugio_{}'.format(row))
-            self.nivelSubterfugio.valueChanged.connect(self.on_Change_NivelProfissional)
+            self.nivelSubterfugio.valueChanged.connect(self.on_Change_NivelSubterfugio)
 
             self.niveisHabilidade.append({'spin':self.nivelSubterfugio,'name':'nivelsubterfugio_{}'.format(row),'idhabilidade':item[0]}) 
 
@@ -957,18 +985,21 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
             self.tblSubterfugio.setItem(row, 3, custo)
             self.tblSubterfugio.setItem(row, 4, ajuste)
             self.tblSubterfugio.setItem(row, 5, total)
+            self.tblSubterfugio.setItem(row, 6, id)
+            self.tblSubterfugio.setItem(row, 7, idperson)
             row = row + 1
 
     def popularHabilidadeManobra(self,persona):
         person = persona
         rows = personagem.get_skills_persona(person.id,3)        
 
+        self.tblManobras.setColumnHidden(6,True)
+        self.tblManobras.setColumnHidden(7,True)
         self.tblManobras.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.tblManobras.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
         self.tblManobras.verticalHeader().hide()
 
         header = self.tblManobras.horizontalHeader()       
-        header.setSectionResizeMode(0, QtWidgets.QHeaderView.ResizeToContents)
         header.setSectionResizeMode(1, QtWidgets.QHeaderView.ResizeToContents)
         header.setSectionResizeMode(2, QtWidgets.QHeaderView.ResizeToContents)
         header.setSectionResizeMode(3, QtWidgets.QHeaderView.ResizeToContents)
@@ -981,13 +1012,15 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         row = 0
         for item in rows:
             self.tblManobras.insertRow(row)
+            id = QTableWidgetItem(str(item[0]))
+            idperson = QTableWidgetItem(str(person.id))
             descricao = QTableWidgetItem(str(item[1]))
             restrito = QTableWidgetItem(str(item[2]))
             
             self.nivelManobras = QtWidgets.QSpinBox()
             self.nivelManobras.setValue(item[3])
             self.nivelManobras.setObjectName('nivelmanobras_{}'.format(row))
-            self.nivelManobras.valueChanged.connect(self.on_Change_NivelProfissional)
+            self.nivelManobras.valueChanged.connect(self.on_Change_NivelManobras)
 
             self.niveisHabilidade.append({'spin':self.nivelManobras,'name':'nivelmanobras_{}'.format(row),'idhabilidade':item[0]}) 
 
@@ -1001,18 +1034,21 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
             self.tblManobras.setItem(row, 3, custo)
             self.tblManobras.setItem(row, 4, ajuste)
             self.tblManobras.setItem(row, 5, total)
+            self.tblManobras.setItem(row, 6, id)
+            self.tblManobras.setItem(row, 7, idperson)
             row = row + 1
 
     def popularHabilidadeInfluencia(self,persona):
         person = persona
         rows = personagem.get_skills_persona(person.id,4)        
 
+        self.tblInfluencia.setColumnHidden(6,True)
+        self.tblInfluencia.setColumnHidden(7,True)
         self.tblInfluencia.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.tblInfluencia.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
         self.tblInfluencia.verticalHeader().hide()
 
         header = self.tblInfluencia.horizontalHeader()       
-        header.setSectionResizeMode(0, QtWidgets.QHeaderView.ResizeToContents)
         header.setSectionResizeMode(1, QtWidgets.QHeaderView.ResizeToContents)
         header.setSectionResizeMode(2, QtWidgets.QHeaderView.ResizeToContents)
         header.setSectionResizeMode(3, QtWidgets.QHeaderView.ResizeToContents)
@@ -1025,13 +1061,15 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         row = 0
         for item in rows:
             self.tblInfluencia.insertRow(row)
+            id = QTableWidgetItem(str(item[0]))
+            idperson = QTableWidgetItem(str(person.id))
             descricao = QTableWidgetItem(str(item[1]))
             restrito = QTableWidgetItem(str(item[2]))
             
             self.nivelInfluencia = QtWidgets.QSpinBox()
             self.nivelInfluencia.setValue(item[3])
             self.nivelInfluencia.setObjectName('nivelinfluencia_{}'.format(row))
-            self.nivelInfluencia.valueChanged.connect(self.on_Change_NivelProfissional)
+            self.nivelInfluencia.valueChanged.connect(self.on_Change_NivelInfluencia)
 
             self.niveisHabilidade.append({'spin':self.nivelInfluencia,'name':'nivelinfluencia_{}'.format(row),'idhabilidade':item[0]}) 
 
@@ -1045,18 +1083,21 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
             self.tblInfluencia.setItem(row, 3, custo)
             self.tblInfluencia.setItem(row, 4, ajuste)
             self.tblInfluencia.setItem(row, 5, total)
+            self.tblInfluencia.setItem(row, 6, id)
+            self.tblInfluencia.setItem(row, 7, idperson)
             row = row + 1
 
     def popularHabilidadeConhecimento(self,persona):
         person = persona
         rows = personagem.get_skills_persona(person.id,5)        
 
+        self.tblConhecimento.setColumnHidden(6,True)
+        self.tblConhecimento.setColumnHidden(7,True)
         self.tblConhecimento.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.tblConhecimento.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
         self.tblConhecimento.verticalHeader().hide()
 
         header = self.tblConhecimento.horizontalHeader()       
-        header.setSectionResizeMode(0, QtWidgets.QHeaderView.ResizeToContents)
         header.setSectionResizeMode(1, QtWidgets.QHeaderView.ResizeToContents)
         header.setSectionResizeMode(2, QtWidgets.QHeaderView.ResizeToContents)
         header.setSectionResizeMode(3, QtWidgets.QHeaderView.ResizeToContents)
@@ -1069,13 +1110,15 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         row = 0
         for item in rows:
             self.tblConhecimento.insertRow(row)
+            id = QTableWidgetItem(str(item[0]))
+            idperson = QTableWidgetItem(str(person.id))
             descricao = QTableWidgetItem(str(item[1]))
             restrito = QTableWidgetItem(str(item[2]))
             
             self.nivelConhecimento = QtWidgets.QSpinBox()
             self.nivelConhecimento.setValue(item[3])
             self.nivelConhecimento.setObjectName('nivelconhecimento_{}'.format(row))
-            self.nivelConhecimento.valueChanged.connect(self.on_Change_NivelProfissional)
+            self.nivelConhecimento.valueChanged.connect(self.on_Change_NivelConhecimento)
 
             self.niveisHabilidade.append({'spin':self.nivelConhecimento,'name':'nivelconhecimento_{}'.format(row),'idhabilidade':item[0]}) 
 
@@ -1089,18 +1132,21 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
             self.tblConhecimento.setItem(row, 3, custo)
             self.tblConhecimento.setItem(row, 4, ajuste)
             self.tblConhecimento.setItem(row, 5, total)
+            self.tblConhecimento.setItem(row, 6, id)
+            self.tblConhecimento.setItem(row, 7, idperson)
             row = row + 1
 
     def popularHabilidadeGeral(self,persona):
         person = persona
         rows = personagem.get_skills_persona(person.id,6)        
 
+        self.tblGeral.setColumnHidden(6,True)
+        self.tblGeral.setColumnHidden(7,True)
         self.tblGeral.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.tblGeral.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
         self.tblGeral.verticalHeader().hide()
 
         header = self.tblGeral.horizontalHeader()       
-        header.setSectionResizeMode(0, QtWidgets.QHeaderView.ResizeToContents)
         header.setSectionResizeMode(1, QtWidgets.QHeaderView.ResizeToContents)
         header.setSectionResizeMode(2, QtWidgets.QHeaderView.ResizeToContents)
         header.setSectionResizeMode(3, QtWidgets.QHeaderView.ResizeToContents)
@@ -1113,13 +1159,15 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         row = 0
         for item in rows:
             self.tblGeral.insertRow(row)
+            id = QTableWidgetItem(str(item[0]))
+            idperson = QTableWidgetItem(str(person.id))
             descricao = QTableWidgetItem(str(item[1]))
             restrito = QTableWidgetItem(str(item[2]))
             
             self.nivelGeral = QtWidgets.QSpinBox()
             self.nivelGeral.setValue(item[3])
             self.nivelGeral.setObjectName('nivelgeral_{}'.format(row))
-            self.nivelGeral.valueChanged.connect(self.on_Change_NivelProfissional)
+            self.nivelGeral.valueChanged.connect(self.on_Change_NivelGeral)
 
             self.niveisHabilidade.append({'spin':self.nivelGeral,'name':'nivelgeral_{}'.format(row),'idhabilidade':item[0]}) 
 
@@ -1133,8 +1181,9 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
             self.tblGeral.setItem(row, 3, custo)
             self.tblGeral.setItem(row, 4, ajuste)
             self.tblGeral.setItem(row, 5, total)
+            self.tblGeral.setItem(row, 6, id)
+            self.tblGeral.setItem(row, 7, idperson)
             row = row + 1
-
 
     ### Combos #####
     def ComboPertencesGrupo(self):
@@ -1203,7 +1252,6 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         for item in itens:
             self.cbxArma.addItem(item[1],item[0])
 
-
     ### Modals #####
     def ShowFrmSobre(self):
         self.FrmSobre = QtWidgets.QMainWindow()
@@ -1223,7 +1271,6 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         self.ui.setupUi(self.FrmEquipamento)        
         self.ui.preencherEquipamento(id)
         self.FrmEquipamento.show()
-
                                                      
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])

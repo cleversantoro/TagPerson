@@ -35,6 +35,9 @@ class PersonagemCTR:
     def save_persona_skills(persona):
         return dao.save_persona_skills(persona)
 
+    def save_persona_skill(idpersona, idskill, value):
+        return dao.save_persona_skill(idpersona,idskill,value)
+
     def save_persona_equipment(persona):
         return dao.save_persona_equipment(persona)
 

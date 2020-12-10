@@ -106,7 +106,7 @@
      <enum>QTabWidget::North</enum>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="icon">
@@ -2876,6 +2876,9 @@
        <property name="text">
         <string>Restrito</string>
        </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
       </column>
       <column>
        <property name="text">
@@ -2895,6 +2898,16 @@
       <column>
        <property name="text">
         <string>Total</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>id</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>idperson</string>
        </property>
       </column>
      </widget>
@@ -2953,6 +2966,16 @@
         <string>Total</string>
        </property>
       </column>
+      <column>
+       <property name="text">
+        <string>id</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>idperson</string>
+       </property>
+      </column>
      </widget>
      <widget class="QTableWidget" name="tblSubterfugio">
       <property name="geometry">
@@ -3009,6 +3032,16 @@
         <string>Total</string>
        </property>
       </column>
+      <column>
+       <property name="text">
+        <string>id</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>idperson</string>
+       </property>
+      </column>
      </widget>
      <widget class="QTableWidget" name="tblInfluencia">
       <property name="geometry">
@@ -3044,6 +3077,9 @@
        <property name="text">
         <string>Restrito</string>
        </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
       </column>
       <column>
        <property name="text">
@@ -3063,6 +3099,16 @@
       <column>
        <property name="text">
         <string>Total</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>id</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>idperson</string>
        </property>
       </column>
      </widget>
@@ -3121,6 +3167,16 @@
         <string>Total</string>
        </property>
       </column>
+      <column>
+       <property name="text">
+        <string>id</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>idperson</string>
+       </property>
+      </column>
      </widget>
      <widget class="QTableWidget" name="tblManobras">
       <property name="geometry">
@@ -3175,6 +3231,16 @@
       <column>
        <property name="text">
         <string>Total</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>id</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>idperson</string>
        </property>
       </column>
      </widget>
@@ -5009,6 +5075,9 @@
       <width>71</width>
       <height>20</height>
      </rect>
+    </property>
+    <property name="inputMask">
+     <string>dddd</string>
     </property>
    </widget>
    <widget class="QSpinBox" name="spnNivel">

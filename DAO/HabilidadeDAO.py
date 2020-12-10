@@ -69,3 +69,4 @@ class HabilidadeDAO:
         cur_sys.execute(query)
         return cur_sys.fetchall()
 
+

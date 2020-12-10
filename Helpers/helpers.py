@@ -17,7 +17,7 @@ class utils:
                 return i + 1
 
     def get_xp_next(level):
-        return evolution_table[level - 1] + 1
+        return const.EVOLUTION_TABLE[level - 1] + 1
 
     def convert_to_coins(money):
             gold = money / 100
