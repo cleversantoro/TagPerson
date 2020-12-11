@@ -22,13 +22,93 @@ from View.FrmEquipamento import Ui_Equipamento
 
 import os
 
-class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
+class FrmNovoPersonagem(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.ui = Ui_NovoPersonagem()
+        self.ui.setupUi(self)        
+        self.appSignals()
+        self.Events()
+
+        self.ui.lblHumano.setProperty('id',1)
+
+    def appSignals(self):
+        self.ui.btnCancel.clicked.connect(self.on_clicked_Cancelar)
+        self.ui.btnOk.clicked.connect(self.on_clicked_Criar)
+    
+    def Events(self):
+        self.ui.lblHumano.mouseDoubleClickEvent = self.on_dblclicked
+        self.ui.lblPequenino.mouseDoubleClickEvent = self.on_dblclicked
+        self.ui.lblAnao.mouseDoubleClickEvent = self.on_dblclicked
+        self.ui.lblElfoFlorestal.mouseDoubleClickEvent = self.on_dblclicked
+        self.ui.lblElfoDourado.mouseDoubleClickEvent = self.on_dblclicked
+        self.ui.lblMeioElfo.mouseDoubleClickEvent = self.on_dblclicked
+
+    def on_dblclicked(self, event):
+        if (self.ui.objectName == "lblHumano"):
+        #QObject.setProperty('PropertyName', value)
+            isTest = t.property('id')
+        if (event.type() == QtCore.QEvent.MouseButtonDblClick):
+            event.button()
+            #pos = event.pos()
+            #print('mouse move: (%d, %d)' % (pos.x(), pos.y()))
+        #lbl = QLabel()
+        #lbl = self
+        #t = lbl.selectedText
+        self.ui.lblRaca.setText("Humano")        
+        pass
+    
+    @QtCore.pyqtSlot()        
+    def on_clicked_Criar(self):
+        persona = Persona('persona-teste',-1)
+        persona.race = raca.get_race(1)
+        persona.profession = profissao.get_profession(1)
+
+        #resistencia_fisica = persona.get_physical_resistance()
+        #resistencia_magia = persona.get_magical_resistance()
+        #velocidade = persona.get_speed()
+        #karma = persona.get_karma()
+        #defesa = persona.calc_defense()
+        #energia_fisica = persona.get_max_ef()
+        #energia_heroica = utils.calc_eh(persona)
+        #absorcao = persona.calc_absorption()
+
+        i = 0
+        y = 0
+        for x in persona.profession.posessions:
+            equip = equipamento.get_equipment_item(x) 
+
+            if( equip.itemtype == 'armour'):
+                persona.combat_equip[0] = equip
+            elif(equip.itemtype == 'helmet'):
+                persona.combat_equip[1] = equip
+            elif(equip.itemtype == 'shield'):
+                persona.combat_equip[2] = equip
+            elif(equip.itemtype == 'weapon'):
+                persona.combat_weapon[y] = equip
+                y += 1
+            elif(equip.itemtype == 'item'):
+                persona.equipment[i] = equip
+                i += 1
+        #personagem.save_persona(person)
+        #main.popularGridPersonagens()
+        pass
+    
+    @QtCore.pyqtSlot()
+    def on_clicked_Cancelar(self):
+        self.close()    
+        #pass
+      
+
+class TelaPrincipal(QMainWindow, Ui_FrmPrincipal):
 
     def __init__(self):
         super().__init__()
         self.setupUi(self)
         self.setFixedSize(1525, 922)
         self.center()
+
+        self.fmNovoPersonagem = FrmNovoPersonagem()
 
         #error_dialog = QtWidgets.QErrorMessage()
         
@@ -1260,10 +1340,7 @@ class TelaPrincipal(QtWidgets.QMainWindow, Ui_FrmPrincipal):
         self.FrmSobre.show()
 
     def ShowFrmNovoPersonagem(self):
-        self.FrmNovoPersonagem = QtWidgets.QMainWindow()
-        self.ui = Ui_NovoPersonagem()
-        self.ui.setupUi(self.FrmNovoPersonagem)
-        self.FrmNovoPersonagem.show()
+        self.fmNovoPersonagem.show()
 
     def ShowFrmEquipamento(self,id):
         self.FrmEquipamento = QtWidgets.QMainWindow()

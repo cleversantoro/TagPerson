@@ -181,28 +181,6 @@
      <string>Meio Elfo</string>
     </property>
    </widget>
-   <widget class="QLabel" name="lblHumano">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>19</y>
-      <width>80</width>
-      <height>114</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="../../Imagens/Personagem/personagem.qrc">:/Raca/raca/humano.png</pixmap>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-    <property name="id" stdset="0">
-     <number>1</number>
-    </property>
-   </widget>
    <widget class="QLabel" name="lblPequenino">
     <property name="geometry">
      <rect>
@@ -296,6 +274,49 @@
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnHumano">
+    <property name="geometry">
+     <rect>
+      <x>12</x>
+      <y>27</y>
+      <width>101</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../../Imagens/Personagem/personagem.qrc">
+      <normaloff>:/Raca/raca/humano.png</normaloff>:/Raca/raca/humano.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>83</width>
+      <height>117</height>
+     </size>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <property name="autoDefault">
+     <bool>true</bool>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>
