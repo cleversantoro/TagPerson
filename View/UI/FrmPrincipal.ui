@@ -3258,7 +3258,7 @@
        <rect>
         <x>3</x>
         <y>-2</y>
-        <width>427</width>
+        <width>422</width>
         <height>691</height>
        </rect>
       </property>
@@ -3277,10 +3277,10 @@
       <widget class="QTableWidget" name="tblCombate">
        <property name="geometry">
         <rect>
-         <x>3</x>
-         <y>24</y>
-         <width>420</width>
-         <height>661</height>
+         <x>4</x>
+         <y>21</y>
+         <width>415</width>
+         <height>665</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -3339,9 +3339,9 @@
      <widget class="QGroupBox" name="groupBox_11">
       <property name="geometry">
        <rect>
-        <x>433</x>
+        <x>430</x>
         <y>-2</y>
-        <width>431</width>
+        <width>422</width>
         <height>691</height>
        </rect>
       </property>
@@ -3361,9 +3361,9 @@
        <property name="geometry">
         <rect>
          <x>4</x>
-         <y>24</y>
-         <width>423</width>
-         <height>661</height>
+         <y>21</y>
+         <width>415</width>
+         <height>665</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -3422,10 +3422,10 @@
      <widget class="QGroupBox" name="groupBox_12">
       <property name="geometry">
        <rect>
-        <x>866</x>
+        <x>858</x>
         <y>-2</y>
-        <width>418</width>
-        <height>693</height>
+        <width>422</width>
+        <height>691</height>
        </rect>
       </property>
       <property name="font">
@@ -3445,7 +3445,7 @@
         <rect>
          <x>4</x>
          <y>21</y>
-         <width>410</width>
+         <width>415</width>
          <height>665</height>
         </rect>
        </property>
@@ -4122,6 +4122,12 @@
          <height>661</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>7</pointsize>
+        </font>
+       </property>
        <column>
         <property name="text">
          <string/>
@@ -4191,6 +4197,12 @@
          <width>410</width>
          <height>661</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>7</pointsize>
+        </font>
        </property>
        <column>
         <property name="text">

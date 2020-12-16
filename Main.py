@@ -171,18 +171,7 @@ class TelaPrincipal(QMainWindow, Ui_FrmPrincipal):
         self.tblCombate.setFixedWidth(width)
 
     ###Slots#####
-    def on_Change_NivelCombat(self, value):
-        value = index
-        #row = self.tblCombate.currentRow()
-        #column = self.tblCombate.currentColumn()
-        #self.ID = self.tblCombate.  item(row, 4)
-        #self.tblCombate.item(row,4).setText('2')
-        #index = self.tblCombate.currentIndex()
-        #nome = self.niveisCombat[row]['name']
-        #valor = self.niveisCombat[row]['spin'].value()
-        #idhabilidade = self.niveisCombat[row]['idcombate']
-        self.niveisCombat
-    
+    ##Atributos
     def on_Change_NivelProfissional(self, value):
         valueSpin = value
         indexRow = self.tblProfissional.currentRow()
@@ -224,7 +213,69 @@ class TelaPrincipal(QMainWindow, Ui_FrmPrincipal):
         idSkill = int((self.tblGeral.item(indexRow,6)).text())
         idPerson = int((self.tblGeral.item(indexRow,7)).text())
         personagem.save_persona_skill(idPerson, idSkill, valueSpin)
+    
+    ##Combate
+    def on_Change_NivelCombat(self, value):
+        value = index
+        #row = self.tblCombate.currentRow()
+        #column = self.tblCombate.currentColumn()
+        #self.ID = self.tblCombate.  item(row, 4)
+        #self.tblCombate.item(row,4).setText('2')
+        #index = self.tblCombate.currentIndex()
+        #nome = self.niveisCombat[row]['name']
+        #valor = self.niveisCombat[row]['spin'].value()
+        #idhabilidade = self.niveisCombat[row]['idcombate']
+        self.niveisCombat
+    
+    def on_Change_NivelCombat(self, value):
+        value = index
+        #row = self.tblCombate.currentRow()
+        #column = self.tblCombate.currentColumn()
+        #self.ID = self.tblCombate.  item(row, 4)
+        #self.tblCombate.item(row,4).setText('2')
+        #index = self.tblCombate.currentIndex()
+        #nome = self.niveisCombat[row]['name']
+        #valor = self.niveisCombat[row]['spin'].value()
+        #idhabilidade = self.niveisCombat[row]['idcombate']
+        self.niveisCombat
 
+    def on_Change_NivelCombat(self, value):
+        value = index
+        #row = self.tblCombate.currentRow()
+        #column = self.tblCombate.currentColumn()
+        #self.ID = self.tblCombate.  item(row, 4)
+        #self.tblCombate.item(row,4).setText('2')
+        #index = self.tblCombate.currentIndex()
+        #nome = self.niveisCombat[row]['name']
+        #valor = self.niveisCombat[row]['spin'].value()
+        #idhabilidade = self.niveisCombat[row]['idcombate']
+        self.niveisCombat
+    ##Magias
+    def on_Change_NivelCombat(self, value):
+        value = index
+        #row = self.tblCombate.currentRow()
+        #column = self.tblCombate.currentColumn()
+        #self.ID = self.tblCombate.  item(row, 4)
+        #self.tblCombate.item(row,4).setText('2')
+        #index = self.tblCombate.currentIndex()
+        #nome = self.niveisCombat[row]['name']
+        #valor = self.niveisCombat[row]['spin'].value()
+        #idhabilidade = self.niveisCombat[row]['idcombate']
+        self.niveisCombat
+
+    def on_Change_NivelCombat(self, value):
+        value = index
+        #row = self.tblCombate.currentRow()
+        #column = self.tblCombate.currentColumn()
+        #self.ID = self.tblCombate.  item(row, 4)
+        #self.tblCombate.item(row,4).setText('2')
+        #index = self.tblCombate.currentIndex()
+        #nome = self.niveisCombat[row]['name']
+        #valor = self.niveisCombat[row]['spin'].value()
+        #idhabilidade = self.niveisCombat[row]['idcombate']
+        self.niveisCombat
+
+    ###########
     def on_Clicked_CellArma(self, index):
         row = self.tblArma.currentRow()
         idequipamento = self.personArmas[row]['idequipamento']
