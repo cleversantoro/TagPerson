@@ -78,7 +78,7 @@ class FrmNovoPersonagem(QMainWindow):
         for x in persona.profession.posessions:
             equip = equipamento.get_equipment_item(x) 
 
-            if( equip.itemtype == 'armour'):
+            if(equip.itemtype == 'armour'):
                 persona.combat_equip[0] = equip
             elif(equip.itemtype == 'helmet'):
                 persona.combat_equip[1] = equip
@@ -99,7 +99,6 @@ class FrmNovoPersonagem(QMainWindow):
         self.close()    
         #pass
       
-
 class TelaPrincipal(QMainWindow, Ui_FrmPrincipal):
 
     def __init__(self):
@@ -215,65 +214,41 @@ class TelaPrincipal(QMainWindow, Ui_FrmPrincipal):
         personagem.save_persona_skill(idPerson, idSkill, valueSpin)
     
     ##Combate
-    def on_Change_NivelCombat(self, value):
-        value = index
-        #row = self.tblCombate.currentRow()
-        #column = self.tblCombate.currentColumn()
-        #self.ID = self.tblCombate.  item(row, 4)
-        #self.tblCombate.item(row,4).setText('2')
-        #index = self.tblCombate.currentIndex()
-        #nome = self.niveisCombat[row]['name']
-        #valor = self.niveisCombat[row]['spin'].value()
-        #idhabilidade = self.niveisCombat[row]['idcombate']
-        self.niveisCombat
+    def on_Change_CombateTecnicasBasicas(self, value):
+        valueSpin = value
+        indexRow = self.tblCombate.currentRow()
+        idCombat = int((self.tblCombate.item(indexRow,7)).text())
+        idPerson = int((self.tblCombate.item(indexRow,8)).text())
+        personagem.save_persona_combat(idPerson, idCombat, valueSpin)
     
-    def on_Change_NivelCombat(self, value):
-        value = index
-        #row = self.tblCombate.currentRow()
-        #column = self.tblCombate.currentColumn()
-        #self.ID = self.tblCombate.  item(row, 4)
-        #self.tblCombate.item(row,4).setText('2')
-        #index = self.tblCombate.currentIndex()
-        #nome = self.niveisCombat[row]['name']
-        #valor = self.niveisCombat[row]['spin'].value()
-        #idhabilidade = self.niveisCombat[row]['idcombate']
-        self.niveisCombat
+    def on_Change_CombateEspecializacao(self, value):
+        valueSpin = value
+        indexRow = self.tblEspecializacao.currentRow()
+        idCombat = int((self.tblEspecializacao.item(indexRow,7)).text())
+        idPerson = int((self.tblEspecializacao.item(indexRow,8)).text())
+        personagem.save_persona_combat(idPerson, idCombat, valueSpin)
 
-    def on_Change_NivelCombat(self, value):
-        value = index
-        #row = self.tblCombate.currentRow()
-        #column = self.tblCombate.currentColumn()
-        #self.ID = self.tblCombate.  item(row, 4)
-        #self.tblCombate.item(row,4).setText('2')
-        #index = self.tblCombate.currentIndex()
-        #nome = self.niveisCombat[row]['name']
-        #valor = self.niveisCombat[row]['spin'].value()
-        #idhabilidade = self.niveisCombat[row]['idcombate']
-        self.niveisCombat
+    def on_Change_CombateRestritas(self, value):
+        valueSpin = value
+        indexRow = self.tblProfissao.currentRow()
+        idCombat = int((self.tblProfissao.item(indexRow,7)).text())
+        idPerson = int((self.tblProfissao.item(indexRow,8)).text())
+        personagem.save_persona_combat(idPerson, idCombat, valueSpin)
+
     ##Magias
-    def on_Change_NivelCombat(self, value):
-        value = index
-        #row = self.tblCombate.currentRow()
-        #column = self.tblCombate.currentColumn()
-        #self.ID = self.tblCombate.  item(row, 4)
-        #self.tblCombate.item(row,4).setText('2')
-        #index = self.tblCombate.currentIndex()
-        #nome = self.niveisCombat[row]['name']
-        #valor = self.niveisCombat[row]['spin'].value()
-        #idhabilidade = self.niveisCombat[row]['idcombate']
-        self.niveisCombat
+    def on_Change_MagiaBasica(self, value):
+        valueSpin = value
+        indexRow = self.tblMagiaBasica.currentRow()
+        idSpell = int((self.tblMagiaBasica.item(indexRow,5)).text())
+        idPerson = int((self.tblMagiaBasica.item(indexRow,6)).text())
+        personagem.save_persona_spell(idPerson, idSpell, valueSpin)
 
-    def on_Change_NivelCombat(self, value):
-        value = index
-        #row = self.tblCombate.currentRow()
-        #column = self.tblCombate.currentColumn()
-        #self.ID = self.tblCombate.  item(row, 4)
-        #self.tblCombate.item(row,4).setText('2')
-        #index = self.tblCombate.currentIndex()
-        #nome = self.niveisCombat[row]['name']
-        #valor = self.niveisCombat[row]['spin'].value()
-        #idhabilidade = self.niveisCombat[row]['idcombate']
-        self.niveisCombat
+    def on_Change_MagiaEspecializacao(self, value):
+        valueSpin = value
+        indexRow = self.tblMagiaEspecializacao.currentRow()
+        idSpell = int((self.tblMagiaEspecializacao.item(indexRow,5)).text())
+        idPerson = int((self.tblMagiaEspecializacao.item(indexRow,6)).text())
+        personagem.save_persona_spell(idPerson, idSpell, valueSpin)
 
     ###########
     def on_Clicked_CellArma(self, index):
@@ -289,7 +264,12 @@ class TelaPrincipal(QMainWindow, Ui_FrmPrincipal):
             self.txtEvocacao.setText(str(mg.evocation))
             self.txtAlcance.setText(str(mg.range))
             self.txtDuracao.setText(str(mg.duration))
-            self.txtEfeitos.setText(str(mg.level))
+
+            parts = mg.level.split('|')
+            self.txtEfeitos.clear()
+            for item in parts:
+                self.txtEfeitos.insertPlainText('%s\n' % item)
+            
             self.txtDescricao.setText(str(mg.description))
 
     def on_Clicked_CellMagiaEsp(self, row, column):
@@ -300,7 +280,12 @@ class TelaPrincipal(QMainWindow, Ui_FrmPrincipal):
             self.txtEvocacao.setText(str(mg.evocation))
             self.txtAlcance.setText(str(mg.range))
             self.txtDuracao.setText(str(mg.duration))
-            self.txtEfeitos.setText(str(mg.level))
+           
+            parts = mg.level.split('|')
+            self.txtEfeitos.clear()
+            for item in parts:
+                self.txtEfeitos.insertPlainText('%s\n' % item)
+            
             self.txtDescricao.setText(str(mg.description))
 
     def on_Change_ComboPertencesGrupo(self,index):
@@ -786,6 +771,8 @@ class TelaPrincipal(QMainWindow, Ui_FrmPrincipal):
         person = persona
         rows = personagem.get_combat_persona(person.id,1)        
 
+        self.tblCombate.setColumnHidden(7,True)
+        self.tblCombate.setColumnHidden(8,True)
         self.tblCombate.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.tblCombate.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
         self.tblCombate.verticalHeader().hide()
@@ -805,12 +792,14 @@ class TelaPrincipal(QMainWindow, Ui_FrmPrincipal):
         row = 0
         for item in rows:
             self.tblCombate.insertRow(row)
+            id = QTableWidgetItem(str(item[0]))
             descricao = QTableWidgetItem(str(item[1]))
+            idperson = QTableWidgetItem(str(person.id))
             
             self.nivelcombatbas = QtWidgets.QSpinBox()
             self.nivelcombatbas.setObjectName('nivelcombatbas_{}'.format(row))
             self.nivelcombatbas.setValue(item[2])
-            self.nivelcombatbas.valueChanged.connect(self.on_Change_NivelCombat)
+            self.nivelcombatbas.valueChanged.connect(self.on_Change_CombateTecnicasBasicas)
 
             self.niveisCombat.append({'spin':self.nivelcombatbas,'name':'nivelcombatbas_{}'.format(row),'idcombate':item[0]}) 
 
@@ -828,12 +817,16 @@ class TelaPrincipal(QMainWindow, Ui_FrmPrincipal):
             self.tblCombate.setItem(row, 4, total)
             self.tblCombate.setItem(row, 5, categoria)
             self.tblCombate.setItem(row, 6, icone)
+            self.tblCombate.setItem(row, 7, id)
+            self.tblCombate.setItem(row, 8, idperson)
             row = row + 1
 
     def popularCombateTecnicasEspecializacao(self,persona):
         person = persona
         rows = personagem.get_combat_persona(person.id, person.specialization.combat_group)        
 
+        self.tblEspecializacao.setColumnHidden(7,True)
+        self.tblEspecializacao.setColumnHidden(8,True)
         self.tblEspecializacao.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.tblEspecializacao.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
         self.tblEspecializacao.verticalHeader().hide()
@@ -853,12 +846,14 @@ class TelaPrincipal(QMainWindow, Ui_FrmPrincipal):
         row = 0
         for item in rows:
             self.tblEspecializacao.insertRow(row)
+            id = QTableWidgetItem(str(item[0]))
             descricao = QTableWidgetItem(str(item[1]))
+            idperson = QTableWidgetItem(str(person.id))
             
             self.nivelcombatesp = QtWidgets.QSpinBox()
             self.nivelcombatesp.setObjectName('nivelcombatesp_{}'.format(row))
             self.nivelcombatesp.setValue(item[2])
-            self.nivelcombatesp.valueChanged.connect(self.on_Change_NivelCombat)
+            self.nivelcombatesp.valueChanged.connect(self.on_Change_CombateEspecializacao)
 
             self.niveisCombat.append({'spin':self.nivelcombatesp,'name':'nivelcombatesp_{}'.format(row),'idcombate':item[0]}) 
 
@@ -876,16 +871,19 @@ class TelaPrincipal(QMainWindow, Ui_FrmPrincipal):
             self.tblEspecializacao.setItem(row, 4, total)
             self.tblEspecializacao.setItem(row, 5, categoria)
             self.tblEspecializacao.setItem(row, 6, icone)
+            self.tblEspecializacao.setItem(row, 7, id)
+            self.tblEspecializacao.setItem(row, 8, idperson)
             row = row + 1
 
     def popularCombateTecnicasRestritas(self,persona):
         person = persona
-
         if persona.profession.id == 1:
             rows = personagem.get_combat_persona(person.id,4)        
         elif persona.profession.id == 2:
             rows = personagem.get_combat_persona(person.id,5)        
 
+        self.tblProfissao.setColumnHidden(7,True)
+        self.tblProfissao.setColumnHidden(8,True)
         self.tblProfissao.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.tblProfissao.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
         self.tblProfissao.verticalHeader().hide()
@@ -905,12 +903,14 @@ class TelaPrincipal(QMainWindow, Ui_FrmPrincipal):
         row = 0
         for item in rows:
             self.tblProfissao.insertRow(row)
+            id = QTableWidgetItem(str(item[0]))
             descricao = QTableWidgetItem(str(item[1]))
+            idperson = QTableWidgetItem(str(person.id))
             
             self.nivelcombatpro = QtWidgets.QSpinBox()
             self.nivelcombatpro.setObjectName('nivelcombatpro_{}'.format(row))
             self.nivelcombatpro.setValue(item[2])
-            self.nivelcombatpro.valueChanged.connect(self.on_Change_NivelCombat)
+            self.nivelcombatpro.valueChanged.connect(self.on_Change_CombateRestritas)
 
             self.niveisCombat.append({'spin':self.nivelcombatpro,'name':'nivelcombatpro_{}'.format(row),'idcombate':item[0]}) 
 
@@ -928,14 +928,18 @@ class TelaPrincipal(QMainWindow, Ui_FrmPrincipal):
             self.tblProfissao.setItem(row, 4, total)
             self.tblProfissao.setItem(row, 5, categoria)
             self.tblProfissao.setItem(row, 6, icone)
+            self.tblProfissao.setItem(row, 7, id)
+            self.tblProfissao.setItem(row, 8, idperson)
             row = row + 1
 
     ### Magia #####
     def popularMagiaBasica(self,persona):
         self.niveisMagia = []
         person = persona
-        rows = personagem.get_spell_persona(person.id, person.profession.spell_group)        
+        rows = personagem.get_spell_persona(person.id, person.profession.spell_group)
 
+        self.tblMagiaBasica.setColumnHidden(5,True)
+        self.tblMagiaBasica.setColumnHidden(6,True)
         self.tblMagiaBasica.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.tblMagiaBasica.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
         self.tblMagiaBasica.verticalHeader().hide()
@@ -953,12 +957,14 @@ class TelaPrincipal(QMainWindow, Ui_FrmPrincipal):
         row = 0
         for item in rows:
             self.tblMagiaBasica.insertRow(row)
+            id = QTableWidgetItem(str(item[0]))
+            idperson = QTableWidgetItem(str(person.id))
             descricao = QTableWidgetItem(str(item[1]))
             
             self.nivelmagiabas = QtWidgets.QSpinBox()
             self.nivelmagiabas.setValue(item[2])
             self.nivelmagiabas.setObjectName('nivelmagiabas_{}'.format(row))
-            self.nivelmagiabas.valueChanged.connect(self.on_Change_NivelCombat)
+            self.nivelmagiabas.valueChanged.connect(self.on_Change_MagiaBasica)
 
             self.niveisMagia.append({'spin':self.nivelmagiabas,'name':'nivelmagiabas_{}'.format(row),'idmagia':item[0]}) 
 
@@ -966,7 +972,6 @@ class TelaPrincipal(QMainWindow, Ui_FrmPrincipal):
             total = QTableWidgetItem(str(item[4]))
             
             icon = QtGui.QIcon(QtGui.QPixmap(":/menu/iconfinder_question_12319.png"))
-
             self.icone = QTableWidgetItem(icon,None) 
 
             self.tblMagiaBasica.setItem(row, 0, descricao)
@@ -974,6 +979,8 @@ class TelaPrincipal(QMainWindow, Ui_FrmPrincipal):
             self.tblMagiaBasica.setItem(row, 2, custo)
             self.tblMagiaBasica.setItem(row, 3, total)
             self.tblMagiaBasica.setItem(row, 4, self.icone)
+            self.tblMagiaBasica.setItem(row, 5, id)
+            self.tblMagiaBasica.setItem(row, 6, idperson)
             row = row + 1
 
     def popularMagiaEspecializacao(self,persona):
@@ -981,6 +988,9 @@ class TelaPrincipal(QMainWindow, Ui_FrmPrincipal):
         person = persona
         rows = personagem.get_spell_persona(person.id, person.specialization.spell_group)        
 
+
+        self.tblMagiaEspecializacao.setColumnHidden(5,True)
+        self.tblMagiaEspecializacao.setColumnHidden(6,True)
         self.tblMagiaEspecializacao.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.tblMagiaEspecializacao.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
         self.tblMagiaEspecializacao.verticalHeader().hide()
@@ -998,12 +1008,14 @@ class TelaPrincipal(QMainWindow, Ui_FrmPrincipal):
         row = 0
         for item in rows:
             self.tblMagiaEspecializacao.insertRow(row)
+            id = QTableWidgetItem(str(item[0]))
+            idperson = QTableWidgetItem(str(person.id))
             descricao = QTableWidgetItem(str(item[1]))
             
             self.nivelmagiaesp = QtWidgets.QSpinBox()
             self.nivelmagiaesp.setValue(item[2])
             self.nivelmagiaesp.setObjectName('nivelmagiaesp_{}'.format(row))
-            self.nivelmagiaesp.valueChanged.connect(self.on_Change_NivelCombat)
+            self.nivelmagiaesp.valueChanged.connect(self.on_Change_MagiaEspecializacao)
 
             self.niveisMagiaEsp.append({'spin':self.nivelmagiaesp,'name':'nivelmagiaesp_{}'.format(row),'idmagia':item[0]}) 
 
@@ -1011,7 +1023,6 @@ class TelaPrincipal(QMainWindow, Ui_FrmPrincipal):
             total = QTableWidgetItem(str(item[4]))
             
             icon = QtGui.QIcon(QtGui.QPixmap(":/menu/iconfinder_question_12319.png"))
-
             self.icone = QTableWidgetItem(icon,None) 
 
             self.tblMagiaEspecializacao.setItem(row, 0, descricao)
@@ -1019,6 +1030,8 @@ class TelaPrincipal(QMainWindow, Ui_FrmPrincipal):
             self.tblMagiaEspecializacao.setItem(row, 2, custo)
             self.tblMagiaEspecializacao.setItem(row, 3, total)
             self.tblMagiaEspecializacao.setItem(row, 4, self.icone)
+            self.tblMagiaEspecializacao.setItem(row, 5, id)
+            self.tblMagiaEspecializacao.setItem(row, 6, idperson)
             row = row + 1
 
     ### Habilidades#####

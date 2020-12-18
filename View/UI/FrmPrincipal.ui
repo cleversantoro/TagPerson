@@ -3334,6 +3334,16 @@
          <string/>
         </property>
        </column>
+       <column>
+        <property name="text">
+         <string>id</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>idperson</string>
+        </property>
+       </column>
       </widget>
      </widget>
      <widget class="QGroupBox" name="groupBox_11">
@@ -3417,6 +3427,16 @@
          <string/>
         </property>
        </column>
+       <column>
+        <property name="text">
+         <string>id</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>idperson</string>
+        </property>
+       </column>
       </widget>
      </widget>
      <widget class="QGroupBox" name="groupBox_12">
@@ -3498,6 +3518,16 @@
        <column>
         <property name="text">
          <string/>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>id</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>idperson</string>
         </property>
        </column>
       </widget>
@@ -4166,6 +4196,16 @@
          <set>AlignCenter</set>
         </property>
        </column>
+       <column>
+        <property name="text">
+         <string>id</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>idpersona</string>
+        </property>
+       </column>
       </widget>
      </widget>
      <widget class="QGroupBox" name="groupBox_14">
@@ -4237,6 +4277,16 @@
        <column>
         <property name="text">
          <string/>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>id</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>idpersona</string>
         </property>
        </column>
       </widget>
@@ -4332,9 +4382,9 @@
        <property name="geometry">
         <rect>
          <x>8</x>
-         <y>140</y>
+         <y>463</y>
          <width>413</width>
-         <height>187</height>
+         <height>221</height>
         </rect>
        </property>
        <property name="font">
@@ -4349,9 +4399,9 @@
        <property name="geometry">
         <rect>
          <x>8</x>
-         <y>360</y>
+         <y>136</y>
          <width>413</width>
-         <height>321</height>
+         <height>301</height>
         </rect>
        </property>
        <property name="font">
@@ -4438,7 +4488,7 @@
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>124</y>
+         <y>444</y>
          <width>55</width>
          <height>16</height>
         </rect>
@@ -4456,7 +4506,7 @@
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>342</y>
+         <y>118</y>
          <width>71</width>
          <height>16</height>
         </rect>

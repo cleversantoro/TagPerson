@@ -304,6 +304,16 @@ class PersonagemDAO:
         cur_usr.execute(query)
         conn_usr.commit()
 
+    def save_persona_combat(idpersona, idcombat, value):
+        query = 'INSERT or REPLACE INTO personagem_combate (id_personagem, id_combate, nivel) values ({},{},{});'.format(idpersona,idcombat,value)
+        cur_usr.execute(query)
+        conn_usr.commit()
+
+    def save_persona_spell(idpersona, idspell, value):
+        query = 'INSERT or REPLACE INTO personagem_magia (id_personagem, id_magia, nivel) values ({},{},{});'.format(idpersona,idspell,value)
+        cur_usr.execute(query)
+        conn_usr.commit()
+
     def save_persona_equipment(persona):
         equip = {}
         for item in persona.equipment:
