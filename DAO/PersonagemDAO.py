@@ -293,6 +293,9 @@ class PersonagemDAO:
         cur_usr.execute(query)
         conn_usr.commit()
 
+    def save_persona_skills(persona):
+        PersonagemDAO.__save_persona_list(persona.id, persona.skills, 'habilidade')
+
     def save_persona_spells(persona):
         PersonagemDAO.__save_persona_list(persona.id, persona.spells, 'magia')
 

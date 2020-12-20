@@ -30,32 +30,35 @@ class FrmNovoPersonagem(QMainWindow):
         self.appSignals()
         self.Events()
 
-        self.ui.lblHumano.setProperty('id',1)
+        self.ui.btnHumano.setProperty('id',1)
+        self.ui.btnPequenino.setProperty('id',2)
+        self.ui.btnAnao.setProperty('id',3)
+        self.ui.btnElfoFlorestal.setProperty('id',4)
+        self.ui.btnElfoDourado.setProperty('id',5)
+        self.ui.btnMeioElfo.setProperty('id',6)
 
     def appSignals(self):
-        self.ui.btnCancel.clicked.connect(self.on_clicked_Cancelar)
-        self.ui.btnOk.clicked.connect(self.on_clicked_Criar)
+        self.ui.btnCancelar.clicked.connect(self.on_clicked_Cancelar)
+        self.ui.btnCriar.clicked.connect(self.on_clicked_Criar)
     
     def Events(self):
-        self.ui.lblHumano.mouseDoubleClickEvent = self.on_dblclicked
-        self.ui.lblPequenino.mouseDoubleClickEvent = self.on_dblclicked
-        self.ui.lblAnao.mouseDoubleClickEvent = self.on_dblclicked
-        self.ui.lblElfoFlorestal.mouseDoubleClickEvent = self.on_dblclicked
-        self.ui.lblElfoDourado.mouseDoubleClickEvent = self.on_dblclicked
-        self.ui.lblMeioElfo.mouseDoubleClickEvent = self.on_dblclicked
+        #self.ui.btnHumano.mouseDoubleClickEvent = self.on_dblclicked
+        self.ui.btnHumano.clicked.connect(self.on_dblclicked) #= self.on_dblclicked
+        #self.ui.btnPequenino.mouseDoubleClickEvent = self.on_dblclicked
+        self.ui.btnPequenino.clicked.connect(self.on_dblclicked)
+        self.ui.btnAnao.mouseDoubleClickEvent = self.on_dblclicked
+        self.ui.btnElfoFlorestal.mouseDoubleClickEvent = self.on_dblclicked
+        self.ui.btnElfoDourado.mouseDoubleClickEvent = self.on_dblclicked
+        self.ui.btnMeioElfo.mouseDoubleClickEvent = self.on_dblclicked
 
-    def on_dblclicked(self, event):
-        if (self.ui.objectName == "lblHumano"):
-        #QObject.setProperty('PropertyName', value)
-            isTest = t.property('id')
-        if (event.type() == QtCore.QEvent.MouseButtonDblClick):
-            event.button()
-            #pos = event.pos()
-            #print('mouse move: (%d, %d)' % (pos.x(), pos.y()))
-        #lbl = QLabel()
-        #lbl = self
-        #t = lbl.selectedText
-        self.ui.lblRaca.setText("Humano")        
+    def on_dblclicked(self):
+        sender_button = self.sender()
+        id = sender_button.property('id')
+        
+        #if (event.type() == QtCore.QEvent.MouseButtonDblClick):
+        #    event.button()
+        #    id = self.ui.btnHumano.property('id')
+        self.ui.lblRaca.setText(const.RACA[id])        
         pass
     
     @QtCore.pyqtSlot()        
@@ -98,7 +101,20 @@ class FrmNovoPersonagem(QMainWindow):
     def on_clicked_Cancelar(self):
         self.close()    
         #pass
-      
+
+#class CustomSignal(QtCore.QObject):
+#    upClicked = QtCore.pyqtSignal()
+#    downClicked = QtCore.pyqtSignal()
+
+#    #@QtCore.pyqtSlot()
+#    def on_PressButonn_UP_Down_Spin(self, event):
+#        last_value = self.value()
+#        super(SpinBox, self).mousePressEvent(event)
+#        if self.value() < last_value:
+#            self.downClicked.emit()
+#        elif self.value() > last_value:
+#            self.upClicked.emit()
+
 class TelaPrincipal(QMainWindow, Ui_FrmPrincipal):
 
     def __init__(self):
@@ -106,6 +122,7 @@ class TelaPrincipal(QMainWindow, Ui_FrmPrincipal):
         self.setupUi(self)
         self.setFixedSize(1525, 922)
         self.center()
+        #self.signals = CustomSignal()
 
         self.fmNovoPersonagem = FrmNovoPersonagem()
 
@@ -134,6 +151,7 @@ class TelaPrincipal(QMainWindow, Ui_FrmPrincipal):
         self.actionSobre.triggered.connect(self.ShowFrmSobre)
         self.actionNovo.triggered.connect(self.ShowFrmNovoPersonagem)
         self.actionSalvar_toolbar.triggered.connect(self.gravarPersonagem)
+        self.actionNovo_toolbar.triggered.connect(self.ShowFrmNovoPersonagem)
 
         self.cbxPertencesGrupo.currentIndexChanged.connect(self.on_Change_ComboPertencesGrupo)
         self.cbxArmadura.currentIndexChanged.connect(self.on_Change_Armadura)
@@ -143,6 +161,7 @@ class TelaPrincipal(QMainWindow, Ui_FrmPrincipal):
         self.btnAdicionarArma.clicked.connect(self.on_Clicked_btnAdicionarArma)
         self.btnAdicionarPertences.clicked.connect(self.on_Clicked_btnAdicionarPertences)
 
+        self.spnExperiencia.valueChanged.connect(self.on_Change_Level)
         #self.lblRandonIdade
         #self.lblRandonPeso
         #self.lblRandonAltura
@@ -338,13 +357,30 @@ class TelaPrincipal(QMainWindow, Ui_FrmPrincipal):
         #self.lblPeso
         pass 
     
-    @QtCore.pyqtSlot()
-    def on_Change_Level(self,value):
+    #@QtCore.pyqtSlot()
+    def on_Change_Level(self, value):
         level = utils.get_level(int(value))
-        nextlevel = utils.get_xp_next(level)
-        return level
+        nextxp = utils.get_xp_next(level)
+        #self.person.level = level
+        #self.txtProximoNivel.setText(str(nextlevel))
+        #self.populaEspecializacaoPersonagem(self.person)
 
     ### Personagens #####
+    def populaEspecializacaoPersonagem(self, persona):
+        self.ComboEspecializacao(persona.profession.id)
+        if persona.level <= 5 :
+            self.cbxEspecializao.setCurrentIndex(0)
+            self.cbxEspecializao.setEnabled(False)
+        else:
+            self.cbxEspecializao.setEnabled(True)
+            if persona.specialization != None:
+                espec = persona.specialization.name
+                index = self.cbxEspecializao.findText(persona.specialization.name,QtCore.Qt.MatchFixedString)
+                if index >= 0:
+                    self.cbxEspecializao.setCurrentIndex(index)
+            else:
+                self.cbxEspecializao.setCurrentIndex(0)
+
     def popularGridPersonagens(self):
         rows = personagem.get_persona_list()
         self.tblPersonagens.setColumnHidden(0,True)
@@ -419,9 +455,11 @@ class TelaPrincipal(QMainWindow, Ui_FrmPrincipal):
         self.txtNome.setText(persona.name)
         self.txtJogador.setText(persona.player)
         self.lblRaca.setText(persona.race.name)
-        self.lblProfissao.setText(persona.profession.name)        
-        self.txtExperiencia.setText(str(persona.xp))
-        self.spnNivel.setValue(self.on_Change_Level(persona.xp))
+        self.lblProfissao.setText(persona.profession.name)
+        
+        self.spnExperiencia.setValue(persona.xp)
+        self.spnNivel.setValue(persona.level)
+        #self.txtProximoNivel.setText(str(utils.get_xp_next(persona.xp)))
 
         #god = divindade.get_god_name(persona.god)
         #index = self.cbxDivindade.findText(god,QtCore.Qt.MatchFixedString)
@@ -437,19 +475,7 @@ class TelaPrincipal(QMainWindow, Ui_FrmPrincipal):
         else:
             self.cbxClasseSocial.setCurrentIndex(0)
         
-        self.ComboEspecializacao(self.person.profession.id)
-        if persona.level <= 5 :
-            self.cbxEspecializao.setCurrentIndex(0)
-            self.cbxEspecializao.setEnabled(False)
-        else:
-            self.cbxEspecializao.setEnabled(True)
-            if persona.specialization != None:
-                espec = persona.specialization.name
-                index = self.cbxEspecializao.findText(persona.specialization.name,QtCore.Qt.MatchFixedString)
-                if index >= 0:
-                    self.cbxEspecializao.setCurrentIndex(index)
-            else:
-                self.cbxEspecializao.setCurrentIndex(0)
+        self.populaEspecializacaoPersonagem(persona)
 
         if(persona.specialization != None):
             self.popularCombateTecnicasEspecializacao(persona)

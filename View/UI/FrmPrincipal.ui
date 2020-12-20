@@ -5129,19 +5129,6 @@
      <string>Estágio:</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="txtExperiencia">
-    <property name="geometry">
-     <rect>
-      <x>960</x>
-      <y>13</y>
-      <width>71</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="inputMask">
-     <string>dddd</string>
-    </property>
-   </widget>
    <widget class="QSpinBox" name="spnNivel">
     <property name="geometry">
      <rect>
@@ -5235,6 +5222,45 @@
     </property>
     <property name="text">
      <string>Especialização:</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spnExperiencia">
+    <property name="geometry">
+     <rect>
+      <x>961</x>
+      <y>11</y>
+      <width>70</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>9999</number>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txtProximoNivel">
+    <property name="geometry">
+     <rect>
+      <x>1110</x>
+      <y>39</y>
+      <width>70</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblProximoNivel">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>42</y>
+      <width>51</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Próximo:</string>
     </property>
    </widget>
   </widget>
@@ -5360,7 +5386,6 @@
  <tabstops>
   <tabstop>txtNome</tabstop>
   <tabstop>txtJogador</tabstop>
-  <tabstop>txtExperiencia</tabstop>
   <tabstop>spnNivel</tabstop>
   <tabstop>cbxDivindade</tabstop>
   <tabstop>cbxClasseSocial</tabstop>
