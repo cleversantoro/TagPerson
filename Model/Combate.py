@@ -14,8 +14,7 @@ class Combat(Base):
         self.bonus = 0
         self.has_specialization = False
 
-
     def __str__(self):
-        return 'Skill: %s\nDescription: %s\nr: %s\ne: %s\nsuggestions: %s' % \
-                    (self.name, self.description, str(self.atributed),
-                    str(self.has_specialization), str(self.bonus))
+        return f'Name:{self.name} \n description:{self.description} \n ' \
+               f'r:{self.atributed} \n e:{self.has_specialization} \n ' \
+               f'suggestions:{self.bonus}'
