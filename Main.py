@@ -541,14 +541,14 @@ class TelaPrincipal(QMainWindow, Ui_FrmPrincipal):
         self.hsdIdade.setTickPosition(QSlider.TicksBelow)
         self.hsdIdade.setTickInterval(1)
         
-        self.hsdPeso.setMinimum(peso[0])
-        self.hsdPeso.setMaximum(peso[1])
+        #self.hsdPeso.setMinimum(peso[0])
+        #self.hsdPeso.setMaximum(peso[1])
         self.hsdPeso.setValue(0 if persona.weight == 'None' else persona.weight)
         self.hsdPeso.setTickPosition(QSlider.TicksBelow)
         self.hsdPeso.setTickInterval(1)
 
-        self.hsdAltura.setMinimum(altura[0])
-        self.hsdAltura.setMaximum(altura[1])
+        #self.hsdAltura.setMinimum(altura[0])
+        #self.hsdAltura.setMaximum(altura[1])
         self.hsdAltura.setValue(0 if persona.height == 'None' else persona.height)
         self.hsdAltura.setTickPosition(QSlider.TicksBelow)
         self.hsdAltura.setTickInterval(1)
