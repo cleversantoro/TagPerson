@@ -3258,7 +3258,7 @@
        <rect>
         <x>3</x>
         <y>-2</y>
-        <width>427</width>
+        <width>422</width>
         <height>691</height>
        </rect>
       </property>
@@ -3277,10 +3277,10 @@
       <widget class="QTableWidget" name="tblCombate">
        <property name="geometry">
         <rect>
-         <x>3</x>
-         <y>24</y>
-         <width>420</width>
-         <height>661</height>
+         <x>4</x>
+         <y>21</y>
+         <width>415</width>
+         <height>665</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -3334,14 +3334,24 @@
          <string/>
         </property>
        </column>
+       <column>
+        <property name="text">
+         <string>id</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>idperson</string>
+        </property>
+       </column>
       </widget>
      </widget>
      <widget class="QGroupBox" name="groupBox_11">
       <property name="geometry">
        <rect>
-        <x>433</x>
+        <x>430</x>
         <y>-2</y>
-        <width>431</width>
+        <width>422</width>
         <height>691</height>
        </rect>
       </property>
@@ -3361,9 +3371,9 @@
        <property name="geometry">
         <rect>
          <x>4</x>
-         <y>24</y>
-         <width>423</width>
-         <height>661</height>
+         <y>21</y>
+         <width>415</width>
+         <height>665</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -3417,15 +3427,25 @@
          <string/>
         </property>
        </column>
+       <column>
+        <property name="text">
+         <string>id</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>idperson</string>
+        </property>
+       </column>
       </widget>
      </widget>
      <widget class="QGroupBox" name="groupBox_12">
       <property name="geometry">
        <rect>
-        <x>866</x>
+        <x>858</x>
         <y>-2</y>
-        <width>418</width>
-        <height>693</height>
+        <width>422</width>
+        <height>691</height>
        </rect>
       </property>
       <property name="font">
@@ -3445,7 +3465,7 @@
         <rect>
          <x>4</x>
          <y>21</y>
-         <width>410</width>
+         <width>415</width>
          <height>665</height>
         </rect>
        </property>
@@ -3498,6 +3518,16 @@
        <column>
         <property name="text">
          <string/>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>id</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>idperson</string>
         </property>
        </column>
       </widget>
@@ -4122,6 +4152,12 @@
          <height>661</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>7</pointsize>
+        </font>
+       </property>
        <column>
         <property name="text">
          <string/>
@@ -4160,6 +4196,16 @@
          <set>AlignCenter</set>
         </property>
        </column>
+       <column>
+        <property name="text">
+         <string>id</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>idpersona</string>
+        </property>
+       </column>
       </widget>
      </widget>
      <widget class="QGroupBox" name="groupBox_14">
@@ -4191,6 +4237,12 @@
          <width>410</width>
          <height>661</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>7</pointsize>
+        </font>
        </property>
        <column>
         <property name="text">
@@ -4225,6 +4277,16 @@
        <column>
         <property name="text">
          <string/>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>id</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>idpersona</string>
         </property>
        </column>
       </widget>
@@ -4320,9 +4382,9 @@
        <property name="geometry">
         <rect>
          <x>8</x>
-         <y>140</y>
+         <y>463</y>
          <width>413</width>
-         <height>187</height>
+         <height>221</height>
         </rect>
        </property>
        <property name="font">
@@ -4337,9 +4399,9 @@
        <property name="geometry">
         <rect>
          <x>8</x>
-         <y>360</y>
+         <y>136</y>
          <width>413</width>
-         <height>321</height>
+         <height>301</height>
         </rect>
        </property>
        <property name="font">
@@ -4426,7 +4488,7 @@
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>124</y>
+         <y>444</y>
          <width>55</width>
          <height>16</height>
         </rect>
@@ -4444,7 +4506,7 @@
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>342</y>
+         <y>118</y>
          <width>71</width>
          <height>16</height>
         </rect>
@@ -5067,19 +5129,6 @@
      <string>Estágio:</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="txtExperiencia">
-    <property name="geometry">
-     <rect>
-      <x>960</x>
-      <y>13</y>
-      <width>71</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="inputMask">
-     <string>dddd</string>
-    </property>
-   </widget>
    <widget class="QSpinBox" name="spnNivel">
     <property name="geometry">
      <rect>
@@ -5173,6 +5222,45 @@
     </property>
     <property name="text">
      <string>Especialização:</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spnExperiencia">
+    <property name="geometry">
+     <rect>
+      <x>961</x>
+      <y>11</y>
+      <width>70</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>9999</number>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txtProximoNivel">
+    <property name="geometry">
+     <rect>
+      <x>1110</x>
+      <y>39</y>
+      <width>70</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblProximoNivel">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>42</y>
+      <width>51</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Próximo:</string>
     </property>
    </widget>
   </widget>
@@ -5298,7 +5386,6 @@
  <tabstops>
   <tabstop>txtNome</tabstop>
   <tabstop>txtJogador</tabstop>
-  <tabstop>txtExperiencia</tabstop>
   <tabstop>spnNivel</tabstop>
   <tabstop>cbxDivindade</tabstop>
   <tabstop>cbxClasseSocial</tabstop>

@@ -38,6 +38,12 @@ class PersonagemCTR:
     def save_persona_skill(idpersona, idskill, value):
         return dao.save_persona_skill(idpersona,idskill,value)
 
+    def save_persona_combat(idpersona, idcombat, value):
+        return dao.save_persona_combat(idpersona,idcombat,value)
+
+    def save_persona_spell(idpersona, idspell, value):
+        return dao.save_persona_spell(idpersona,idspell,value)
+
     def save_persona_equipment(persona):
         return dao.save_persona_equipment(persona)
 

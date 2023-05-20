@@ -67,7 +67,7 @@
    <property name="frameShadow">
     <enum>QFrame::Raised</enum>
    </property>
-   <widget class="QLabel" name="label_14">
+   <widget class="QLabel" name="lblhumano">
     <property name="geometry">
      <rect>
       <x>32</x>
@@ -86,10 +86,10 @@
      <string>Humano</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_15">
+   <widget class="QLabel" name="lblpequenino">
     <property name="geometry">
      <rect>
-      <x>142</x>
+      <x>150</x>
       <y>152</y>
       <width>75</width>
       <height>16</height>
@@ -105,7 +105,7 @@
      <string>Pequenino</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_16">
+   <widget class="QLabel" name="lblanao">
     <property name="geometry">
      <rect>
       <x>279</x>
@@ -124,12 +124,12 @@
      <string>Anão</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_17">
+   <widget class="QLabel" name="lblelfofloresta">
     <property name="geometry">
      <rect>
-      <x>377</x>
+      <x>390</x>
       <y>152</y>
-      <width>91</width>
+      <width>71</width>
       <height>16</height>
      </rect>
     </property>
@@ -143,12 +143,12 @@
      <string>Elfo Florestal</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_18">
+   <widget class="QLabel" name="lblelfodourado">
     <property name="geometry">
      <rect>
-      <x>493</x>
+      <x>500</x>
       <y>152</y>
-      <width>95</width>
+      <width>81</width>
       <height>16</height>
      </rect>
     </property>
@@ -162,10 +162,10 @@
      <string>Elfo Dourado</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_19">
+   <widget class="QLabel" name="lblmeioelfo">
     <property name="geometry">
      <rect>
-      <x>634</x>
+      <x>640</x>
       <y>150</y>
       <width>65</width>
       <height>20</height>
@@ -181,101 +181,6 @@
      <string>Meio Elfo</string>
     </property>
    </widget>
-   <widget class="QLabel" name="lblPequenino">
-    <property name="geometry">
-     <rect>
-      <x>139</x>
-      <y>19</y>
-      <width>80</width>
-      <height>114</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="../../Imagens/Personagem/personagem.qrc">:/Raca/raca/pequenino.png</pixmap>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QLabel" name="lblAnao">
-    <property name="geometry">
-     <rect>
-      <x>258</x>
-      <y>19</y>
-      <width>80</width>
-      <height>114</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="../../Imagens/Personagem/personagem.qrc">:/Raca/raca/anao.png</pixmap>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QLabel" name="lblElfoDourado">
-    <property name="geometry">
-     <rect>
-      <x>497</x>
-      <y>19</y>
-      <width>80</width>
-      <height>114</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="../../Imagens/Personagem/personagem.qrc">:/Raca/raca/elfodourado.png</pixmap>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QLabel" name="lblElfoFlorestal">
-    <property name="geometry">
-     <rect>
-      <x>377</x>
-      <y>19</y>
-      <width>80</width>
-      <height>114</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="../../Imagens/Personagem/personagem.qrc">:/Raca/raca/elfoflorestal.png</pixmap>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QLabel" name="lblMeioElfo">
-    <property name="geometry">
-     <rect>
-      <x>616</x>
-      <y>19</y>
-      <width>80</width>
-      <height>114</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="../../Imagens/Personagem/personagem.qrc">:/Raca/raca/meioelfo.png</pixmap>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
    <widget class="QPushButton" name="btnHumano">
     <property name="geometry">
      <rect>
@@ -289,6 +194,9 @@
      <font>
       <kerning>true</kerning>
      </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
@@ -319,6 +227,166 @@
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QPushButton" name="btnPequenino">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>21</y>
+      <width>101</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../../Imagens/Personagem/personagem.qrc">
+      <normaloff>:/Raca/raca/pequenino.png</normaloff>:/Raca/raca/pequenino.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>112</width>
+      <height>139</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnAnao">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>21</y>
+      <width>101</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../../Imagens/Personagem/personagem.qrc">
+      <normaloff>:/Raca/raca/anao.png</normaloff>:/Raca/raca/anao.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>90</width>
+      <height>125</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnElfoFlorestal">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>21</y>
+      <width>101</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../../Imagens/Personagem/personagem.qrc">
+      <normaloff>:/Raca/raca/elfoflorestal.png</normaloff>:/Raca/raca/elfoflorestal.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>100</width>
+      <height>132</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnElfoDourado">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>21</y>
+      <width>101</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../../Imagens/Personagem/personagem.qrc">
+      <normaloff>:/Raca/raca/elfodourado.png</normaloff>:/Raca/raca/elfodourado.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>90</width>
+      <height>125</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnMeioElfo">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>21</y>
+      <width>101</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../../Imagens/Personagem/personagem.qrc">
+      <normaloff>:/Raca/raca/meioelfo.png</normaloff>:/Raca/raca/meioelfo.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>90</width>
+      <height>125</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
   </widget>
   <widget class="QFrame" name="frame_3">
    <property name="geometry">
@@ -338,12 +406,12 @@
    <property name="frameShadow">
     <enum>QFrame::Raised</enum>
    </property>
-   <widget class="QLabel" name="label_20">
+   <widget class="QLabel" name="lblguerreiro">
     <property name="geometry">
      <rect>
-      <x>19</x>
-      <y>141</y>
-      <width>69</width>
+      <x>28</x>
+      <y>140</y>
+      <width>60</width>
       <height>16</height>
      </rect>
     </property>
@@ -357,7 +425,7 @@
      <string>Guerreiro</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_21">
+   <widget class="QLabel" name="lblladino">
     <property name="geometry">
      <rect>
       <x>151</x>
@@ -376,12 +444,12 @@
      <string>Ladino</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_22">
+   <widget class="QLabel" name="lblsacerdote">
     <property name="geometry">
      <rect>
-      <x>252</x>
+      <x>261</x>
       <y>141</y>
-      <width>71</width>
+      <width>60</width>
       <height>16</height>
      </rect>
     </property>
@@ -395,10 +463,10 @@
      <string>Sacerdote</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_23">
+   <widget class="QLabel" name="lblmago">
     <property name="geometry">
      <rect>
-      <x>389</x>
+      <x>396</x>
       <y>141</y>
       <width>43</width>
       <height>18</height>
@@ -414,12 +482,12 @@
      <string>Mago</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_24">
+   <widget class="QLabel" name="lblrastreador">
     <property name="geometry">
      <rect>
-      <x>489</x>
+      <x>505</x>
       <y>141</y>
-      <width>81</width>
+      <width>70</width>
       <height>16</height>
      </rect>
     </property>
@@ -433,10 +501,10 @@
      <string>Rastreador</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_25">
+   <widget class="QLabel" name="lblbardo">
     <property name="geometry">
      <rect>
-      <x>622</x>
+      <x>638</x>
       <y>141</y>
       <width>41</width>
       <height>16</height>
@@ -452,7 +520,7 @@
      <string>Bardo</string>
     </property>
    </widget>
-   <widget class="QLabel" name="lblGuerreiro">
+   <widget class="QPushButton" name="btnGuerreiro">
     <property name="geometry">
      <rect>
       <x>13</x>
@@ -461,109 +529,187 @@
       <height>114</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
     <property name="text">
      <string/>
     </property>
-    <property name="pixmap">
-     <pixmap resource="../../Imagens/Personagem/personagem.qrc">:/Profissao/profissao/guerreiro.png</pixmap>
+    <property name="icon">
+     <iconset resource="../../Imagens/Personagem/personagem.qrc">
+      <normaloff>:/Profissao/profissao/guerreiro.png</normaloff>:/Profissao/profissao/guerreiro.png</iconset>
     </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
+    <property name="iconSize">
+     <size>
+      <width>90</width>
+      <height>106</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="lblLadino">
+   <widget class="QPushButton" name="btnLadino">
     <property name="geometry">
      <rect>
-      <x>131</x>
+      <x>130</x>
       <y>13</y>
       <width>80</width>
       <height>114</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
     <property name="text">
      <string/>
     </property>
-    <property name="pixmap">
-     <pixmap resource="../../Imagens/Personagem/personagem.qrc">:/Profissao/profissao/ladino.png</pixmap>
+    <property name="icon">
+     <iconset resource="../../Imagens/Personagem/personagem.qrc">
+      <normaloff>:/Profissao/profissao/ladino.png</normaloff>:/Profissao/profissao/ladino.png</iconset>
     </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
+    <property name="iconSize">
+     <size>
+      <width>114</width>
+      <height>108</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="lblSacerdote">
+   <widget class="QPushButton" name="lblSacerdote">
     <property name="geometry">
      <rect>
-      <x>248</x>
+      <x>253</x>
       <y>13</y>
       <width>80</width>
       <height>114</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
     <property name="text">
      <string/>
     </property>
-    <property name="pixmap">
-     <pixmap resource="../../Imagens/Personagem/personagem.qrc">:/Profissao/profissao/sacerdote.png</pixmap>
+    <property name="icon">
+     <iconset resource="../../Imagens/Personagem/personagem.qrc">
+      <normaloff>:/Profissao/profissao/sacerdote.png</normaloff>:/Profissao/profissao/sacerdote.png</iconset>
     </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
+    <property name="iconSize">
+     <size>
+      <width>144</width>
+      <height>104</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="lblRastreador">
+   <widget class="QPushButton" name="btnMago">
     <property name="geometry">
      <rect>
-      <x>483</x>
+      <x>374</x>
       <y>13</y>
       <width>80</width>
       <height>114</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
     <property name="text">
      <string/>
     </property>
-    <property name="pixmap">
-     <pixmap resource="../../Imagens/Personagem/personagem.qrc">:/Profissao/profissao/rastreador.png</pixmap>
+    <property name="icon">
+     <iconset resource="../../Imagens/Personagem/personagem.qrc">
+      <normaloff>:/Profissao/profissao/mago.png</normaloff>:/Profissao/profissao/mago.png</iconset>
     </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
+    <property name="iconSize">
+     <size>
+      <width>152</width>
+      <height>109</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="lblMago">
+   <widget class="QPushButton" name="btnRastreador">
     <property name="geometry">
      <rect>
-      <x>366</x>
+      <x>489</x>
       <y>13</y>
       <width>80</width>
       <height>114</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
     <property name="text">
      <string/>
     </property>
-    <property name="pixmap">
-     <pixmap resource="../../Imagens/Personagem/personagem.qrc">:/Profissao/profissao/mago.png</pixmap>
+    <property name="icon">
+     <iconset resource="../../Imagens/Personagem/personagem.qrc">
+      <normaloff>:/Profissao/profissao/rastreador.png</normaloff>:/Profissao/profissao/rastreador.png</iconset>
     </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
+    <property name="iconSize">
+     <size>
+      <width>144</width>
+      <height>107</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="lblBardo">
+   <widget class="QPushButton" name="btnBardo">
     <property name="geometry">
      <rect>
-      <x>601</x>
+      <x>614</x>
       <y>13</y>
       <width>80</width>
       <height>114</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
     <property name="text">
      <string/>
     </property>
-    <property name="pixmap">
-     <pixmap resource="../../Imagens/Personagem/personagem.qrc">:/Profissao/profissao/bardo.png</pixmap>
+    <property name="icon">
+     <iconset resource="../../Imagens/Personagem/personagem.qrc">
+      <normaloff>:/Profissao/profissao/bardo.png</normaloff>:/Profissao/profissao/bardo.png</iconset>
     </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
+    <property name="iconSize">
+     <size>
+      <width>144</width>
+      <height>102</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>
@@ -607,7 +753,7 @@
     <string>Profissão:</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="btnCancel">
+  <widget class="QPushButton" name="btnCancelar">
    <property name="geometry">
     <rect>
      <x>710</x>
@@ -620,7 +766,7 @@
     <string>Cancelar</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="btnOk">
+  <widget class="QPushButton" name="btnCriar">
    <property name="geometry">
     <rect>
      <x>820</x>

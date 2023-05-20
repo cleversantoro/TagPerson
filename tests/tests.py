@@ -10,6 +10,7 @@ from Controller.ProfissaoCTR import ProfissaoCTR  as ctrProf
 from Controller.RacaCTR import RacaCTR as ctrRaca
 from Controller.TempoCTR import  TempoCTR as ctrTemp
 from Controller.CombateCTR import  CombateCTR as ctrCombat
+from Model.Combate import Combat as combate
 
 class test:
 
@@ -18,7 +19,7 @@ class test:
         ctrDivind.get_god_name(1)
         print('')
 
-    def equipamento():
+    def equipamento(self):
         teste1 = ctrEquip.get_equipment_groups_misc()        
         teste1 = ctrEquip.get_equipment_from_group(1)
         teste2 = ctrEquip.get_equipment_groups()
@@ -114,8 +115,10 @@ class test:
     
     def tempo():
         teste1 = ctrTemp.get_timeline()
+        cmb = combate
+        cmb.atributed = 1
+        print(cmb)
         print('')
-
 
 if __name__ == '__main__':
     #test.divindade()
@@ -124,9 +127,10 @@ if __name__ == '__main__':
     #test.habilidade()
     #test.localidade()
     #test.magia()
-    test.personagem()
+    #test.personagem()
     #test.profissao()
     #test.raca()
-    #test.tempo()
+    test.tempo()
     #test.combate()
     print('fim')
+    #print(combate)

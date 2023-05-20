@@ -30,6 +30,7 @@ class const:
                        305, 345, 385, 435, 485, 535, 585, 645, 705, 765, 825, 895,
                        965, 1035, 1105, 1185, 1265, 1345, 1425, 1515, 1605, 1695,
                        1785, 1885, 1985, 2085, 2185]
+    RACA = {1:'Humano', 2:'Pequenino', 3:'Anão', 4:'Elfo Florestal', 5:'Elfo Dourado', 6:'Meio Elfo'}
 
     COMBAT_EQUIP = 3
     (ARMOUR, HELMET, SHIELD) = range(COMBAT_EQUIP)

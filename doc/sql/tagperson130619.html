@@ -1,0 +1,1982 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>tagperson.db Database Schema</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <style type="text/css">
+                    body { background-color: #fff; color: #000; font-family: Consolas, monospace}
+                    a:link { color: #03d; }
+                    a:visited { color: #039; }
+                    a:hover { color: #09f; }
+                    table { border-collapse: collapse; width: 100%; }
+                    table caption { color: #666; text-align: right; font-size: 65%; margin-bottom: .5ex; }
+                    table td, table th { border: solid 1px #666; border-collapse: collapse; padding: .3ex .5ex; vertical-align: top; }
+                    table tbody tr:hover { background-color: #ffc; }
+                    table thead th { text-align: left; background-color: #ccc; }
+                    table tbody th { text-align: left; white-space: nowrap; }
+                    .table { page-break-inside: avoid; }
+                    .pk { float: right; cursor: arrow; color: #999; }
+                    .type { white-space: nowrap; }
+                    .null { text-align: center; }
+                    .flag { white-space: nowrap; font-size: 70%; display: inline-block; border: solid 1px #ccc; padding: .25ex .5ex; background-color: #ddd; margin-right: 1ex; }
+                    .tocref { float: right; text-decoration: none; font-weight: normal; }
+                    .footer { text-align: center; margin-top: 1em; font-size: 80%;}
+                    li.view:before { content: "VIEW"; font-size: 70%; display: inline-block; border: solid 1px #ccc; padding: .25ex .5ex; background-color: #ddd; margin-right: 1ex; }
+                    @media print {
+                    body { font-size: .8em; }
+                    #toc, .tocref { display: none; }
+                    a:link, a:visited { color: #000; text-decoration: none; }
+                    }
+                </style>
+  </head>
+  <body>
+    <h1>tagperson.db Database Schema</h1>
+    <div id="toc">
+      <ul>
+        <li class="table"><a href="#categoria">categoria</a></li>
+        <li class="table"><a href="#combate">combate</a></li>
+        <li class="table"><a href="#combate_grupo">combate_grupo</a></li>
+        <li class="table"><a href="#combate_grupo_custo">combate_grupo_custo</a></li>
+        <li class="table"><a href="#divindade">divindade</a></li>
+        <li class="table"><a href="#equipamento">equipamento</a></li>
+        <li class="table"><a href="#equipamento_armas">equipamento_armas</a></li>
+        <li class="table"><a href="#equipamento_defesa">equipamento_defesa</a></li>
+        <li class="table"><a href="#equipamento_grupos">equipamento_grupos</a></li>
+        <li class="table"><a href="#especializacao">especializacao</a></li>
+        <li class="table"><a href="#habilidade">habilidade</a></li>
+        <li class="table"><a href="#habilidade_especializacao">habilidade_especializacao</a></li>
+        <li class="table"><a href="#habilidade_grupo">habilidade_grupo</a></li>
+        <li class="table"><a href="#habilidade_grupo_custo">habilidade_grupo_custo</a></li>
+        <li class="table"><a href="#linha_tempo">linha_tempo</a></li>
+        <li class="table"><a href="#localidade">localidade</a></li>
+        <li class="table"><a href="#magia">magia</a></li>
+        <li class="table"><a href="#magia_grupo">magia_grupo</a></li>
+        <li class="table"><a href="#magia_grupo_custo">magia_grupo_custo</a></li>
+        <li class="table"><a href="#personagem">personagem</a></li>
+        <li class="table"><a href="#personagem_combate">personagem_combate</a></li>
+        <li class="table"><a href="#personagem_equipamento">personagem_equipamento</a></li>
+        <li class="table"><a href="#personagem_habilidade">personagem_habilidade</a></li>
+        <li class="table"><a href="#personagem_habilidade_especializacao">personagem_habilidade_especializacao</a></li>
+        <li class="table"><a href="#personagem_magia">personagem_magia</a></li>
+        <li class="table"><a href="#profissao">profissao</a></li>
+        <li class="table"><a href="#raca">raca</a></li>
+        <li class="table"><a href="#raca_profissao">raca_profissao</a></li>
+      </ul>
+    </div>
+    <div class="table">
+      <h2 id=""><a href="#toc" class="tocref">⇧</a>
+        Database Properties
+      </h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="type">Database</td>
+            <td class="type">C:\Users\clever ka\source\repos\TagPerson\DataBase\tagperson.db</td>
+          </tr>
+          <tr>
+            <td class="type">ServerVersion</td>
+            <td class="type">3.27.2</td>
+          </tr>
+          <tr>
+            <td class="type">DatabaseSize</td>
+            <td class="type">1,078 MB</td>
+          </tr>
+          <tr>
+            <td class="type">Created</td>
+            <td class="type">03/06/2019 10:49</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table">
+      <h2 id="categoria"><a href="#toc" class="tocref">⇧</a>Table categoria</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:30ex">Name</th>
+            <th style="width:20ex">Type</th>
+            <th style="width:4ex">NULL</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><span class="pk" title="PRIMARY KEY sqlite_autoindex_categoria_1">◆</span>id</th>
+            <td class="type">int</td>
+            <td class="null">☐</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>nome</th>
+            <td class="type">nvarchar (60)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>icon</th>
+            <td class="type">nvarchar (50)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table">
+      <h2 id="combate"><a href="#toc" class="tocref">⇧</a>Table combate</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:30ex">Name</th>
+            <th style="width:20ex">Type</th>
+            <th style="width:4ex">NULL</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><span class="pk" title="PRIMARY KEY sqlite_autoindex_combate_1">◆</span>id</th>
+            <td class="type">int</td>
+            <td class="null">☐</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>id_habilidade_grupo</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>id_categoria</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>nome</th>
+            <td class="type">nvarchar (50)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>atributo</th>
+            <td class="type">nvarchar (3)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>efeito</th>
+            <td class="type">ntext</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>requisitos</th>
+            <td class="type">ntext</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>obs</th>
+            <td class="type">ntext</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>quadro_rolagem</th>
+            <td class="type">ntext</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>aprimoramento</th>
+            <td class="type">ntext</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>bonus</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>possui_especializacao</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table">
+      <h2 id="combate_grupo"><a href="#toc" class="tocref">⇧</a>Table combate_grupo</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:30ex">Name</th>
+            <th style="width:20ex">Type</th>
+            <th style="width:4ex">NULL</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><span class="pk" title="PRIMARY KEY sqlite_autoindex_combate_grupo_1">◆</span>id</th>
+            <td class="type">int</td>
+            <td class="null">☐</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>id_pai</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>nome</th>
+            <td class="type">nvarchar (100)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table">
+      <h2 id="combate_grupo_custo"><a href="#toc" class="tocref">⇧</a>Table combate_grupo_custo</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:30ex">Name</th>
+            <th style="width:20ex">Type</th>
+            <th style="width:4ex">NULL</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><span class="pk" title="PRIMARY KEY sqlite_autoindex_combate_grupo_custo_1">◆</span>id_combate</th>
+            <td class="type">int</td>
+            <td class="null">☐</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th><span class="pk" title="PRIMARY KEY sqlite_autoindex_combate_grupo_custo_1">◆</span>id_combate_grupo</th>
+            <td class="type">int</td>
+            <td class="null">☐</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>custo</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>reducao</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table">
+      <h2 id="divindade"><a href="#toc" class="tocref">⇧</a>Table divindade</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:30ex">Name</th>
+            <th style="width:20ex">Type</th>
+            <th style="width:4ex">NULL</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><span class="pk" title="PRIMARY KEY sqlite_autoindex_divindade_1">◆</span>id</th>
+            <td class="type">int</td>
+            <td class="null">☐</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>nome</th>
+            <td class="type">nvarchar (60)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>dominio</th>
+            <td class="type">nvarchar (100)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table">
+      <h2 id="equipamento"><a href="#toc" class="tocref">⇧</a>Table equipamento</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:30ex">Name</th>
+            <th style="width:20ex">Type</th>
+            <th style="width:4ex">NULL</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><span class="pk" title="PRIMARY KEY sqlite_autoindex_equipamento_1">◆</span>id</th>
+            <td class="type">int</td>
+            <td class="null">☐</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>id_grupo</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>nome</th>
+            <td class="type">nvarchar (60)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>descricao</th>
+            <td class="type">nvarchar (160)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>image_file</th>
+            <td class="type">nvarchar (50)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>valor</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>arma</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td><span class="flag">DEFAULT 0</span></td>
+          </tr>
+          <tr>
+            <th>defesa</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td><span class="flag">DEFAULT 0</span></td>
+          </tr>
+          <tr>
+            <th>armadura</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td><span class="flag">DEFAULT 0</span></td>
+          </tr>
+          <tr>
+            <th>escudo</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td><span class="flag">DEFAULT 0</span></td>
+          </tr>
+          <tr>
+            <th>capacete</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td><span class="flag">DEFAULT 0</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table">
+      <h2 id="equipamento_armas"><a href="#toc" class="tocref">⇧</a>Table equipamento_armas</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:30ex">Name</th>
+            <th style="width:20ex">Type</th>
+            <th style="width:4ex">NULL</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><span class="pk" title="PRIMARY KEY sqlite_autoindex_equipamento_armas_1">◆</span>id</th>
+            <td class="type">int</td>
+            <td class="null">☐</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>id_equipamento</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>tipo</th>
+            <td class="type">nvarchar (50)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>custo</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>alcance</th>
+            <td class="type">nvarchar (50)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>forca_minima</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>bonus</th>
+            <td class="type">nvarchar (50)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>l</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>m</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>p</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>25</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>50</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>75</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>100</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>Pq</th>
+            <td class="type">nvarchar (50)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>An</th>
+            <td class="type">nvarchar (50)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>El</th>
+            <td class="type">nvarchar (50)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>ME</th>
+            <td class="type">nvarchar (50)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>Hu</th>
+            <td class="type">nvarchar (50)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table">
+      <h2 id="equipamento_defesa"><a href="#toc" class="tocref">⇧</a>Table equipamento_defesa</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:30ex">Name</th>
+            <th style="width:20ex">Type</th>
+            <th style="width:4ex">NULL</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><span class="pk" title="PRIMARY KEY sqlite_autoindex_equipamento_defesa_1">◆</span>id</th>
+            <td class="type">int</td>
+            <td class="null">☐</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>id_equipamento</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>defesa_base</th>
+            <td class="type">nvarchar (3)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>absorcao</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>fisico_minimo</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>forca_minima</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>P</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>A</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>E</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>M</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>H</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table">
+      <h2 id="equipamento_grupos"><a href="#toc" class="tocref">⇧</a>Table equipamento_grupos</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:30ex">Name</th>
+            <th style="width:20ex">Type</th>
+            <th style="width:4ex">NULL</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><span class="pk" title="PRIMARY KEY sqlite_autoindex_equipamento_grupos_1">◆</span>id</th>
+            <td class="type">int</td>
+            <td class="null">☐</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>nome</th>
+            <td class="type">nvarchar (60)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table">
+      <h2 id="especializacao"><a href="#toc" class="tocref">⇧</a>Table especializacao</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:30ex">Name</th>
+            <th style="width:20ex">Type</th>
+            <th style="width:4ex">NULL</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><span class="pk" title="PRIMARY KEY sqlite_autoindex_especializacao_1">◆</span>id</th>
+            <td class="type">int</td>
+            <td class="null">☐</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>nome</th>
+            <td class="type">nvarchar (60)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>descricao</th>
+            <td class="type">ntext</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>id_profissao</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>id_magia_grupo</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>id_tecnica_grupo</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table">
+      <h2 id="habilidade"><a href="#toc" class="tocref">⇧</a>Table habilidade</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:30ex">Name</th>
+            <th style="width:20ex">Type</th>
+            <th style="width:4ex">NULL</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><span class="pk" title="PRIMARY KEY sqlite_autoindex_habilidade_1">◆</span>id</th>
+            <td class="type">int</td>
+            <td class="null">☐</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>id_habilidade_grupo</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>nome</th>
+            <td class="type">nvarchar (50)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>atributo</th>
+            <td class="type">nvarchar (3)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>teste_nivel</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>restrita</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>penalidades</th>
+            <td class="type">nvarchar (50)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>tarefas_aperfeicoadas</th>
+            <td class="type">ntext</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>descricao</th>
+            <td class="type">ntext</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>niveis</th>
+            <td class="type">ntext</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>bonus</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td><span class="flag">DEFAULT 0</span></td>
+          </tr>
+          <tr>
+            <th>possui_especializacao</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td><span class="flag">DEFAULT 0</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table">
+      <h2 id="habilidade_especializacao"><a href="#toc" class="tocref">⇧</a>Table habilidade_especializacao</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:30ex">Name</th>
+            <th style="width:20ex">Type</th>
+            <th style="width:4ex">NULL</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><span class="pk" title="PRIMARY KEY sqlite_autoindex_habilidade_especializacao_1">◆</span>id</th>
+            <td class="type">int</td>
+            <td class="null">☐</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>id_habilidade</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>sugestao</th>
+            <td class="type">nvarchar (40)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table">
+      <h2 id="habilidade_grupo"><a href="#toc" class="tocref">⇧</a>Table habilidade_grupo</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:30ex">Name</th>
+            <th style="width:20ex">Type</th>
+            <th style="width:4ex">NULL</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><span class="pk" title="PRIMARY KEY sqlite_autoindex_habilidade_grupo_1">◆</span>id</th>
+            <td class="type">int</td>
+            <td class="null">☐</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>id_pai</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>nome</th>
+            <td class="type">nvarchar (100)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table">
+      <h2 id="habilidade_grupo_custo"><a href="#toc" class="tocref">⇧</a>Table habilidade_grupo_custo</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:30ex">Name</th>
+            <th style="width:20ex">Type</th>
+            <th style="width:4ex">NULL</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><span class="pk" title="PRIMARY KEY sqlite_autoindex_habilidade_grupo_custo_1">◆</span>id_habilidade</th>
+            <td class="type">int</td>
+            <td class="null">☐</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th><span class="pk" title="PRIMARY KEY sqlite_autoindex_habilidade_grupo_custo_1">◆</span>id_habilidade_grupo</th>
+            <td class="type">int</td>
+            <td class="null">☐</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>custo</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table">
+      <h2 id="linha_tempo"><a href="#toc" class="tocref">⇧</a>Table linha_tempo</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:30ex">Name</th>
+            <th style="width:20ex">Type</th>
+            <th style="width:4ex">NULL</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><span class="pk" title="PRIMARY KEY sqlite_autoindex_linha_tempo_1">◆</span>id</th>
+            <td class="type">int</td>
+            <td class="null">☐</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>id_localidade</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>ano</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>evento</th>
+            <td class="type">nvarchar (300)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table">
+      <h2 id="localidade"><a href="#toc" class="tocref">⇧</a>Table localidade</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:30ex">Name</th>
+            <th style="width:20ex">Type</th>
+            <th style="width:4ex">NULL</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><span class="pk" title="PRIMARY KEY sqlite_autoindex_localidade_1">◆</span>id</th>
+            <td class="type">int</td>
+            <td class="null">☐</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>id_pai</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td><span class="flag">DEFAULT -1</span></td>
+          </tr>
+          <tr>
+            <th>nome</th>
+            <td class="type">nvarchar (60)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>brasao</th>
+            <td class="type">nvarchar (60)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>nota</th>
+            <td class="type">ntext</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>autor</th>
+            <td class="type">nvarchar (120)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>x</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td><span class="flag">DEFAULT 0</span></td>
+          </tr>
+          <tr>
+            <th>y</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td><span class="flag">DEFAULT 0</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table">
+      <h2 id="magia"><a href="#toc" class="tocref">⇧</a>Table magia</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:30ex">Name</th>
+            <th style="width:20ex">Type</th>
+            <th style="width:4ex">NULL</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><span class="pk" title="PRIMARY KEY sqlite_autoindex_magia_1">◆</span>id</th>
+            <td class="type">int</td>
+            <td class="null">☐</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>nome</th>
+            <td class="type">nvarchar (60)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>evocacao</th>
+            <td class="type">nvarchar (40)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>alcance</th>
+            <td class="type">nvarchar (40)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>duracao</th>
+            <td class="type">nvarchar (60)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>descricao</th>
+            <td class="type">ntext</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>niveis</th>
+            <td class="type">ntext</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table">
+      <h2 id="magia_grupo"><a href="#toc" class="tocref">⇧</a>Table magia_grupo</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:30ex">Name</th>
+            <th style="width:20ex">Type</th>
+            <th style="width:4ex">NULL</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><span class="pk" title="PRIMARY KEY sqlite_autoindex_magia_grupo_1">◆</span>id</th>
+            <td class="type">int</td>
+            <td class="null">☐</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>id_pai</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>nome</th>
+            <td class="type">nvarchar (100)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table">
+      <h2 id="magia_grupo_custo"><a href="#toc" class="tocref">⇧</a>Table magia_grupo_custo</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:30ex">Name</th>
+            <th style="width:20ex">Type</th>
+            <th style="width:4ex">NULL</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><span class="pk" title="PRIMARY KEY sqlite_autoindex_magia_grupo_custo_1">◆</span>id_magia</th>
+            <td class="type">int</td>
+            <td class="null">☐</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th><span class="pk" title="PRIMARY KEY sqlite_autoindex_magia_grupo_custo_1">◆</span>id_magia_grupo</th>
+            <td class="type">int</td>
+            <td class="null">☐</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>custo</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table">
+      <h2 id="personagem"><a href="#toc" class="tocref">⇧</a>Table personagem</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:30ex">Name</th>
+            <th style="width:20ex">Type</th>
+            <th style="width:4ex">NULL</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><span class="pk" title="PRIMARY KEY sqlite_autoindex_personagem_1">◆</span>id</th>
+            <td class="type">int</td>
+            <td class="null">☐</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>nome</th>
+            <td class="type">nvarchar (100)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>jogador</th>
+            <td class="type">nvarchar (100)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>image_file</th>
+            <td class="type">nvarchar (60)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>att_intelecto</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>att_aura</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>att_carisma</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>att_forca</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>att_fisico</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>att_agilidade</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>att_percepcao</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>defesa_ativa</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>defesa_passiva</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>energia_heroica_maxima</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>energia_heroica</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>energia_fisica</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>absorcao</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>raca</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>profissao</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>especializacao</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>nivel</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>pontos_habilidade</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>pontos_combate</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>pontos_arma</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>pontos_magia</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>altura</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>peso</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>idade</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>olhos</th>
+            <td class="type">nvarchar (60)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>cabelo</th>
+            <td class="type">nvarchar (60)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>pele</th>
+            <td class="type">nvarchar (60)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>aparencia</th>
+            <td class="type">ntext</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>divindade</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>classe_social</th>
+            <td class="type">nvarchar (30)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>local_nascimento</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>historia</th>
+            <td class="type">ntext</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>moedas_cobre</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>moedas_prata</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>moedas_ouro</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table">
+      <h2 id="personagem_combate"><a href="#toc" class="tocref">⇧</a>Table personagem_combate</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:30ex">Name</th>
+            <th style="width:20ex">Type</th>
+            <th style="width:4ex">NULL</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><span class="pk" title="PRIMARY KEY sqlite_autoindex_personagem_combate_1">◆</span>id_personagem</th>
+            <td class="type">int</td>
+            <td class="null">☐</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th><span class="pk" title="PRIMARY KEY sqlite_autoindex_personagem_combate_1">◆</span>id_combate</th>
+            <td class="type">int</td>
+            <td class="null">☐</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>nivel</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table">
+      <h2 id="personagem_equipamento"><a href="#toc" class="tocref">⇧</a>Table personagem_equipamento</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:30ex">Name</th>
+            <th style="width:20ex">Type</th>
+            <th style="width:4ex">NULL</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><span class="pk" title="PRIMARY KEY sqlite_autoindex_personagem_equipamento_1">◆</span>id_personagem</th>
+            <td class="type">int</td>
+            <td class="null">☐</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th><span class="pk" title="PRIMARY KEY sqlite_autoindex_personagem_equipamento_1">◆</span>id_equipamento</th>
+            <td class="type">int</td>
+            <td class="null">☐</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>quantidade</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table">
+      <h2 id="personagem_habilidade"><a href="#toc" class="tocref">⇧</a>Table personagem_habilidade</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:30ex">Name</th>
+            <th style="width:20ex">Type</th>
+            <th style="width:4ex">NULL</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><span class="pk" title="PRIMARY KEY sqlite_autoindex_personagem_habilidade_1">◆</span>id_personagem</th>
+            <td class="type">int</td>
+            <td class="null">☐</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th><span class="pk" title="PRIMARY KEY sqlite_autoindex_personagem_habilidade_1">◆</span>id_habilidade</th>
+            <td class="type">int</td>
+            <td class="null">☐</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>nivel</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table">
+      <h2 id="personagem_habilidade_especializacao"><a href="#toc" class="tocref">⇧</a>Table personagem_habilidade_especializacao</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:30ex">Name</th>
+            <th style="width:20ex">Type</th>
+            <th style="width:4ex">NULL</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><span class="pk" title="PRIMARY KEY sqlite_autoindex_personagem_habilidade_especializacao_1">◆</span>id</th>
+            <td class="type">int</td>
+            <td class="null">☐</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>id_personagem</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>id_habilidade</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>id_habilidade_especializacao</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>especializacao</th>
+            <td class="type">nvarchar (40)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>nivel</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table">
+      <h2 id="personagem_magia"><a href="#toc" class="tocref">⇧</a>Table personagem_magia</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:30ex">Name</th>
+            <th style="width:20ex">Type</th>
+            <th style="width:4ex">NULL</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><span class="pk" title="PRIMARY KEY sqlite_autoindex_personagem_magia_1">◆</span>id_personagem</th>
+            <td class="type">int</td>
+            <td class="null">☐</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th><span class="pk" title="PRIMARY KEY sqlite_autoindex_personagem_magia_1">◆</span>id_magia</th>
+            <td class="type">int</td>
+            <td class="null">☐</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>nivel</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table">
+      <h2 id="profissao"><a href="#toc" class="tocref">⇧</a>Table profissao</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:30ex">Name</th>
+            <th style="width:20ex">Type</th>
+            <th style="width:4ex">NULL</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><span class="pk" title="PRIMARY KEY sqlite_autoindex_profissao_1">◆</span>id</th>
+            <td class="type">int</td>
+            <td class="null">☐</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>nome</th>
+            <td class="type">nvarchar (60)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>image_file</th>
+            <td class="type">nvarchar (60)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>descricao</th>
+            <td class="type">ntext</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>equipamentos_iniciais</th>
+            <td class="type">ntext</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>moedas_cobre</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>energia_heroica</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>pontos_habilidade</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>pontos_arma</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>pontos_combate</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>penalidade_habilidade_grupo</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>especialidade_habilidade</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>atributo_magia</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>id_magia_grupo</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table">
+      <h2 id="raca"><a href="#toc" class="tocref">⇧</a>Table raca</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:30ex">Name</th>
+            <th style="width:20ex">Type</th>
+            <th style="width:4ex">NULL</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><span class="pk" title="PRIMARY KEY sqlite_autoindex_raca_1">◆</span>id</th>
+            <td class="type">int</td>
+            <td class="null">☐</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>nome</th>
+            <td class="type">nvarchar (60)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>descricao</th>
+            <td class="type">ntext</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>image_file</th>
+            <td class="type">nvarchar (60)</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>attr_int</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>attr_aur</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>attr_car</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>attr_for</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>attr_fis</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>attr_agi</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>attr_per</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>velocidade_inicio</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>energia_fisica</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>altura_inicio</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>peso_inicio</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>idade_minima</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th>idade_maxima</th>
+            <td class="type">int</td>
+            <td class="null">☒</td>
+            <td>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table">
+      <h2 id="raca_profissao"><a href="#toc" class="tocref">⇧</a>Table raca_profissao</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:30ex">Name</th>
+            <th style="width:20ex">Type</th>
+            <th style="width:4ex">NULL</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><span class="pk" title="PRIMARY KEY sqlite_autoindex_raca_profissao_1">◆</span>id_raca</th>
+            <td class="type">int</td>
+            <td class="null">☐</td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <th><span class="pk" title="PRIMARY KEY sqlite_autoindex_raca_profissao_1">◆</span>id_profissao</th>
+            <td class="type">int</td>
+            <td class="null">☐</td>
+            <td>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="footer">
+                    Generated by <a href="http://SqlDbDoc.codeplex.com/">DB&gt;doc</a> and <a href="https://github.com/ErikEJ/SqlCeToolbox">SQL Server Compact/SQLite Toolbox</a> on
+                    June 13, 2019, 16:01:18</div>
+  </body>
+</html>

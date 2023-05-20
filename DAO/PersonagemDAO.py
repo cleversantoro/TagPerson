@@ -293,6 +293,9 @@ class PersonagemDAO:
         cur_usr.execute(query)
         conn_usr.commit()
 
+    def save_persona_skills(persona):
+        PersonagemDAO.__save_persona_list(persona.id, persona.skills, 'habilidade')
+
     def save_persona_spells(persona):
         PersonagemDAO.__save_persona_list(persona.id, persona.spells, 'magia')
 
@@ -301,6 +304,16 @@ class PersonagemDAO:
 
     def save_persona_skill(idpersona, idskill, value):
         query = 'INSERT or REPLACE INTO personagem_habilidade (id_personagem, id_habilidade, nivel) values ({},{},{});'.format(idpersona,idskill,value)
+        cur_usr.execute(query)
+        conn_usr.commit()
+
+    def save_persona_combat(idpersona, idcombat, value):
+        query = 'INSERT or REPLACE INTO personagem_combate (id_personagem, id_combate, nivel) values ({},{},{});'.format(idpersona,idcombat,value)
+        cur_usr.execute(query)
+        conn_usr.commit()
+
+    def save_persona_spell(idpersona, idspell, value):
+        query = 'INSERT or REPLACE INTO personagem_magia (id_personagem, id_magia, nivel) values ({},{},{});'.format(idpersona,idspell,value)
         cur_usr.execute(query)
         conn_usr.commit()
 

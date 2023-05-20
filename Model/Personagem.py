@@ -1,8 +1,8 @@
+from Helpers import helpers
 from Helpers.constantes import const
-from Model.__Base__ import Base
-from Model.Raca import Race
 from Model.Items import Item
-import operator,math
+from Model.__Base__ import Base
+
 
 class Persona(Base):
     def __init__(self, name='', id=-1):
@@ -159,7 +159,7 @@ class Persona(Base):
                const.MAGIC_PTS
 
     def equip_item(self, item):
-        item_kind = get_item_kind(item)
+        item_kind = Item.get_item_kind(item)
         if item_kind > -1:
             self.combat_equip[item_kind] = item
 
@@ -185,7 +185,7 @@ class Persona(Base):
         self.copper_coins, self.silver_coins, self.gold_coins = coins
 
     def add_money(self, money):
-        copper, silver, gold = core.convert_to_coins(money)
+        copper, silver, gold = helpers.core.convert_to_coins(money)
         self.copper_coins += copper
         self.silver_coins += silver
         self.gold_coins += gold

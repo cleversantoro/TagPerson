@@ -188,7 +188,6 @@
     <Content Include="View\UI\Comando-ui-py.txt" />
     <Content Include="View\UI\FrmEquipamento.ui" />
     <Content Include="View\UI\FrmNovoPersonagem.ui" />
-    <Content Include="View\UI\FrmPrincipal-old.ui" />
     <Content Include="View\UI\FrmPrincipal.ui" />
     <Content Include="View\UI\FrmSobre.ui" />
   </ItemGroup>
